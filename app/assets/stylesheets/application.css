@@ -1,0 +1,28 @@
+/*ヘッダー-----------------------------------------------------------------*/
+.header {
+  background-color: #f7f2b4;
+  height: 90px;
+}
+
+li {
+  list-style: none;
+  float: right;
+}
+
+.header-logo {
+  font-size: 36px;
+  float: left;
+}
+
+/*メイン-----------------------------------------------------------------*/
+.main {
+  height: 900px;
+  background-color: #ffebeb;
+  flex-direction: column;
+}
+
+/*フッター-----------------------------------------------------------------*/
+.footer {
+  height: 120px;
+  background-color: #3c907878;
+}
