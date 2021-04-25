@@ -1,1 +1,25 @@
+// reset=========================================================
+ul, li {
+  list-style: none;
+}
+
+// ヘッダー=========================================================
+header {
+  height: 85px;
+  width: 100%;
+  color: white;
+  background-color: #40a0cdc9;
+}
+
+.header-logo {
+  float: left;
+  line-height: 85px;
+  margin-left: 60px;
+  font-size: 30px;
+}
+
+.header-list {
+  float: right;
+  margin: 28px 40px 0 0;
+}
 
