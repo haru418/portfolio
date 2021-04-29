@@ -9,12 +9,54 @@
   </ul>
 </header>
 
+<!--1つ目の投稿=====================================================================================-->
+<% posts_user_name_1 = link_to("稲葉",  "", class:"posts-user-name") %>
+<% posts_img_1 = image_tag "/4384784_s.jpg", class:"posts-img" %>
+<% posts_cooking_name_1 = "チキンのトマトソース煮込み" %>
+<% posts_ingredients_name_1 = "鶏肉/トマト缶/ニンニクチューブ/玉ねぎ" %>
+<% posts_comment_1 = "上手く作れました。上手く作れました。上手く作れました。上手く作れました。上手く作れました。上手く作れました。上手く作れました。上手く作れました。上手く作れました。上手く作れました。上手く作れました。" %>
+
 <div class="posts-index-main">
   <div class="container">
-    <div class="posts-item">
-      <a>ユーザー名</a>
-      <img src="https://lh3.googleusercontent.com/proxy/fD8M7YQ7qIQiym-WrhjIXgJgk4yNj28QHlPd_aj-GsVNnLloqJ7GKpGKFErRBnSgvnZmecULUZ_dfDEqn-l61A">
-      <p>料理名</p>
+    <div class="posts-items">
+      <div class="posts-item">
+        <%= posts_user_name_1 %>
+        <%= posts_img_1 %>
+        <div class="poster-comments">
+          <p class="cooking-name">
+            <%= posts_cooking_name_1 %>
+          </p>
+          <p class="ingredients-name">
+            <%= posts_ingredients_name_1 %>
+          </p>
+          <p class="poster-comment">
+            <%= posts_comment_1 %>
+          </p>
+        </div>
+      </div>
+      
+<!--2つ目の投稿=====================================================================================-->
+<% posts_user_name_2 = link_to("山田",  "", class:"posts-user-name") %>
+<% posts_img_2 = image_tag "/4384784_s.jpg", class:"posts-img" %>
+<% posts_cooking_name_2 = "肉じゃが" %>
+<% posts_ingredients_name_2 = "豚肉/じゃがいも/人参/玉ねぎ" %>
+<% posts_comment_2 = "上手く作れました。上手く作れました。上手く作れました。上手く作れました。上手く作れました。上手く作れました。上手く作れました。上手く作れました。上手く作れました。上手く作れました。上手く作れました。" %>
+      
+      <div class="posts-item">
+        <%= posts_user_name_2 %>
+        <%= posts_img_2 %>
+        <div class="poster-comments">
+          <p class="cooking-name">
+            <%= posts_cooking_name_2 %>
+          </p>
+          <p class="ingredients-name">
+            <%= posts_ingredients_name_2 %>
+          </p>
+          <p class="poster-comment">
+            <%= posts_comment_2 %>
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </div>

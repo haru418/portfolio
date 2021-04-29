@@ -1,5 +1,5 @@
 .posts-index-main {
-  height: 1200px;
+  height: auto;
 }
 
 .container {
@@ -8,17 +8,25 @@
 
 .posts-item {
   height: 600px;
-  width: 750px;
-  margin: 50px 0 50px 50px;
+  width: 600px;
+  margin: 50px 0 50px 100px;
   border: 1px solid #80808040;
+  color: black;
+  box-shadow: 3px 3px 10px 0px #c1ced7;
 }
 
-.posts-item a {
+.posts-user-name {
   float: left;
+ margin: 20px 0 20px 20px;
+ text-decoration: none;
+ color: black;
 }
 
-.posts-item img {
+.posts-img {
   height: 300px;
-  width: 500px;
-  margin-top: 50px;
+  width: 100%;
+}
+
+.poster-comments {
+  padding: 0 20px 20px 20px;
 }
