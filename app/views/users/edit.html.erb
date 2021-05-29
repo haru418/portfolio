@@ -1,0 +1,28 @@
+<div class="users-edit-main">
+  <div class="container">
+    <%= form_tag user_path, method: :patch, multipart: true do %>
+      <% @user.errors.full_messages.each do |message| %>
+        <div class="error-message">
+          <%= message %>
+        </div>
+      <% end %>
+      <div class="edit-user">
+        <div class="user-name">
+          <p>ユーザー名</p>
+          <input name="user_name" value="<%= @user.user_name %>">
+        </div>
+        <div class="user-email">
+          <p>メールアドレス</p>
+          <input name="email" value="<%= @user.email %>">
+        </div>
+        <div class="user-image">
+          <p>プロフィール画像</p>
+          <input name="image" type="file">
+        </div>
+        <div class="send-edit-user">
+          <input class="send_edit_user" type="submit" value="登録する">
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

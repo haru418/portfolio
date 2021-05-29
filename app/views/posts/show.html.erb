@@ -1,0 +1,46 @@
+<div class="posts-show-main">
+  <div class="container">
+    <div class="posts-show-item">
+      <div class="poster-contents">
+        <div class="post-user-name">
+          <img src="<%= "/user_images/#{@user.image}" %>">
+          <%= link_to @user.user_name, user_path(@user), class:"post_user_name" %>
+        </div>
+        <p class="show-cooking-name">
+          <%= @recipe.cooking_name %>
+        </p>
+        <div class="cooking-image">
+          <%= image_tag "/cooking_images/#{@recipe.cooking_image}" %>
+        </div>
+        <div class="flex">
+          <div class="show-cooking-recipe">
+            <p class="show-process-letter">作り方</p>
+            <div class="show-process">
+              <p>1 <%= @step.step_1 %></p>
+              <p>2 <%= @step.step_2 %></p>
+              <p>3 <%= @step.step_3 %></p>
+            </div>
+          </div>
+          <div class="show-ingredients">
+            <div class="ingredients">
+              <p class="ingredient-letter">材料</p>
+              <p><%= @ingredient.ingredient_1 %></p>
+              <p><%= @ingredient.ingredient_2 %></p>
+              <p><%= @ingredient.ingredient_3 %></p>
+            </div>
+          </div>
+        </div>
+        <div class="comment">
+          <p class="comment-letter">コメント</p>
+          <p><%= @recipe.comment %></p>
+        </div>
+      </div>
+      <% if @recipe.user_id == @current_user.id %>
+        <div class="post-menu">
+          <%= link_to "編集", edit_post_path(@recipe.id, @step.id, @ingredient.id), class:"post_edit_button"  %>
+          <%= link_to "削除", destroy_post_path(@recipe.id), method: :post, class:"post_destroy_button"  %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

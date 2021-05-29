@@ -1,0 +1,54 @@
+<div class="posts-new-main">
+  <div class="container">
+    <%= form_tag update_post_path, multipart: true do %>
+      <% @recipe.errors.full_messages.each do |message| %>
+        <div class="edit-form-error">
+          <%= message %>
+        </div>
+      <% end %>
+      <% @ingredient.errors.full_messages.each do |message| %>
+        <div class="edit-form-error">
+          <%= message %>
+        </div>
+      <% end %>
+      <% @step.errors.full_messages.each do |message| %>
+        <div class="edit-form-error">
+          <%= message %>
+        </div>
+      <% end %>
+      <div class="edit-post">
+        <div class="post-cooking-image posts-edit-content">
+          <p>料理画像</p>
+          <input name="cooking_image" type="file">
+        </div>
+        <div class="post-cooking_name posts-edit-content">
+          <p>料理名</p>
+          <textarea name="cooking_name"><%= @recipe.cooking_name %></textarea>
+        </div>
+        <div class="post-edit-ingredients">
+          <div class="edit-ingredients posts-new-content">
+            <p class="ingredient">材料</p>
+            <textarea name="ingredient_1"><%= @ingredient.ingredient_1 %></textarea>
+            <textarea name="ingredient_2"><%= @ingredient.ingredient_2 %></textarea>
+            <textarea name="ingredient_3"><%= @ingredient.ingredient_3 %></textarea>
+          </div>
+        </div>
+        <div class="edit-cooking-steps posts-new-content">
+          <p class="edit-steps-letter">作り方</p>
+          <div class="edit-steps">
+            <textarea name="step_1"><%= @step.step_1 %></textarea>
+            <textarea name="step_2"><%= @step.step_2 %></textarea>
+            <textarea name="step_3"><%= @step.step_3 %></textarea>
+          </div>
+        </div>
+        <div class="post-comment posts-edit-content">
+          <p>コメント</p>
+          <textarea name="comment"><%= @recipe.comment %></textarea>
+        </div>
+        <div class="send-post">
+          <input type="submit" value="投稿する">
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

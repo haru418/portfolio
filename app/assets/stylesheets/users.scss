@@ -1,0 +1,171 @@
+// index====================================================================================
+.users-index-main {
+  height: auto;
+}
+
+.container {
+  margin: auto;
+  // background-color: #8080801c;
+}
+
+.users-index-items {
+  margin-top: 50px;
+}
+
+.users-index-item {
+  height: auto;
+  width: 600px;
+  margin: auto;
+  border: 1px solid #80808040;
+  color: black;
+  box-shadow: 3px 3px 10px 0px #c1ced7;
+}
+
+.users-index-item p {
+  margin: 0 0 20px 50px;
+}
+
+.users_index_name {
+  color: black;
+  text-decoration: none;
+}
+
+.user_index_image {
+  height: 30px;
+  width: 30px;
+}
+
+// show====================================================================================
+.users {
+  display: flex;
+}
+
+.user {
+  width: 285px;
+  margin-right: 50px;
+  text-align: center;
+  // background-color: pink;
+}
+
+.posts-user-item {
+  height: auto;
+  width: 600px;
+  margin: auto;
+  margin-top: 50px;
+  margin-left: 0;
+  border: 1px solid #80808040;
+  color: black;
+  box-shadow: 3px 3px 10px 0px #c1ced7;
+}
+
+.user_show_image {
+  height: 50px;
+  width: 50px;
+  margin-top: 50px;
+}
+
+.user_edit_button {
+  color: blue;
+  text-decoration: none;
+}
+
+.user_info {
+  display: inline-block;
+  height: 45px;
+  width: 270px;
+  font-size: 18px;
+  border-top: 1px solid black;
+  line-height: 45px;
+  text-decoration: none;
+  color: black;
+}
+
+.user-info p {
+  height: 45px;
+  font-size: 18px;
+  border-top: 1px solid black;
+  margin: 0;
+  line-height: 45px;
+}
+
+#open {
+  cursor: pointer;
+  height: 45px;
+  font-size: 18px;
+  border-top: 1px solid black;
+  margin: 0;
+  line-height: 45px;
+}
+
+.liked-posts {
+  border-bottom: 1px solid black;
+}
+
+.send-user {
+  margin-top: 20px;
+}
+
+// edit====================================================================================
+.edit-user {
+  height: auto;
+  width: 300px;
+  margin: auto;
+  margin-top: 40px;
+  border: 1px solid #80808040;
+  box-shadow: 3px 3px 10px 0px #c1ced7;
+  text-align: center
+}
+
+.user-image input {
+  border: 1px solid rgb(118, 118, 118);
+  border-radius: 3px;
+  padding: 10px;
+}
+
+.send_edit_user {
+  margin: 30px 0;
+}
+
+// new====================================================================================
+.new-user {
+  height: auto;
+  width: 300px;
+  margin: auto;
+  margin-top: 40px;
+  border: 1px solid #80808040;
+  box-shadow: 3px 3px 10px 0px #c1ced7;
+  text-align: center
+}
+
+.new-user p {
+  width: 153px;
+  margin: auto;
+  margin-top: 20px;
+  text-align: left;
+}
+
+.send_new_user {
+  margin-bottom: 30px;
+}
+
+// login_page====================================================================================
+.login-user {
+  height: auto;
+  width: 300px;
+  margin: auto;
+  margin-top: 40px;
+  border: 1px solid #80808040;
+  box-shadow: 3px 3px 10px 0px #c1ced7;
+  text-align: center
+}
+
+.login-user p {
+  margin: auto;
+  margin-top: 20px;
+  text-align: left;
+  width: 153px;
+}
+
+.login_button {
+  margin-bottom: 30px;
+}

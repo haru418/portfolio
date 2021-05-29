@@ -1,0 +1,28 @@
+<div class="users-new-main">
+  <div class="container">
+    <%= form_tag users_path do %>
+      <% @user.errors.full_messages.each do |message| %>
+        <div class="error-message">
+          <%= message %>
+        </div>
+      <% end %>
+      <div class="new-user">
+        <div class="user-name">
+          <p>ユーザー名</p>
+          <input name="user_name" value="<%= @user.user_name %>">
+        </div>
+        <div class="user-email">
+          <p>メールアドレス</p>
+          <input name="email" value="<%= @user.email %>">
+        </div>
+        <div class="user-pass">
+          <p>パスワード</p>
+          <input name="password" type="password" value="<%= @user.password %>">
+        </div>
+        <div class="send-user">
+          <input class="send_new_user" type="submit" value="登録する">
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

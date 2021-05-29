@@ -19,7 +19,31 @@ header {
 }
 
 .header-list {
-  float: right;
-  margin: 28px 40px 0 0;
+  line-height: 85px;
+  margin: 0;
+  color: white;
+  list-style: none;
 }
 
+.header-menu {
+  float: right;
+  padding-left: 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.logout-button {
+  float: right;
+  padding-left: 20px;
+  margin-right: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.login-button {
+  float: right;
+  padding-left: 20px;
+  margin-right: 10px;
+  color: white;
+  text-decoration: none;
+}

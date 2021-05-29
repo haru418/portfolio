@@ -1,0 +1,58 @@
+<div class="users-show-main">
+  <div class="container">
+    <div class="someone-cooking">
+      <h1><%= @user.user_name %>の料理</h1>
+    </div>
+    <div class="users">
+      <% @user.recipes.each do |recipe| %>
+        <div class="posts-user-item">
+          <div class="poster-contents">
+            <div class="posts-top">
+              <div class="posts-user-image">
+                <img src="<%= "/user_images/#{recipe.user.image}" %>">
+              </div>
+              <div class="posts-user-name">
+                <%= link_to recipe.user.user_name, user_path(recipe.user.id), class:"post_user_name" %>
+              </div>
+            </div>
+            <div class="posts-center">
+              <div class="cooking-image">
+                <%= image_tag "/cooking_images/#{recipe.cooking_image}" %>
+              </div>
+            </div>
+            <div class="posts-bottom">
+              <p class="cooking-name">
+                <%= link_to recipe.cooking_name, post_path(recipe.id), class:"cooking_name" %>
+              </p>
+              <p class="comment">
+                <%= link_to recipe.comment, post_path(recipe.id), class:"cooking_name" %>
+              </p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <div class="user">
+        <div class="user-show-image">
+          <%= image_tag "/user_images/#{@user.image}", class:"user_show_image" %>
+        </div>
+        <h2><%= @user.user_name %></h2>
+        <p><%= @user.email %></p>
+        <% if @user.id == @current_user.id %>
+          <%= link_to "編集", edit_user_path(@user.id), class:"user_edit_button" %>
+        <% end %>
+        <div class="user-info">
+          <!--<div id="open">-->
+          <!--  フォロー中-->
+          <!--</div>-->
+          <!--<div id="mask" class="hidden"></div>-->
+          <!--<section id="modal" class="hidden">-->
+          <!--  <p>フォロー中</p>-->
+          <!--</section>-->
+          <%= link_to "フォロー中", following_posts_path(@user.id), class:"user_info" %>
+          <p>フォロワー</p>
+          <p class="liked-posts">いいね！</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
