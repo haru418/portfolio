@@ -42,7 +42,7 @@
 
 .user {
   width: 285px;
-  margin-right: 50px;
+  margin-left: 20px;
   text-align: center;
   // background-color: pink;
 }
@@ -75,6 +75,18 @@
   width: 270px;
   font-size: 18px;
   border-top: 1px solid black;
+  line-height: 45px;
+  text-decoration: none;
+  color: black;
+}
+
+.user_info_likes {
+  display: inline-block;
+  height: 45px;
+  width: 270px;
+  font-size: 18px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
   line-height: 45px;
   text-decoration: none;
   color: black;
@@ -168,4 +180,61 @@
 
 .login_button {
   margin-bottom: 30px;
+}
+// login_page====================================================================================
+.user-likes-main {
+  height: auto;
+}
+
+.likes-items {
+  margin-top: 50px;
+  // display: flex;
+}
+
+.likes-item {
+  height: auto;
+  width: 45%;
+  margin: auto;
+  margin-bottom: 50px;
+  border: 1px solid #80808040;
+  color: black;
+  box-shadow: 3px 3px 10px 0px #c1ced7;
+}
+
+.likes-top {
+  margin-top: 15px;
+  margin-left: 10px;
+  display: flex;
+}
+
+.likes-top img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.likes_user_name {
+  padding-top: 10px;
+  padding-left: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.likes-center {
+  padding: 0 10px;
+  margin-top: 15px;
+}
+
+.likes-center img {
+  height: 250px;
+  width: 100%;
+}
+
+.likes-bottom {
+  margin: 20px 0 20px 10px;
+}
+
+.likes-bottom a {
+  text-decoration: none;
+  color: black;
 }

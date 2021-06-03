@@ -4,6 +4,7 @@
       <h1><%= @user.user_name %>の料理</h1>
     </div>
     <div class="users">
+      <div class="posts-user-items">
       <% @user.recipes.each do |recipe| %>
         <div class="posts-user-item">
           <div class="poster-contents">
@@ -31,6 +32,7 @@
           </div>
         </div>
       <% end %>
+      </div>
       <div class="user">
         <div class="user-show-image">
           <%= image_tag "/user_images/#{@user.image}", class:"user_show_image" %>
@@ -48,9 +50,10 @@
           <!--<section id="modal" class="hidden">-->
           <!--  <p>フォロー中</p>-->
           <!--</section>-->
-          <%= link_to "フォロー中", following_posts_path(@user.id), class:"user_info" %>
+          <%= link_to "フォロー中", relationships_user_path(@user.id), class:"user_info" %>
           <p>フォロワー</p>
-          <p class="liked-posts">いいね！</p>
+          <!--<p class="liked-posts">いいね！</p>-->
+          <%= link_to "いいね！", likes_user_path(@user.id), class:"user_info_likes" %>
         </div>
       </div>
     </div>

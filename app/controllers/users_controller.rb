@@ -74,6 +74,14 @@ class UsersController < ApplicationController
     redirect_to login_url
   end
   
+  def likes
+    @user = User.find(params[:id])
+    @likes = Like.where(user_id: @user.id)
+  end
+  
+  def relationships
+  end
+  
   def limitation_correct_user
     unless @current_user.id == params[:id].to_i
       flash[:notice] = "他のユーザーの編集はできません"

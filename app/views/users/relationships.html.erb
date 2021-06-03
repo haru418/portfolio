@@ -1,0 +1,16 @@
+<!--<section id="modal" class="hidden">-->
+<!--  <p>フォロー中</p>-->
+<!--  <div class="following-user">-->
+<!--    <img src="<%= "/user_images/#{}" %>">-->
+<!--    <p>山田太郎</p>-->
+<!--    <p>フォロー中</p>-->
+<!--  </div>-->
+<!--</section>-->
+
+<% if logged_in? && current_user != user %>
+  <% if current_user.following?(user) %>
+    <%= button_to 'フォロー解除', create_relationship_path(current_user.relationships.find_by(follow: user)), method: :delete %>
+  <% else %>
+    <%= button_to 'フォロー', destroy_relationship_path(follow: user) %>
+  <% end %>
+<% end %>

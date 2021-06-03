@@ -6,6 +6,8 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 
   <body>
@@ -19,7 +21,7 @@
             <%= link_to "ログアウト", logout_path, method: :post, class:"header-menu logout-button" %>
           </li>
           <li>
-            <%= link_to @current_user.user_name, users_path(@user), class:"header-menu" %>
+            <%= link_to @current_user.user_name, user_path(@current_user.id), class:"header-menu" %>
           </li>
           <li>
             <%= link_to "全てのユーザー", users_path, class:"header-menu" %>

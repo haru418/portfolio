@@ -1,0 +1,24 @@
+<div class="user-likes-main">
+  <div class="container">
+    <div class="likes-title">
+      <h1>いいね！した投稿</h1>
+    </div>
+    <div class="likes-items">
+      <% @likes.each do |like| %>
+        <% recipe = Recipe.find_by(id: like.recipe_id) %>
+        <div class="likes-item">
+          <div class="likes-top">
+            <img src="<%= "/user_images/#{recipe.user.image}" %>">
+            <%= link_to recipe.user.user_name, user_path(recipe.user.id), class:"likes_user_name" %>
+          </div>
+          <div class="likes-center">
+            <img src="<%= "/cooking_images/#{recipe.cooking_image}" %>">
+          </div>
+          <div class="likes-bottom">
+            <%= link_to recipe.cooking_name, post_path(recipe.id) %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

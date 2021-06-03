@@ -50,6 +50,7 @@ class PostsController < ApplicationController
     @user = @recipe.user
     @step = Step.find(params[:id])
     @ingredient = Ingredient.find(params[:id])
+    @likes_count = Like.where(recipe_id: @recipe.id).count
   end
   
   def edit
@@ -88,9 +89,6 @@ class PostsController < ApplicationController
     @ingredient.destroy
     redirect_to posts_index_url
     flash[:notice] = "投稿を削除しました"
-  end
-  
-  def following
   end
   
   def limitation_correct_user
