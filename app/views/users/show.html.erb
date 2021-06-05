@@ -43,18 +43,23 @@
           <%= link_to "編集", edit_user_path(@user.id), class:"user_edit_button" %>
         <% end %>
         <div class="user-info">
-          <!--<div id="open">-->
-          <!--  フォロー中-->
-          <!--</div>-->
-          <!--<div id="mask" class="hidden"></div>-->
-          <!--<section id="modal" class="hidden">-->
-          <!--  <p>フォロー中</p>-->
-          <!--</section>-->
-          <%= link_to "フォロー中", relationships_user_path(@user.id), class:"user_info" %>
-          <p>フォロワー</p>
-          <!--<p class="liked-posts">いいね！</p>-->
-          <%= link_to "いいね！", likes_user_path(@user.id), class:"user_info_likes" %>
+          <a href="<%= following_user_path(@user) %>">
+            <strong id="following" class="stat">
+              <%= @user.following.count %>
+            </strong>
+            フォロー中
+          </a>
+          <a href="<%= followers_user_path(@user) %>">
+            <strong id="followers" class="stat">
+              <%= @user.followers.count %>
+            </strong>
+            フォロワー
+          </a>
+          <%= link_to "いいね！した投稿", likes_user_path(@user.id), class:"user_info_likes" %>
         </div>
+        <section class="stats">
+          <%= render 'follow_form' %>
+        </section>
       </div>
     </div>
   </div>

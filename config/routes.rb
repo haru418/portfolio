@@ -14,12 +14,11 @@ Rails.application.routes.draw do
   
   resources :users
   get "users/:id/likes" => "users#likes", as: :likes_user
-  get "users/:id/relationships" => "users#relationships", as: :relationships_user
-  
+  get "users/:id/following" => "users#following", as: :following_user
+  get "users/:id/followers" => "users#followers", as: :followers_user
+
   post "likes/:recipe_id/create" => "likes#create", as: :create_like
   post "likes/:recipe_id/destroy" => "likes#destroy", as: :destroy_like
   
-  post "relationships/:follow_id/create" => "relationships#create", as: :createrelationship
-  post "relationships/:follow_id/destroy" => "relationships#destroy", as: :destroy_relationship
-  
+  resources :relationships, only: [:create, :destroy]
 end
