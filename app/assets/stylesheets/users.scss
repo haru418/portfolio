@@ -13,12 +13,13 @@
 }
 
 .users-index-item {
-  height: auto;
+  height: 80px;
   width: 600px;
   margin: auto;
   border: 1px solid #80808040;
   color: black;
   box-shadow: 3px 3px 10px 0px #c1ced7;
+  display: flex;
 }
 
 .users-index-item p {
@@ -28,21 +29,29 @@
 .users_index_name {
   color: black;
   text-decoration: none;
+  padding-top: 28px;
 }
 
 .user_index_image {
-  height: 30px;
-  width: 30px;
+  height: 50px;
+  width: 50px;
+  margin: 15px 15px 0;
+  border-radius: 50%;
 }
 
 // show====================================================================================
+.someone-cooking h1 {
+  margin-left: 39px;
+}
+
 .users {
   display: flex;
 }
 
 .user {
   width: 285px;
-  margin-left: 20px;
+  margin: 0 0 0 auto;
+  margin-right: 39px;
   text-align: center;
   // background-color: pink;
 }
@@ -52,16 +61,17 @@
   width: 600px;
   margin: auto;
   margin-top: 50px;
-  margin-left: 0;
+  margin-left: 39px;
   border: 1px solid #80808040;
   color: black;
   box-shadow: 3px 3px 10px 0px #c1ced7;
 }
 
 .user_show_image {
-  height: 50px;
-  width: 50px;
+  height: 63px;
+  width: 63px;
   margin-top: 50px;
+  border-radius: 50%;
 }
 
 .user_edit_button {

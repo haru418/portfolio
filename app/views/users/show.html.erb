@@ -57,9 +57,9 @@
           </a>
           <%= link_to "いいね！した投稿", likes_user_path(@user.id), class:"user_info_likes" %>
         </div>
-        <section class="stats">
-          <%= render 'follow_form' %>
-        </section>
+      </div>
+      <div class="follow-btn">
+        <%= render 'follow_form' %>
       </div>
     </div>
   </div>

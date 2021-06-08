@@ -12,10 +12,11 @@ Rails.application.routes.draw do
   post "login" => "users#login"
   post "logout" => "users#logout"
   
-  resources :users
-  get "users/:id/likes" => "users#likes", as: :likes_user
-  get "users/:id/following" => "users#following", as: :following_user
-  get "users/:id/followers" => "users#followers", as: :followers_user
+  resources :users do
+    member do
+      get :likes, :following, :followers
+    end
+  end
 
   post "likes/:recipe_id/create" => "likes#create", as: :create_like
   post "likes/:recipe_id/destroy" => "likes#destroy", as: :destroy_like

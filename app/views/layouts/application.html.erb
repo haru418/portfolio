@@ -15,32 +15,18 @@
       <div class="header-logo">
         <%= link_to "pf_app", root_path, class:"header-menu" %>
       </div>
-      <ul class="header-list">
+      <div class="header-list">
         <% if session[:user_id] %>
-          <li>
             <%= link_to "ログアウト", logout_path, method: :post, class:"header-menu logout-button" %>
-          </li>
-          <li>
             <%= link_to @current_user.user_name, user_path(@current_user.id), class:"header-menu" %>
-          </li>
-          <li>
             <%= link_to "全てのユーザー", users_path, class:"header-menu" %>
-          </li>
-          <li>
             <%= link_to "投稿する", posts_new_path, class:"header-menu" %>
-          </li>
-          <li>
             <%= link_to "投稿一覧", posts_index_path, class:"header-menu" %>
-          </li>
         <% else %>
-          <li>
             <%= link_to " ログイン", login_path, class:"header-menu login-button" %>
-          </li>
-          <li>
             <%= link_to "新規登録", new_user_path, class:"header-menu" %>
-          </li>
         <% end %>
-      </ul>
+      </div>
     </header>
     
     <% if flash[:notice] %>
