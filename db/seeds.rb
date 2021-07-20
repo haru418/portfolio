@@ -8,6 +8,17 @@
   User.create!(user_name: "ロドリゲス", email: "r@gmail.com", image: "user_5.png", password: "foobar")
   User.create!(user_name: "ハル", email: "haru@gmail.com", image: "user_1.png", password: "foobar")
 
+  44.times do |n|
+    user_name  = Faker::Name.name
+    email = "example-#{n+1}@railstutorial.org"
+    image = "default.png"
+    password = "password"
+    User.create!(user_name: user_name,
+                 email: email,
+                 image: image,
+                 password: password)
+  end
+
 # 投稿内容を一行ずつ記述して変数に代入します。
   Recipe.create!(cooking_name: "豚キムチ", comment: "美味しくできました", user_id: 1, cooking_image: "cooking_1.png")
   Recipe.create!(cooking_name: "納豆巻き", comment: "巻くのが大変でした", user_id: 2, cooking_image: "cooking_2.png")
@@ -29,3 +40,11 @@
   Ingredient.create!(recipe_id: 4, ingredient_1: "キャベツ", ingredient_2: "にんじん", ingredient_3: "玉ねぎ")
   Ingredient.create!(recipe_id: 5, ingredient_1: "牛肉", ingredient_2: "豆腐", ingredient_3: "めんつゆ")
   Ingredient.create!(recipe_id: 6, ingredient_1: "海苔", ingredient_2: "白米", ingredient_3: "刺身")
+
+# リレーションシップ
+  users = User.all
+  user  = users.first
+  following = users[2..20]
+  followers = users[3..30]
+  following.each { |followed| user.follow(followed) }
+  followers.each { |follower| follower.follow(user) }
