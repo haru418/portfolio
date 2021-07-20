@@ -120,6 +120,27 @@
   margin-top: 32px;
 }
 
+.posts-show-bottom {
+  display: flex;
+}
+
+.like-btn-unlike {
+  color: #ff2581;
+  margin-right: 3px;
+  margin-left: 20px;
+}
+
+.like-btn {
+  color: #8899a6;
+  margin-right: 3px;
+  margin-left: 20px;
+}
+
+.post-menu {
+  margin: 0 0 0 auto;
+  margin-right: 5px;
+}
+
 // new===================================================================
 .new-post {
   height: auto;

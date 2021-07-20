@@ -8,10 +8,18 @@ Rails.application.routes.draw do
   get "posts/:id/edit" => "posts#edit", as: :edit_post
   post "posts/:id/update" => "posts#update", as: :update_post
   post "posts/:id/destroy" => "posts#destroy", as: :destroy_post
-  get "posts/:id/following" => "posts#following", as: :following_posts
   get "login" => "users#login_page"
   post "login" => "users#login"
   post "logout" => "users#logout"
   
-  resources :users
+  resources :users do
+    member do
+      get :likes, :following, :followers
+    end
+  end
+
+  post "likes/:recipe_id/create" => "likes#create", as: :create_like
+  post "likes/:recipe_id/destroy" => "likes#destroy", as: :destroy_like
+  
+  resources :relationships, only: [:create, :destroy]
 end
