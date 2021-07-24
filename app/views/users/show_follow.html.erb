@@ -1,0 +1,13 @@
+<div class="users-index-main">
+  <div class="container">
+    <h3><%= @title %></h3>
+    <div class="users-index-items">
+      <% if @users.any? %>
+        <ul class="users-follow">
+          <%= render @users %>
+        </ul>
+        <%= will_paginate %>
+      <% end %>
+    </div>
+  </div>
+</div>

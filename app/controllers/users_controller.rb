@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user, only: [:index, :show, :edit, :update]
+  before_action :authenticate_user, only: [:index, :show, :edit, :update, :following, :followers]
   before_action :limitation_login_user, only: [:new, :create, :login_page, :login]
   before_action :limitation_correct_user, only: [:edit, :update]
   
   def index
-    @users = User.all
+    @users = User.paginate(page: params[:page])
   end
   
   def show
@@ -78,8 +78,19 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @likes = Like.where(user_id: @user.id)
   end
-  
-  def relationships
+
+  def following
+    @title = "フォロー中"
+    @user = User.find(params[:id])
+    @users = @user.following.paginate(page: params[:page])
+    render 'show_follow'
+  end
+
+  def follower
+    @title = "フォロワー"
+    @user = User.find(params[:id])
+    @users = @user.followers.paginate(page: params[:page])
+    render 'show_follow'
   end
   
   def limitation_correct_user

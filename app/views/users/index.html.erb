@@ -4,12 +4,8 @@
       <div class="success-message"><%= flash[:notice] %></div>
     <% end %>
     <div class="users-index-items">
-      <% @users.each do |user| %>
-        <div class="users-index-item">
-          <%= image_tag "/user_images/#{user.image}", class:"user_index_image" %>
-          <%= link_to user.user_name, user_path(user.id), class:"users_index_name" %>
-        </div>
-      <% end %>
+      <%= render @users %>
     </div>
+    <%= will_paginate %>
   </div>
 </div>

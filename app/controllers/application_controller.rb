@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
     @current_user = User.find(session[:user_id]) if session[:user_id]
   end
   
+  # ユーザーのログインを確認する
   def authenticate_user
     unless @current_user
       flash[:notice] = "ログインしてください"
