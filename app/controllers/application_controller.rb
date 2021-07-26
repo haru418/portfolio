@@ -20,4 +20,9 @@ class ApplicationController < ActionController::Base
       redirect_to posts_index_url
     end
   end
+
+  # ユーザーがログインしていればtrue、その他ならfalseを返す
+  def logged_in?
+    !set_current_user.nil?
+  end
 end
