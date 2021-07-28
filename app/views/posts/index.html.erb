@@ -1,33 +1,7 @@
 <div class="posts-index-main">
   <div class="container">
     <div class="posts-items">
-      <% @recipes.each do |recipe| %>
-        <div class="posts-item">
-          <div class="poster-contents">
-            <div class="posts-top">
-              <div class="posts-user-image">
-                <img src="<%= "/user_images/#{recipe.user.image}" %>">
-              </div>
-              <div class="posts-user-name">
-                <%= link_to recipe.user.user_name, user_path(recipe.user.id) %>
-              </div>
-            </div>
-            <div class="posts-center">
-              <div class="cooking-image">
-                <%= image_tag "/cooking_images/#{recipe.cooking_image}" %>
-              </div>
-            </div>
-            <div class="posts-bottom">
-              <p class="cooking-name">
-                <%= link_to recipe.cooking_name, post_path(recipe.id), class:"cooking_name" %>
-              </p>
-              <p class="comment">
-                <%= link_to recipe.comment, post_path(recipe.id), class:"cooking_name" %>
-              </p>
-            </div>
-          </div>
-        </div>
-      <% end %>
+      <%= render 'recipes/feed' %>
     </div>
   </div>
 </div>

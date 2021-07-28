@@ -3,7 +3,10 @@ class PostsController < ApplicationController
   before_action :limitation_correct_user, only: [:edit, :update, :destroy]
   
   def index
-    @recipes = Recipe.all.order(created_at: :desc)
+    if logged_in?
+      @recipe = set_current_user.recipes.build
+      @feed_items = set_current_user.feed.paginate(page: params[:page]).order(created_at: :desc)
+    end
   end
   
   def new
@@ -41,6 +44,7 @@ class PostsController < ApplicationController
       redirect_to posts_index_url
       flash[:notice] = "投稿を作成しました"
     else
+      @feed_items = []
       render :new
     end
   end
