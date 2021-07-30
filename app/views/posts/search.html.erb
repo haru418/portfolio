@@ -1,0 +1,6 @@
+<h1>検索結果</h1>
+<% @results.each do |recipe| %>
+  <div class="recipes-result">
+    <%= link_to recipe.cooking_name, post_path(recipe.id) %>
+  </div>
+<% end %>

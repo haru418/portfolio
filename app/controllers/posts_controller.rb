@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user
   before_action :limitation_correct_user, only: [:edit, :update, :destroy]
+  before_action :set_search, only: [:index]
   
   def index
     if logged_in?
@@ -94,14 +95,21 @@ class PostsController < ApplicationController
     redirect_to posts_index_url
     flash[:notice] = "投稿を削除しました"
   end
-  
-  def limitation_correct_user
-    @recipe = Recipe.find(params[:id])
-    @step = Step.find(params[:id])
-    @ingredient = Ingredient.find(params[:id])
-    unless @recipe.user_id == @current_user.id
-      flash[:notice] = "自分以外の投稿の編集はできません"
-      redirect_to posts_index_url
-    end
+
+  def search
+    @q_recipes = Recipe.ransack(params[:q])
+    @results = @q_recipes.result
   end
+
+  private
+  
+    def limitation_correct_user
+      @recipe = Recipe.find(params[:id])
+      @step = Step.find(params[:id])
+      @ingredient = Ingredient.find(params[:id])
+      unless @recipe.user_id == @current_user.id
+        flash[:notice] = "自分以外の投稿の編集はできません"
+        redirect_to posts_index_url
+      end
+    end
 end

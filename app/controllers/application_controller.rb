@@ -25,4 +25,13 @@ class ApplicationController < ActionController::Base
   def logged_in?
     !set_current_user.nil?
   end
+
+  def set_search
+    @q = User.ransack(params[:q])
+    @results = @q.result
+    @q_recipes = Recipe.ransack(params[:q])
+    @results = @q_recipes.result
+    @q_ingredients = Ingredient.ransack(params[:q])
+    @results = @q_ingredients.result
+  end
 end
