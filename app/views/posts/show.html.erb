@@ -36,23 +36,14 @@
         </div>
       </div>
       <div class="posts-show-bottom">
-        <% if Like.find_by(user_id: @current_user.id, recipe_id: @recipe.id) %>
-          <%= link_to destroy_like_path(@recipe.id), method: :post do %>
-            <span class="fa fa-heart like-btn-unlike"></span>
-          <% end %>
-        <% else %>
-          <%= link_to create_like_path(@recipe.id), method: :post do %>
-            <span class="fa fa-heart like-btn"></span>
-          <% end %>
-        <% end %>
-        <%= @likes_count %>
-        <% if @recipe.user_id == @current_user.id %>
-          <div class="post-menu">
-            <%= link_to "編集", edit_post_path(@recipe.id, @step.id, @ingredient.id), class:"post_edit_button" %>
-            <%= link_to "削除", destroy_post_path(@recipe.id), method: :post, class:"post_destroy_button" %>
-          </div>
-        <% end %>
+        <%= render 'likes/like' %>
       </div>
+      <% if @recipe.user_id == @current_user.id %>
+        <div class="post-menu">
+          <%= link_to "編集", edit_post_path(@recipe.id, @step.id, @ingredient.id), class:"post_edit_button" %>
+          <%= link_to "削除", destroy_post_path(@recipe.id), method: :post, class:"post_destroy_button" %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

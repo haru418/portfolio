@@ -4,7 +4,13 @@ class UsersController < ApplicationController
   before_action :limitation_correct_user, only: [:edit, :update]
   
   def index
+    @user = User.where("user_name LIKE ?", "%#{params[:user_name]}%")
     @users = User.paginate(page: params[:page])
+    if params[:user_name].present?
+      @user
+    else
+      User.none
+    end
   end
   
   def show
@@ -92,6 +98,14 @@ class UsersController < ApplicationController
     @users = @user.followers.paginate(page: params[:page])
     render 'show_follow'
   end
+  
+  # def search
+  #   if params[:user_name].present?
+  #     @users = User.where("user_name LIKE ?", "%#{params[:user_name]}%")
+  #   else
+  #     @users = User.none
+  #   end
+  # end
   
   def limitation_correct_user
     unless @current_user.id == params[:id].to_i

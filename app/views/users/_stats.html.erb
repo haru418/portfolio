@@ -12,4 +12,10 @@
     </strong>
     フォロワー
   </a>
+  <a class="like" href="<%= likes_user_path(@user) %>">
+    <strong id="likes" class="stat">
+      <%= @user.likes.count %>
+    </strong>
+    いいね！した投稿
+  </a>
 </div>

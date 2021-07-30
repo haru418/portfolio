@@ -16,6 +16,9 @@ Rails.application.routes.draw do
     member do
       get :likes, :following, :followers
     end
+    collection do
+      post :index
+    end
   end
 
   post "likes/:recipe_id/create" => "likes#create", as: :create_like

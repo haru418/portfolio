@@ -43,10 +43,7 @@
           <%= link_to "編集", edit_user_path(@user.id), class:"user_edit_button" %>
         <% end %>
         <div class="user-info">
-          <div class="stats">
-            <%= render 'users/stats' %>
-          </div>
-          <%= link_to "いいね！した投稿", likes_user_path(@user.id), class:"user_info_likes" %>
+          <%= render 'users/stats' %>
         </div>
         <%= render 'follow_form' if logged_in? %>
       </div>
