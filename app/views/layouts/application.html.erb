@@ -5,30 +5,43 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
   </head>
 
   <body>
     <header>
-      <div class="header-logo">
-        <%= link_to "pf_app", root_path, class:"header-menu" %>
-      </div>
-      <div class="header-list">
-        <% if session[:user_id] %>
-            <%= link_to "ログアウト", logout_path, method: :post, class:"header-menu logout-button" %>
+      <div class="header-all">
+        <div class="menu-bar">
+          <span class="material-icons" id="open-menu">menu</span>
+        </div>
+        <div class="header-logo">
+          <%= link_to "pf_app", root_path, class:"header-menu" %>
+        </div>
+        <div class="header-list">
+          <% if session[:user_id] %>
             <%= link_to @current_user.user_name, user_path(@current_user.id), class:"header-menu" %>
-            <%= link_to "全てのユーザー", users_path, class:"header-menu" %>
-            <%= link_to "投稿する", posts_new_path, class:"header-menu" %>
-            <%= link_to "投稿一覧", posts_index_path, class:"header-menu" %>
-        <% else %>
-            <%= link_to " ログイン", login_path, class:"header-menu login-button" %>
-            <%= link_to "新規登録", new_user_path, class:"header-menu" %>
-        <% end %>
+          <% else %>
+            <%= link_to "新規登録", new_user_path, class:"signup" %>
+          <% end %>
+        </div>
       </div>
     </header>
-    
+
+      <div class="overlay">
+        <span class="material-icons" id="close">close</span>
+        <nav>
+          <ul>
+            <li><%= link_to "レシピ", posts_index_path %></li>
+            <li><%= link_to "投稿する", posts_new_path %></li>
+            <li><%= link_to "全てのユーザー", users_path %></li>
+            <li><%= link_to "ログアウト", logout_path, method: :post %></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="menu-cover"></div>
     <% if flash[:notice] %>
       <div class="flash">
         <%= flash[:notice] %>
@@ -36,5 +49,6 @@
     <% end %>
     
     <%= yield %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </body>
 </html>

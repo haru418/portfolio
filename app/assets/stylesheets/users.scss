@@ -4,7 +4,7 @@
 }
 
 .container {
-  margin: auto;
+  width: 1081px;
   // background-color: #8080801c;
 }
 
@@ -41,11 +41,17 @@
 
 // show====================================================================================
 .someone-cooking h1 {
-  margin-left: 39px;
+  margin-left: 215px;
 }
 
 .users {
+  width: 70%;
   display: flex;
+  margin: auto;
+}
+
+.user-show-side {
+  margin-left: 50px;
 }
 
 .user {
@@ -123,6 +129,10 @@
   margin-top: 20px;
 }
 
+.user-show-search {
+  width: 285px;
+}
+
 // edit====================================================================================
 .edit-user {
   height: auto;
@@ -187,14 +197,13 @@
 .login_button {
   margin-bottom: 30px;
 }
-// login_page====================================================================================
+// likes====================================================================================
 .user-likes-main {
   height: auto;
 }
 
 .likes-items {
   margin-top: 50px;
-  // display: flex;
 }
 
 .likes-item {

@@ -31,7 +31,5 @@ class ApplicationController < ActionController::Base
     @results = @q.result
     @q_recipes = Recipe.ransack(params[:q])
     @results = @q_recipes.result
-    @q_ingredients = Ingredient.ransack(params[:q])
-    @results = @q_ingredients.result
   end
 end

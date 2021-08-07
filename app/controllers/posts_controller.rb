@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user
   before_action :limitation_correct_user, only: [:edit, :update, :destroy]
-  before_action :set_search, only: [:index]
+  before_action :set_search, only: [:index, :show]
   
   def index
     if logged_in?

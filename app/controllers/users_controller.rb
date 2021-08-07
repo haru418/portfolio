@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user, only: [:index, :show, :edit, :update, :following, :followers]
   before_action :limitation_login_user, only: [:new, :create, :login_page, :login]
   before_action :limitation_correct_user, only: [:edit, :update]
+  before_action :set_search, only: [:show, :likes]
   
   def index
     @users = User.paginate(page: params[:page])

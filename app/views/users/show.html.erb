@@ -5,47 +5,52 @@
     </div>
     <div class="users">
       <div class="posts-user-items">
-      <% @user.recipes.each do |recipe| %>
-        <div class="posts-user-item">
-          <div class="poster-contents">
-            <div class="posts-top">
-              <div class="posts-user-image">
-                <img src="<%= "/user_images/#{recipe.user.image}" %>">
+        <% @user.recipes.each do |recipe| %>
+          <div class="posts-user-item">
+            <div class="poster-contents">
+              <div class="posts-top">
+                <div class="posts-user-image">
+                  <img src="<%= "/user_images/#{recipe.user.image}" %>">
+                </div>
+                <div class="posts-user-name">
+                  <%= link_to recipe.user.user_name, user_path(recipe.user.id), class:"post_user_name" %>
+                </div>
               </div>
-              <div class="posts-user-name">
-                <%= link_to recipe.user.user_name, user_path(recipe.user.id), class:"post_user_name" %>
+              <div class="posts-center">
+                <div class="cooking-image">
+                  <%= image_tag "/cooking_images/#{recipe.cooking_image}" %>
+                </div>
               </div>
-            </div>
-            <div class="posts-center">
-              <div class="cooking-image">
-                <%= image_tag "/cooking_images/#{recipe.cooking_image}" %>
+              <div class="posts-bottom">
+                <p class="cooking-name">
+                  <%= link_to recipe.cooking_name, post_path(recipe.id), class:"cooking_name" %>
+                </p>
+                <p class="comment">
+                  <%= link_to recipe.comment, post_path(recipe.id), class:"cooking_name" %>
+                </p>
               </div>
-            </div>
-            <div class="posts-bottom">
-              <p class="cooking-name">
-                <%= link_to recipe.cooking_name, post_path(recipe.id), class:"cooking_name" %>
-              </p>
-              <p class="comment">
-                <%= link_to recipe.comment, post_path(recipe.id), class:"cooking_name" %>
-              </p>
             </div>
           </div>
-        </div>
-      <% end %>
-      </div>
-      <div class="user">
-        <div class="user-show-image">
-          <%= image_tag "/user_images/#{@user.image}", class:"user_show_image" %>
-        </div>
-        <h2><%= @user.user_name %></h2>
-        <p><%= @user.email %></p>
-        <% if @user.id == @current_user.id %>
-          <%= link_to "編集", edit_user_path(@user.id), class:"user_edit_button" %>
         <% end %>
-        <div class="user-info">
-          <%= render 'users/stats' %>
+      </div>
+      <div class="user-show-side">
+        <div class="user">
+          <div class="user-show-image">
+            <%= image_tag "/user_images/#{@user.image}", class:"user_show_image" %>
+          </div>
+          <h2><%= @user.user_name %></h2>
+          <p><%= @user.email %></p>
+          <% if @user.id == @current_user.id %>
+            <%= link_to "編集", edit_user_path(@user.id), class:"user_edit_button" %>
+          <% end %>
+          <div class="user-info">
+            <%= render 'users/stats' %>
+          </div>
+          <%= render 'follow_form' if logged_in? %>
         </div>
-        <%= render 'follow_form' if logged_in? %>
+        <div class="user-show-search">
+          <%= render 'posts/search_form' %>
+        </div>
       </div>
     </div>
   </div>

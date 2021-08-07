@@ -15,8 +15,6 @@ Rails.application.routes.draw do
   post "logout" => "users#logout"
   post "likes/:recipe_id/create" => "likes#create", as: :create_like
   post "likes/:recipe_id/destroy" => "likes#destroy", as: :destroy_like
-  get "search" => "ingredients#search"
-  post "search" => "ingredients#search", as: :search_ingredients
   
   resources :users do
     member do
@@ -29,4 +27,5 @@ Rails.application.routes.draw do
   end
   
   resources :relationships, only: [:create, :destroy]
+  resources :guest_sessions, only: [:create]
 end

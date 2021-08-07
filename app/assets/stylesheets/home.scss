@@ -3,48 +3,199 @@ ul, li {
   list-style: none;
 }
 
-// ヘッダー=========================================================
 header {
-  height: 85px;
+  height: 60px;
   width: 100%;
-  color: white;
-  background-color: #40a0cdc9;
+  color: black;
+  border-bottom: 1px solid #8080804d;
 }
+
+.header-all {
+  display: flex;
+}
+
+// ハンバーガーメニュー=========================================================
+.menu-bar {
+  line-height: 60px;
+}
+
+.menu-bar #open-menu {
+  font-size: 32px;
+  line-height: 60px;
+  margin-left: 30px;
+  cursor: pointer;
+}
+
+.overlay {
+  width: 260px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.95);
+  text-align: center;
+  padding: 64px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .5s;
+  z-index: 10;
+}
+
+.overlay.show {
+  width: 260px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.overlay #close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.overlay ul {
+  margin: 0;
+  padding: 0;
+}
+
+.overlay li {
+  margin-top: 40px;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .3s, transform .3s;
+}
+
+.overlay a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+.overlay.show li {
+  opacity: 1;
+  transform: none;
+}
+
+.overlay.show li:nth-child(1) {
+  transition-delay: .1s;
+}
+
+.overlay.show li:nth-child(2) {
+  transition-delay: .2s;
+}
+
+.overlay.show li:nth-child(3) {
+  transition-delay: .3s;
+}
+
+.menu-cover {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  background: rgba(0,0,0,.7);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.menu-cover.cover {
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+  pointer-events: auto;
+}
+// ハンバーガーメニューここまで=========================================================
 
 .header-logo {
   float: left;
-  line-height: 85px;
-  margin-left: 234px;
+  line-height: 60px;
   font-size: 30px;
+  margin-left: 9px;
 }
 
-.header-list {
-  line-height: 85px;
-  margin: 0;
-  margin-right: 242px;
-  color: white;
-  list-style: none;
+.header-list a {
+  margin-left: 1130px;
+  color: black;
+  text-decoration: none;
+  font-size: 17px;
+  line-height: 60px;
 }
 
 .header-menu {
-  float: right;
   padding-left: 20px;
-  color: white;
+  color: black;
   text-decoration: none;
+}
+
+.signup {
+  margin-left: 1130px;
+  color: black;
+  text-decoration: none;
+  font-size: 17px;
 }
 
 .logout-button {
   float: right;
   padding-left: 20px;
   margin-right: 10px;
-  color: white;
+  color: black;
   text-decoration: none;
 }
 
-.login-button {
-  float: right;
-  padding-left: 20px;
-  margin-right: 10px;
-  color: white;
+// トップページ=========================================================
+body {
+  margin: 0;
+}
+
+.top-main {
+  background-color: #faf5f0;
+}
+
+.top-image {
+  width: 100%;
+  display: flex;
+}
+
+.top-image-1 {
+  height: 500px;
+  width: 720px;
+}
+
+.top-image-2 {
+  height: 500px;
+  width: 720px;
+}
+
+.login-contents {
+  height: 200px;
+}
+
+.login-contents-text {
+  text-align: center;
+  margin-top: 67px;
+  font-size: 37px;
+}
+
+.login-buttons {
+  margin-top: 50px;
+}
+
+.login-buttons a {
   text-decoration: none;
+  color: black;
+  font-size: 20px;
+}
+
+.signup-btn {
+  margin-right: 70px;
+  margin-left: 500px;
+}
+
+.login-btn {
+  padding-right: 70px;
 }

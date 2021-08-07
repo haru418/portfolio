@@ -1,0 +1,680 @@
+/* line 2, /Users/haru/pf_app/app/assets/stylesheets/home.scss */
+ul, li {
+  list-style: none;
+}
+
+/* line 7, /Users/haru/pf_app/app/assets/stylesheets/home.scss */
+header {
+  height: 60px;
+  width: 100%;
+  color: black;
+  border-bottom: 1px solid #8080804d;
+}
+
+/* line 14, /Users/haru/pf_app/app/assets/stylesheets/home.scss */
+.header-all {
+  display: flex;
+}
+
+/* line 18, /Users/haru/pf_app/app/assets/stylesheets/home.scss */
+.menu-bar {
+  line-height: 60px;
+}
+
+/* line 22, /Users/haru/pf_app/app/assets/stylesheets/home.scss */
+.menu-bar #open-menu {
+  font-size: 32px;
+  line-height: 60px;
+  margin-left: 30px;
+  cursor: pointer;
+}
+
+/* line 29, /Users/haru/pf_app/app/assets/stylesheets/home.scss */
+.header-logo {
+  float: left;
+  line-height: 60px;
+  font-size: 30px;
+  margin-left: 9px;
+}
+
+/* line 36, /Users/haru/pf_app/app/assets/stylesheets/home.scss */
+.header-list {
+  line-height: 60px;
+  color: black;
+  list-style: none;
+}
+
+/* line 42, /Users/haru/pf_app/app/assets/stylesheets/home.scss */
+.header-menu {
+  padding-left: 20px;
+  color: black;
+  text-decoration: none;
+}
+
+/* line 48, /Users/haru/pf_app/app/assets/stylesheets/home.scss */
+.signup {
+  margin-left: 1130px;
+  color: black;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* line 55, /Users/haru/pf_app/app/assets/stylesheets/home.scss */
+.logout-button {
+  float: right;
+  padding-left: 20px;
+  margin-right: 10px;
+  color: black;
+  text-decoration: none;
+}
+
+/* line 63, /Users/haru/pf_app/app/assets/stylesheets/home.scss */
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.95);
+  text-align: center;
+  padding: 64px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* line 76, /Users/haru/pf_app/app/assets/stylesheets/home.scss */
+.overlay.show {
+  opacity: 1;
+}
+
+/* line 80, /Users/haru/pf_app/app/assets/stylesheets/home.scss */
+.overlay #close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+/* line 88, /Users/haru/pf_app/app/assets/stylesheets/home.scss */
+.overlay ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 93, /Users/haru/pf_app/app/assets/stylesheets/home.scss */
+.overlay li {
+  margin-top: 24px;
+}
+/* line 2, /Users/haru/pf_app/app/assets/stylesheets/posts.scss */
+.posts-index-main {
+  height: auto;
+}
+
+/* line 6, /Users/haru/pf_app/app/assets/stylesheets/posts.scss */
+.container {
+  margin: 0;
+}
+
+/* line 11, /Users/haru/pf_app/app/assets/stylesheets/posts.scss */
+.post-page {
+  width: 70%;
+  display: flex;
+  margin: auto;
+}
+
+/* line 17, /Users/haru/pf_app/app/assets/stylesheets/posts.scss */
+.posts-item {
+  height: auto;
+  width: 600px;
+  margin: auto;
+  margin-top: 50px;
+  border: 1px solid #80808040;
+  color: black;
+  box-shadow: 3px 3px 10px 0px #c1ced7;
+}
+
+/* line 27, /Users/haru/pf_app/app/assets/stylesheets/posts.scss */
+.posts-top {
+  display: flex;
+}
+
+/* line 31, /Users/haru/pf_app/app/assets/stylesheets/posts.scss */
+.posts-user-image {
+  height: 30px;
+  width: 30px;
+  margin-right: 0;
+}
+
+/* line 37, /Users/haru/pf_app/app/assets/stylesheets/posts.scss */
+.posts-user-image img {
+  height: 43px;
+  width: 43px;
+  border-radius: 50%;
+}
+
+/* line 43, /Users/haru/pf_app/app/assets/stylesheets/posts.scss */
+.posts-user-name {
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+/* line 48, /Users/haru/pf_app/app/assets/stylesheets/posts.scss */
+.posts-user-name a {
+  color: black;
+  text-decoration: none;
+}
+
+/* line 53, /Users/haru/pf_app/app/assets/stylesheets/posts.scss */
+.cooking-image {
+  margin-top: 20px;
+}
+
+/* line 57, /Users/haru/pf_app/app/assets/stylesheets/posts.scss */
+.cooking-image img {
+  height: 300px;
+  width: 100%;
+}
+
+/* line 62, /Users/haru/pf_app/app/assets/stylesheets/posts.scss */
+.posts-bottom {
+  padding-left: 20px;
+}
+
+/* line 66, /Users/haru/pf_app/app/assets/stylesheets/posts.scss */
+.cooking_name {
+  color: black;
+  text-decoration: none;
+}
+
+/* line 71, /Users/haru/pf_app/app/assets/stylesheets/posts.scss */
+.poster-contents {
+  padding: 20px 20px;
+}
+
+/* line 75, /Users/haru/pf_app/app/assets/stylesheets/posts.scss */
+.search-form {
+  margin-top: 50px;
+  margin-left: 120px;
+}
+
+/* line 81, /Users/haru/pf_app/app/assets/stylesheets/posts.scss */
+.posts-show-main {
+  height: auto;
+}
+
+/* line 85, /Users/haru/pf_app/app/assets/stylesheets/posts.scss */
+.show-flex {
+  width: 70%;
+  display: flex;
+  margin: auto;
+}
+
+/* line 91, /Users/haru/pf_app/app/assets/stylesheets/posts.scss */
+.posts-show-item {
+  height: auto;
+  width: 600px;
+  margin: 50px 0 50px 50px;
+  border: 1px solid #80808040;
+  color: black;
+  box-shadow: 3px 3px 10px 0px #c1ced7;
+}
+
+/* line 100, /Users/haru/pf_app/app/assets/stylesheets/posts.scss */
+.flex {
+  display: flex;
+}
+
+/* line 104, /Users/haru/pf_app/app/assets/stylesheets/posts.scss */
+.show-cooking-name {
+  font-size: 25px;
+}
+
+/* line 108, /Users/haru/pf_app/app/assets/stylesheets/posts.scss */
+.post-user-name img {
+  height: 43px;
+  width: 43px;
+  border-radius: 50%;
+}
+
+/* line 114, /Users/haru/pf_app/app/assets/stylesheets/posts.scss */
+.post_user_name {
+  color: black;
+  text-decoration: none;
+}
+
+/* line 119, /Users/haru/pf_app/app/assets/stylesheets/posts.scss */
+.show-cooking-recipe {
+  margin-right: 15px;
+}
+
+/* line 123, /Users/haru/pf_app/app/assets/stylesheets/posts.scss */
+.show-ingredients {
+  width: 240px;
+  margin: 0 0 0 auto;
+}
+
+/* line 128, /Users/haru/pf_app/app/assets/stylesheets/posts.scss */
+.ingredients p {
+  border-bottom: 1px solid #80808063;
+}
+
+/* line 132, /Users/haru/pf_app/app/assets/stylesheets/posts.scss */
+.ingredient-letter {
+  font-weight: bold;
+}
+
+/* line 136, /Users/haru/pf_app/app/assets/stylesheets/posts.scss */
+.comment-letter {
+  margin-top: 32px;
+}
+
+/* line 140, /Users/haru/pf_app/app/assets/stylesheets/posts.scss */
+.posts-show-bottom {
+  display: flex;
+}
+
+/* line 144, /Users/haru/pf_app/app/assets/stylesheets/posts.scss */
+.like-btn-unlike {
+  color: #ff2581;
+  margin-right: 3px;
+  margin-left: 20px;
+}
+
+/* line 150, /Users/haru/pf_app/app/assets/stylesheets/posts.scss */
+.like-btn {
+  color: #8899a6;
+  margin-right: 3px;
+  margin-left: 20px;
+}
+
+/* line 156, /Users/haru/pf_app/app/assets/stylesheets/posts.scss */
+.post-menu {
+  margin: 0 0 0 auto;
+  margin-right: 5px;
+}
+
+/* line 162, /Users/haru/pf_app/app/assets/stylesheets/posts.scss */
+.new-post {
+  height: auto;
+  width: 400px;
+  margin: auto;
+  margin-top: 40px;
+  border: 1px solid #80808040;
+  box-shadow: 3px 3px 10px 0px #c1ced7;
+  text-align: center;
+}
+
+/* line 172, /Users/haru/pf_app/app/assets/stylesheets/posts.scss */
+.new-steps textarea {
+  width: 253px;
+}
+
+/* line 176, /Users/haru/pf_app/app/assets/stylesheets/posts.scss */
+.posts-new-content p {
+  width: 253px;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+/* line 184, /Users/haru/pf_app/app/assets/stylesheets/posts.scss */
+.posts-new-content textarea {
+  width: 253px;
+}
+
+/* line 188, /Users/haru/pf_app/app/assets/stylesheets/posts.scss */
+.send-post {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* line 194, /Users/haru/pf_app/app/assets/stylesheets/posts.scss */
+.post-menu {
+  text-align: right;
+}
+
+/* line 198, /Users/haru/pf_app/app/assets/stylesheets/posts.scss */
+.edit-post {
+  height: auto;
+  width: 400px;
+  margin: auto;
+  margin-top: 40px;
+  border: 1px solid #80808040;
+  box-shadow: 3px 3px 10px 0px #c1ced7;
+  text-align: center;
+}
+
+/* line 208, /Users/haru/pf_app/app/assets/stylesheets/posts.scss */
+.posts-edit-content p {
+  width: 253px;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+/* line 216, /Users/haru/pf_app/app/assets/stylesheets/posts.scss */
+.posts-edit-content textarea {
+  width: 253px;
+}
+
+/* line 220, /Users/haru/pf_app/app/assets/stylesheets/posts.scss */
+.post_edit_button {
+  text-decoration: none;
+  color: blue;
+  margin-right: 10px;
+}
+
+/* line 226, /Users/haru/pf_app/app/assets/stylesheets/posts.scss */
+.post_destroy_button {
+  text-decoration: none;
+  color: blue;
+  margin-right: 10px;
+}
+/* line 2, /Users/haru/pf_app/app/assets/stylesheets/users.scss */
+.users-index-main {
+  height: auto;
+}
+
+/* line 6, /Users/haru/pf_app/app/assets/stylesheets/users.scss */
+.container {
+  margin: auto;
+}
+
+/* line 11, /Users/haru/pf_app/app/assets/stylesheets/users.scss */
+.users-index-items {
+  margin-top: 50px;
+}
+
+/* line 15, /Users/haru/pf_app/app/assets/stylesheets/users.scss */
+.users-index-item {
+  height: 80px;
+  width: 600px;
+  margin: auto;
+  border: 1px solid #80808040;
+  color: black;
+  box-shadow: 3px 3px 10px 0px #c1ced7;
+  display: flex;
+}
+
+/* line 25, /Users/haru/pf_app/app/assets/stylesheets/users.scss */
+.users-index-item p {
+  margin: 0 0 20px 50px;
+}
+
+/* line 29, /Users/haru/pf_app/app/assets/stylesheets/users.scss */
+.users_index_name {
+  color: black;
+  text-decoration: none;
+  padding-top: 28px;
+}
+
+/* line 35, /Users/haru/pf_app/app/assets/stylesheets/users.scss */
+.user_index_image {
+  height: 50px;
+  width: 50px;
+  margin: 15px 15px 0;
+  border-radius: 50%;
+}
+
+/* line 43, /Users/haru/pf_app/app/assets/stylesheets/users.scss */
+.someone-cooking h1 {
+  margin-left: 215px;
+}
+
+/* line 47, /Users/haru/pf_app/app/assets/stylesheets/users.scss */
+.users {
+  width: 70%;
+  display: flex;
+  margin: auto;
+}
+
+/* line 53, /Users/haru/pf_app/app/assets/stylesheets/users.scss */
+.user-show-side {
+  margin-left: 50px;
+}
+
+/* line 57, /Users/haru/pf_app/app/assets/stylesheets/users.scss */
+.user {
+  width: 285px;
+  margin: 0 0 0 auto;
+  margin-right: 39px;
+  text-align: center;
+}
+
+/* line 65, /Users/haru/pf_app/app/assets/stylesheets/users.scss */
+.posts-user-item {
+  height: auto;
+  width: 600px;
+  margin: auto;
+  margin-top: 50px;
+  margin-left: 39px;
+  border: 1px solid #80808040;
+  color: black;
+  box-shadow: 3px 3px 10px 0px #c1ced7;
+}
+
+/* line 76, /Users/haru/pf_app/app/assets/stylesheets/users.scss */
+.user_show_image {
+  height: 63px;
+  width: 63px;
+  margin-top: 50px;
+  border-radius: 50%;
+}
+
+/* line 83, /Users/haru/pf_app/app/assets/stylesheets/users.scss */
+.user_edit_button {
+  color: blue;
+  text-decoration: none;
+}
+
+/* line 88, /Users/haru/pf_app/app/assets/stylesheets/users.scss */
+.user-info a {
+  display: inline-block;
+  height: 45px;
+  width: 270px;
+  font-size: 18px;
+  border-top: 1px solid black;
+  line-height: 45px;
+  text-decoration: none;
+  color: black;
+}
+
+/* line 99, /Users/haru/pf_app/app/assets/stylesheets/users.scss */
+.like {
+  border-bottom: 1px solid black;
+}
+
+/* line 103, /Users/haru/pf_app/app/assets/stylesheets/users.scss */
+.user-info p {
+  height: 45px;
+  font-size: 18px;
+  border-top: 1px solid black;
+  margin: 0;
+  line-height: 45px;
+}
+
+/* line 111, /Users/haru/pf_app/app/assets/stylesheets/users.scss */
+#open {
+  cursor: pointer;
+  height: 45px;
+  font-size: 18px;
+  border-top: 1px solid black;
+  margin: 0;
+  line-height: 45px;
+}
+
+/* line 120, /Users/haru/pf_app/app/assets/stylesheets/users.scss */
+.liked-posts {
+  border-bottom: 1px solid black;
+}
+
+/* line 124, /Users/haru/pf_app/app/assets/stylesheets/users.scss */
+.send-user {
+  margin-top: 20px;
+}
+
+/* line 128, /Users/haru/pf_app/app/assets/stylesheets/users.scss */
+.btn {
+  margin-top: 20px;
+}
+
+/* line 132, /Users/haru/pf_app/app/assets/stylesheets/users.scss */
+.user-show-search {
+  width: 285px;
+}
+
+/* line 137, /Users/haru/pf_app/app/assets/stylesheets/users.scss */
+.edit-user {
+  height: auto;
+  width: 300px;
+  margin: auto;
+  margin-top: 40px;
+  border: 1px solid #80808040;
+  box-shadow: 3px 3px 10px 0px #c1ced7;
+  text-align: center;
+}
+
+/* line 147, /Users/haru/pf_app/app/assets/stylesheets/users.scss */
+.user-image input {
+  border: 1px solid #767676;
+  border-radius: 3px;
+  padding: 10px;
+}
+
+/* line 153, /Users/haru/pf_app/app/assets/stylesheets/users.scss */
+.send_edit_user {
+  margin: 30px 0;
+}
+
+/* line 158, /Users/haru/pf_app/app/assets/stylesheets/users.scss */
+.new-user {
+  height: auto;
+  width: 300px;
+  margin: auto;
+  margin-top: 40px;
+  border: 1px solid #80808040;
+  box-shadow: 3px 3px 10px 0px #c1ced7;
+  text-align: center;
+}
+
+/* line 168, /Users/haru/pf_app/app/assets/stylesheets/users.scss */
+.new-user p {
+  width: 153px;
+  margin: auto;
+  margin-top: 20px;
+  text-align: left;
+}
+
+/* line 175, /Users/haru/pf_app/app/assets/stylesheets/users.scss */
+.send_new_user {
+  margin-bottom: 30px;
+}
+
+/* line 180, /Users/haru/pf_app/app/assets/stylesheets/users.scss */
+.login-user {
+  height: auto;
+  width: 300px;
+  margin: auto;
+  margin-top: 40px;
+  border: 1px solid #80808040;
+  box-shadow: 3px 3px 10px 0px #c1ced7;
+  text-align: center;
+}
+
+/* line 190, /Users/haru/pf_app/app/assets/stylesheets/users.scss */
+.login-user p {
+  margin: auto;
+  margin-top: 20px;
+  text-align: left;
+  width: 153px;
+}
+
+/* line 197, /Users/haru/pf_app/app/assets/stylesheets/users.scss */
+.login_button {
+  margin-bottom: 30px;
+}
+
+/* line 201, /Users/haru/pf_app/app/assets/stylesheets/users.scss */
+.user-likes-main {
+  height: auto;
+}
+
+/* line 205, /Users/haru/pf_app/app/assets/stylesheets/users.scss */
+.likes-items {
+  margin-top: 50px;
+}
+
+/* line 209, /Users/haru/pf_app/app/assets/stylesheets/users.scss */
+.likes-item {
+  height: auto;
+  width: 45%;
+  margin: auto;
+  margin-bottom: 50px;
+  border: 1px solid #80808040;
+  color: black;
+  box-shadow: 3px 3px 10px 0px #c1ced7;
+}
+
+/* line 219, /Users/haru/pf_app/app/assets/stylesheets/users.scss */
+.likes-top {
+  margin-top: 15px;
+  margin-left: 10px;
+  display: flex;
+}
+
+/* line 225, /Users/haru/pf_app/app/assets/stylesheets/users.scss */
+.likes-top img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+/* line 231, /Users/haru/pf_app/app/assets/stylesheets/users.scss */
+.likes_user_name {
+  padding-top: 10px;
+  padding-left: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+/* line 238, /Users/haru/pf_app/app/assets/stylesheets/users.scss */
+.likes-center {
+  padding: 0 10px;
+  margin-top: 15px;
+}
+
+/* line 243, /Users/haru/pf_app/app/assets/stylesheets/users.scss */
+.likes-center img {
+  height: 250px;
+  width: 100%;
+}
+
+/* line 248, /Users/haru/pf_app/app/assets/stylesheets/users.scss */
+.likes-bottom {
+  margin: 20px 0 20px 10px;
+}
+
+/* line 252, /Users/haru/pf_app/app/assets/stylesheets/users.scss */
+.likes-bottom a {
+  text-decoration: none;
+  color: black;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
