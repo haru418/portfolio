@@ -1,4 +1,4 @@
-<div class="users-index-main">
+<!-- <div class="users-index-main">
   <div class="container">
     <h3><%= @title %></h3>
     <div class="users-index-items">
@@ -8,6 +8,39 @@
         </ul>
         <%= will_paginate %>
       <% end %>
+    </div>
+  </div>
+</div> -->
+
+<div class="users-show-main">
+  <div class="container">
+    <div class="users">
+      <div class="user">
+        <div class="user-image-name">
+          <div class="user-show-image">
+            <%= image_tag "/user_images/#{@user.image}", class:"user_show_image" %>
+          </div>
+          <div class="name-follow">
+            <h2><%= @user.user_name %></h2>
+            <%= render 'follow_form' if logged_in? %>
+          </div>
+        </div>
+        <p><%#= @user.email %></p>
+        <% if @user.id == @current_user.id %>
+          <%#= link_to "編集", edit_user_path(@user.id), class:"user_edit_button" %>
+        <% end %>
+        <div class="user-info">
+          <%= render 'users/stats' %>
+        </div>
+      </div>
+      <div class="users-index-items">
+        <% if @users.any? %>
+          <ul class="users-follow">
+            <%= render @users %>
+          </ul>
+          <%= will_paginate %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

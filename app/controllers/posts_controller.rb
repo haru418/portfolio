@@ -21,20 +21,16 @@ class PostsController < ApplicationController
       cooking_name: params[:cooking_name],
       comment: params[:comment],
       user_id: @current_user.id,
-      cooking_image: params[:cooking_image],
-    )
+      cooking_image: params[:cooking_image]
+      )
     @ingredient = Ingredient.new(
       recipe_id: @recipe.id,
       ingredient_1: params[:ingredient_1],
-      ingredient_2: params[:ingredient_2],
-      ingredient_3: params[:ingredient_3],
-    )
+      )
     @step = Step.new(
       recipe_id: @recipe.id,
-      step_1: params[:step_1],
-      step_2: params[:step_2],
-      step_3: params[:step_3],
-    )
+      step_1: params[:step_1]
+      )
     if params[:cooking_image]
       @recipe.cooking_image = "cooking_#{@recipe.id}.png"
       File.binwrite("public/cooking_images/#{@recipe.cooking_image}", params[:cooking_image].read)
@@ -53,8 +49,8 @@ class PostsController < ApplicationController
   def show
     @recipe = Recipe.find(params[:id])
     @user = @recipe.user
-    @step = Step.find(params[:id])
     @ingredient = Ingredient.find(params[:id])
+    @step = Step.find(params[:id])
     @likes_count = Like.where(recipe_id: @recipe.id).count
   end
   

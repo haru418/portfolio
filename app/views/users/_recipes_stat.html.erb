@@ -1,0 +1,20 @@
+<a class="user-recipe" href="<%= user_path(@user) %>">
+  レシピ
+<a class="user-stat" href="<%= following_user_path(@user) %>">
+  フォロー中
+  <strong id="following" class="stat">
+    <%= @user.following.count %>
+  </strong>
+</a>
+<a class="user-stat" href="<%= followers_user_path(@user) %>">
+  フォロワー
+  <strong id="followers" class="stat">
+    <%= @user.followers.count %>
+  </strong>
+</a>
+<a class="user-stat" class="like" href="<%= likes_user_path(@user) %>">
+  いいね
+  <strong id="likes" class="stat">
+    <%= @user.likes.count %>
+  </strong>
+</a>

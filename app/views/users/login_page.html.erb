@@ -1,22 +1,42 @@
-<div class="users-login-main">
-  <div class="container">
-    <% if @error_message %>
-      <div class="form-error"><%= @error_message %></div>
-    <% end %>
-    <%= form_tag login_path do %>
-      <div class="login-user">
-        <div class="login-user-email">
-          <p>メールアドレス</p>
-          <input name="email" value="<%= @email %>">
-        </div>
-        <div class="login-user-pass">
-          <p>パスワード</p>
-          <input name="password" type="password" value="<%= @password %>">
-        </div>
-        <div class="send-user">
-          <input class="login_button" type="submit" value="ログイン">
-        </div>
-      </div>
-    <% end %>
+<div class="top-main">
+  <div class="top-image">
+    <div>
+      <img class="top-image-1" src="<%= "/top_images/curry.jpg" %>">
+    </div>
+    <div>
+      <img class="top-image-2" src="<%= "/top_images/vegetable.jpg" %>">
+    </div>
   </div>
+  <div class="login-contents">
+    <div class="login-contents-text">1人の時間に小さな喜びを</div>
+    <div class="login-buttons">
+      <%= link_to "新規登録", new_user_path, class:"signup-btn" %>
+      <%= link_to "ログイン", login_path, class:"login-btn" %>
+      <%= link_to "ゲストログイン", guest_sessions_path, method: :post %>
+    </div>
+  </div>
+  <div class="page-cover new-page-cover"></div>
+  <%= form_tag login_path do %>
+    <div class="new-form">
+      <a class="new-close-btn" href="/">
+        <span class="material-icons" id="new-close">close</span>
+      </a>
+      <h1>お帰りなさい！</h1>
+      <p class="account-creation">アカウント情報を入力</p>
+      <% if @error_message %>
+        <div class="form-error"><%= @error_message %></div>
+      <% end %>
+      <div class="redistration-content">
+        <p class="redistration-info">メールアドレス</p>
+        <input class="redistration-form" name="email" value="<%= @email %>">
+      </div>
+      <div class="redistration-content">
+        <p class="redistration-info">パスワード</p>
+        <input class="redistration-form" name="password" type="password" value="<%= @password %>">
+      </div>
+      <div class="send-user">
+        <input class="send_new_user" type="submit" value="ログイン">
+      </div>
+    </div>
+  <% end %>
 </div>

@@ -1,28 +1,48 @@
-<div class="users-new-main">
-  <div class="container">
-    <%= form_tag users_path do %>
+<div class="top-main">
+  <div class="top-image">
+    <div>
+      <img class="top-image-1" src="<%= "/top_images/curry.jpg" %>">
+    </div>
+    <div>
+      <img class="top-image-2" src="<%= "/top_images/vegetable.jpg" %>">
+    </div>
+  </div>
+  <div class="login-contents">
+    <div class="login-contents-text">1人の時間に小さな喜びを</div>
+    <div class="login-buttons">
+      <%= link_to "新規登録", new_user_path, class:"signup-btn" %>
+      <%= link_to "ログイン", login_path, class:"login-btn" %>
+      <%= link_to "ゲストログイン", guest_sessions_path, method: :post %>
+    </div>
+  </div>
+  <div class="page-cover new-page-cover"></div>
+  <%= form_tag users_path do %>
+    <div class="new-form">
+      <a class="new-close-btn" href="/">
+        <span class="material-icons" id="new-close">close</span>
+      </a>
+      <h1>pf_appへようこそ！</h1>
+      <p class="account-creation">アカウントを作成</p>
       <% @user.errors.full_messages.each do |message| %>
         <div class="error-message">
           <%= message %>
         </div>
       <% end %>
-      <div class="new-user">
-        <div class="user-name">
-          <p>ユーザー名</p>
-          <input name="user_name" value="<%= @user.user_name %>">
-        </div>
-        <div class="user-email">
-          <p>メールアドレス</p>
-          <input name="email" value="<%= @user.email %>">
-        </div>
-        <div class="user-pass">
-          <p>パスワード</p>
-          <input name="password" type="password" value="<%= @user.password %>">
-        </div>
-        <div class="send-user">
-          <input class="send_new_user" type="submit" value="登録する">
-        </div>
+      <div class="redistration-content">
+        <p class="redistration-info">ユーザー名</p>
+        <input class="redistration-form" name="user_name" value="<%= @user.user_name %>">
       </div>
-    <% end %>
-  </div>
+      <div class="redistration-content">
+        <p class="redistration-info">メールアドレス</p>
+        <input class="redistration-form" name="email" value="<%= @user.email %>">
+      </div>
+      <div class="redistration-content">
+        <p class="redistration-info">パスワード</p>
+        <input class="redistration-form" name="password" type="password" value="<%= @user.password %>">
+      </div>
+      <div class="send-user">
+        <input class="send_new_user" type="submit" value="送信">
+      </div>
+    </div>
+  <% end %>
 </div>

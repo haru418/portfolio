@@ -1,52 +1,50 @@
 <div class="posts-new-main">
   <div class="container">
+    <h2 class="start-message">レシピを投稿しよう！</h2>
     <%= form_tag posts_create_path, multipart: true do %>
-      <% @recipe.errors.full_messages.each do |message| %>
-        <div class="form-error">
-          <%= message %>
-        </div>
-      <% end %>
-      <% @ingredient.errors.full_messages.each do |message| %>
-        <div class="form-error">
-          <%= message %>
-        </div>
-      <% end %>
-      <% @step.errors.full_messages.each do |message| %>
-        <div class="form-error">
-          <%= message %>
-        </div>
-      <% end %>
       <div class="new-post">
-        <div class="post-cooking_image posts-new-content">
-          <p>料理画像</p>
-          <input name="cooking_image" type="file">
-        </div>
-        <div class="post-cooking_name posts-new-content">
-          <p class="cooking_name">料理名</p>
-          <textarea name="cooking_name"><%= @recipe.cooking_name %></textarea>
-        </div>
-        <div class="post-new-ingredients">
-          <div class="new-ingredients posts-new-content">
-            <p class="ingredient">材料</p>
-            <textarea name="ingredient_1"></textarea>
-            <textarea name="ingredient_2"></textarea>
-            <textarea name="ingredient_3"></textarea>
+        <% @recipe.errors.full_messages.each do |message| %>
+          <div class="form-error">
+            <%= message %>
           </div>
-        </div>
-        <div class="new-cooking-steps posts-new-content">
-          <p class="new-steps-letter">作り方</p>
-          <div class="new-steps">
-            <textarea name="step_1"></textarea>
-            <textarea name="step_2"></textarea>
-            <textarea name="step_3"></textarea>
+        <% end %>
+        <% @ingredient.errors.full_messages.each do |message| %>
+          <div class="form-error">
+            <%= message %>
           </div>
-        </div>
-        <div class="post-commen posts-new-content">
-          <p class="comment-field">コメント</p>
-          <textarea name="comment"><%= @recipe.comment %></textarea>
-        </div>
-        <div class="send-post">
-          <input type="submit" value="投稿する">
+        <% end %>
+        <% @step.errors.full_messages.each do |message| %>
+          <div class="form-error">
+            <%= message %>
+          </div>
+        <% end %>
+        <div class="new-post-form">
+          <div class="post-cooking-name posts-new-content">
+            <%= render 'posts/cooking_name_fields' %>
+          </div>
+          <div class="post-cooking-image posts-new-content">
+            <%= render 'posts/post_cooking_image' %>
+            <input id="image-loading" name="cooking_image" type="file">
+          </div>
+          <div class="post-new-ingredients posts-new-content">
+            <%= render 'posts/ingredient_fields' %>
+          </div>
+          <div id="detail-association-insertion-point"></div>
+          <div class="additional-links">
+          </div>
+          <div class="new-cooking-steps posts-new-content">
+            <p class="new-steps-letter">作り方</p>
+            <%= render 'posts/step_fields' %>
+          </div>
+          <div id="button-to-add-step"></div>
+          <div class="additional-links additional-steps">
+          </div>
+          <div class="post-comment posts-new-content">
+            <%= render 'posts/comment_fields' %>
+          </div>
+          <div class="send-post">
+            <input type="submit" value="投稿する">
+          </div>
         </div>
       </div>
     <% end %>

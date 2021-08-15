@@ -2,10 +2,17 @@
   <div class="posts-show-item">
     <div class="posts-show-cooking-image">
       <%= image_tag "/cooking_images/#{@recipe.cooking_image}" %>
+      <% if @recipe.user_id == @current_user.id %>
+        <div class="post-menu">
+          <%= link_to "編集", edit_post_path(@recipe.id, @step.id, @ingredient.id), class:"post_edit_button" %>
+          <%= link_to "削除", destroy_post_path(@recipe.id), method: :post, class:"post_destroy_button" %>
+        </div>
+      <% end %>
     </div>
     <p class="show-cooking-name">
       <%= @recipe.cooking_name %>
     </p>
+      <%= render 'likes/like' %>
     <div class="post-user-name">
       <img src="<%= "/user_images/#{@user.image}" %>">
       <%= link_to @user.user_name, user_path(@user), class:"post_user_name" %>
@@ -19,30 +26,24 @@
       <div class="ingredients">
         <div class="ingredient-letter">材料</div>
         <p><%= @ingredient.ingredient_1 %></p>
-        <p><%= @ingredient.ingredient_2 %></p>
-        <p><%= @ingredient.ingredient_3 %></p>
       </div>
     </div>
     <div class="show-cooking-recipe">
       <div class="show-process">
         <div class="step-number">ステップ１</div>
         <p><%= @step.step_1 %></p>
-        <div class="step-number">ステップ２</div>
-        <p><%= @step.step_2 %></p>
-        <div class="step-number">ステップ３</div>
-        <p><%= @step.step_3 %></p>
+        <% if @step.step_2.present? %>
+          <div class="step-number">ステップ２</div>
+          <p><%= @step.step_2 %></p>
+        <% end %>
+        <% if @step.step_3.present? %>
+          <div class="step-number">ステップ３</div>
+          <p><%= @step.step_3 %></p>
+        <% end %>
       </div>
     </div>
     <!-- </div> -->
-    <div class="posts-show-bottom">
-      <%= render 'likes/like' %>
-      <% if @recipe.user_id == @current_user.id %>
-        <div class="post-menu">
-          <%= link_to "編集", edit_post_path(@recipe.id, @step.id, @ingredient.id), class:"post_edit_button" %>
-          <%= link_to "削除", destroy_post_path(@recipe.id), method: :post, class:"post_destroy_button" %>
-        </div>
-      <% end %>
-    </div>
+    
   </div>
   <!-- <div class="posts-show-search-form">
     <%#= render 'posts/search_form' %>

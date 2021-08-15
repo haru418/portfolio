@@ -1,0 +1,31 @@
+<div class="users-new-main">
+  <div class="container">
+    <%= form_tag users_path do %>
+      <div class="new-user">
+        <span class="material-icons" id="signup-close">close</span>
+        <!-- <% @user.errors.full_messages.each do |message| %>
+          <div class="error-message">
+            <%= message %>
+          </div>
+        <% end %> -->
+        <h1>pf_appへようこそ！</h1>
+        <p class="account-creation">アカウントを作成</p>
+        <div class="redistration-content">
+          <p class="redistration-info">ユーザー名</p>
+          <input class="redistration-form" name="user_name" value="<%= @user.user_name %>">
+        </div>
+        <div class="redistration-content">
+          <p class="redistration-info">メールアドレス</p>
+          <input class="redistration-form" name="email" value="<%= @user.email %>">
+        </div>
+        <div class="redistration-content">
+          <p class="redistration-info">パスワード</p>
+          <input class="redistration-form" name="password" type="password" value="<%= @user.password %>">
+        </div>
+        <div class="send-user">
+          <input class="send_new_user" type="submit" value="送信">
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

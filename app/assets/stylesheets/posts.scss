@@ -97,6 +97,7 @@
 // show===================================================================
 .posts-show-main {
   height: auto;
+  padding-bottom: 50px;
 }
 
 .posts-show-item {
@@ -126,7 +127,7 @@
 
 .show-cooking-name {
   font-size: 37px;
-  margin-top: 50px;
+  margin-top: 30px;
   padding-top: 30px;
   border-top: 1px solid #e1ddd8;
 }
@@ -189,57 +190,250 @@
   font-size: 18px;
 }
 
-.posts-show-bottom {
-  display: flex;
-}
-
 .like-btn-unlike {
   color: #ff2581;
   margin-right: 3px;
-  margin-left: 20px;
 }
 
 .like-btn {
   color: #8899a6;
   margin-right: 3px;
-  margin-left: 20px;
 }
 
 .post-menu {
-  margin: 0 0 0 auto;
+  margin: 30px 0 0 auto;
   margin-right: 5px;
 }
 
 // new===================================================================
+.posts-new-main {
+  background-color: #faf5f0;
+}
+
+.first-message {
+  margin-top: 30px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.start-message {
+  margin: 65px 0 20px 162px;
+  font-size: 27px;
+}
+
 .new-post {
   height: auto;
-  width: 400px;
+  width: 810px;
   margin: auto;
-  margin-top: 40px;
-  border: 1px solid #80808040;
-  box-shadow: 3px 3px 10px 0px #c1ced7;
+  margin-bottom: 50px;
+  background-color: white;
+  border-radius: 15px;
   text-align: center
+}
+
+.new-post-form {
+  width: 82%;
+  margin: auto;
+  // background-color: #9acd3242;
 }
 
 .new-steps textarea {
   width: 253px;
 }
 
+.posts-new-content {
+  padding-top: 30px;
+}
+
 .posts-new-content p {
-  width: 253px;
-  margin: auto;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  font-size: 17px;
   text-align: left;
 }
 
+.posts-new-content input {
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
 .posts-new-content textarea {
-  width: 253px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.posts-new-content textarea::placeholder {
+  color: rgb(161, 159, 159);
+}
+
+.posts-new-content textarea::-ms-input-placeholder {
+  color: rgb(161, 159, 159);
+}
+
+.posts-new-content textarea:-ms-input-placeholder {
+  color: rgb(161, 159, 159);
+}
+
+.post-cooking-image {
+  padding-top: 40px;
+}
+
+.cooking-image-form {
+  height: 260px;
+  width: 260px;
+  padding-top: 70px;
+  margin-right: 620px;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: #8080802e;
+}
+
+.cooking-image-form span {
+  font-size: 40px;
+}
+
+.cooking-image-form p {
+  text-align: center;
+}
+
+// .post-cooking-image input[type="file"] {
+//   display: none;
+// }
+
+.not-selected {
+  margin-top: 20px;
+}
+
+.post-new-ingredients {
+  padding-top: 40px;
+}
+
+.new-ingredients {
+  display: flex;
+}
+
+.ingredient {
+  width: 37%;
+  margin-right: 40px;
+}
+
+.ingredient p {
+  font-size: 17px;
+  text-align: left;
+}
+
+.ingredient textarea {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.amount {
+  width: 23%;
+  margin-right: 40px;
+}
+
+.amount p {
+  font-size: 17px;
+  text-align: left;
+}
+
+.amount textarea {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.unit {
+  width: 23%;
+}
+
+.unit select {
+  height: 46px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.unit p {
+  font-size: 17px;
+  text-align: left;
+}
+
+.unit textarea {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.delete-form {
+  height: 20px;
+  width: 33px;
+  margin-top: 60px;
+  margin-left: 5px;
+  color: #337ab7;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.additional-links {
+  height: 60px;
+  text-align: right;
+  padding-top: 25px;
+}
+
+.add-btn {
+  padding: 12px;
+  font-size: 16px;
+  color: white;
+  background-color: #33319f;
+  border: 1px solid #33319f;
+  border-radius: 5px;
+}
+
+.add-btn:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.step-field {
+  height: 134px;
+}
+
+.additional-steps {
+  padding-top: 0;
+}
+
+.new-steps {
+  display: flex;
+}
+
+.new-steps textarea {
+  height: 100px;
+  width: 95%;
+  margin-bottom: 50px;
+}
+
+.delete-step {
+  margin-top: 80px;
+}
+
+.post-comment {
+  padding-top: 5px;
+}
+
+.post-comment textarea {
+  height: 94px;
 }
 
 .send-post {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  padding: 70px 0;
+}
+
+.send-post input {
+  padding: 10px 25px;
+  font-size: 16px;
+  color: white;
+  background-color: #33319f;
+  border: 1px solid #33319f;
+  border-radius: 5px;
 }
 
 // edit===================================================================

@@ -72,7 +72,7 @@ class UsersController < ApplicationController
   def logout
     session[:user_id] = nil
     flash[:notice] = "ログアウトしました"
-    redirect_to login_url
+    redirect_to root_url
   end
   
   def likes

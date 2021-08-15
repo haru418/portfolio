@@ -40,44 +40,25 @@
 }
 
 // show====================================================================================
-.someone-cooking h1 {
-  margin-left: 215px;
-}
-
 .users {
-  width: 70%;
+  width: 78%;
+  margin: auto;
+}
+
+.user-image-name {
   display: flex;
-  margin: auto;
 }
 
-.user-show-side {
-  margin-left: 50px;
-}
-
-.user {
-  width: 285px;
-  margin: 0 0 0 auto;
-  margin-right: 39px;
-  text-align: center;
-  // background-color: pink;
-}
-
-.posts-user-item {
-  height: auto;
-  width: 600px;
-  margin: auto;
-  margin-top: 50px;
-  margin-left: 39px;
-  border: 1px solid #80808040;
-  color: black;
-  box-shadow: 3px 3px 10px 0px #c1ced7;
+.user-image-name h2 {
+  margin-top: 69px;
+  margin-left: 30px;
 }
 
 .user_show_image {
-  height: 63px;
-  width: 63px;
+  height: 117px;
+  width: 117px;
   margin-top: 50px;
-  border-radius: 50%;
+  border-radius: 7px;
 }
 
 .user_edit_button {
@@ -85,27 +66,90 @@
   text-decoration: none;
 }
 
-.user-info a {
+.user-info {
+  margin: 30px 0;
+}
+
+.stats {
+  border-bottom: 1px solid #e1ddd8;
+}
+
+.user-stat {
   display: inline-block;
   height: 45px;
-  width: 270px;
+  width: 150px;
   font-size: 18px;
-  border-top: 1px solid black;
   line-height: 45px;
   text-decoration: none;
   color: black;
 }
 
-.like {
-  border-bottom: 1px solid black;
+.user-recipe {
+  display: inline-block;
+  height: 45px;
+  width: 58px;
+  margin-right: 32px;
+  font-size: 18px;
+  line-height: 45px;
+  text-decoration: none;
+  color: black;
+  border-bottom: 3px solid #232fc3;
 }
 
-.user-info p {
+.user-other-page {
+  display: inline-block;
   height: 45px;
+  width: 58px;
+  margin-right: 32px;
   font-size: 18px;
-  border-top: 1px solid black;
-  margin: 0;
   line-height: 45px;
+  text-decoration: none;
+  color: black;
+}
+
+.user-following {
+  display: inline-block;
+  height: 45px;
+  width: 118px;
+  margin-right: 32px;
+  font-size: 18px;
+  line-height: 45px;
+  text-decoration: none;
+  color: black;
+  border-bottom: 3px solid #232fc3;
+}
+
+.user-followers {
+  display: inline-block;
+  height: 45px;
+  width: 118px;
+  margin-right: 32px;
+  font-size: 18px;
+  line-height: 45px;
+  text-decoration: none;
+  color: black;
+  border-bottom: 3px solid #232fc3;
+}
+
+.user-likes {
+  display: inline-block;
+  height: 45px;
+  width: 72px;
+  margin-right: 32px;
+  font-size: 18px;
+  line-height: 45px;
+  text-decoration: none;
+  color: black;
+  border-bottom: 3px solid #232fc3;
+}
+
+.users-follow {
+  padding: 0;
+}
+
+.posts-user-item {
+  height: 335px;
+  width: 200px;
 }
 
 #open {
@@ -127,6 +171,7 @@
 
 .btn {
   margin-top: 20px;
+  margin-left: 35px;
 }
 
 .user-show-search {
@@ -155,25 +200,132 @@
 }
 
 // new====================================================================================
-.new-user {
-  height: auto;
-  width: 300px;
-  margin: auto;
-  margin-top: 40px;
-  border: 1px solid #80808040;
-  box-shadow: 3px 3px 10px 0px #c1ced7;
-  text-align: center
+.users-new-main {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  opacity: 0;
+  pointer-events: none;
 }
 
-.new-user p {
-  width: 153px;
+.users-new-main.signup-form {
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.new-user {
+  height: auto;
+  width: 500px;
   margin: auto;
-  margin-top: 20px;
+  margin-top: 75px;
+  border: 1px solid #80808040;
+  border-radius: 12px;
+  text-align: center;
+  background-color: white;
+}
+
+.new-user #signup-close {
+  position: absolute;
+  top: 85px;
+  right: 475px;
+  font-size: 25px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.new-user h1 {
+  font-size: 27px;
+  font-family: TT Commons,Arial,Helvetica Neue,sans-serif;
+  margin-top: 60px;
+}
+
+.account-creation {
+  display: inline-block;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  font-size: 16px;
+}
+
+.redistration-content {
+  margin-bottom: 40px;
+}
+
+.redistration-info {
+  width: 153px;
+  margin: 0 0 10px 50px;
   text-align: left;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.redistration-form {
+  height: 36px;
+  width: 400px;
+}
+
+.send-user {
+  margin-top: 60px;
+  margin-bottom: 70px;
 }
 
 .send_new_user {
-  margin-bottom: 30px;
+  height: 48px;
+  width: 111px;
+  font-size: 18px;
+  color: white;
+  background-color: #33319f;
+  border: 1px solid #00000000;
+  border-radius: 7px;
+}
+
+.page-cover {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,.7);
+}
+
+.new-form {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: auto;
+  width: 500px;
+  margin-top: 75px;
+  margin-left: 467px;
+  border: 1px solid #80808040;
+  border-radius: 12px;
+  text-align: center;
+  background-color: white;
+}
+
+.new-form h1 {
+  font-size: 27px;
+  font-family: TT Commons,Arial,Helvetica Neue,sans-serif;
+}
+
+#new-close {
+  margin-top: 10px;
+  margin-left: 450px;
+}
+
+.new-close-btn {
+  color: #333333;
+}
+
+.new-close-btn:hover {
+  color: #333333;
+}
+
+.error-message {
+  color: red;
 }
 
 // login_page====================================================================================
@@ -197,6 +349,11 @@
 .login_button {
   margin-bottom: 30px;
 }
+
+.form-error {
+  margin-bottom: 20px;
+  color: red;
+}
 // likes====================================================================================
 .user-likes-main {
   height: auto;
@@ -207,49 +364,40 @@
 }
 
 .likes-item {
-  height: auto;
-  width: 45%;
-  margin: auto;
-  margin-bottom: 50px;
-  border: 1px solid #80808040;
-  color: black;
-  box-shadow: 3px 3px 10px 0px #c1ced7;
+  height: 430px;
+  width: 200px;
+  margin: 0;
+  padding: 0;
 }
 
 .likes-top {
-  margin-top: 15px;
-  margin-left: 10px;
   display: flex;
 }
 
 .likes-top img {
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
+  height: 37px;
+  width: 37px;
+  border-radius: 5px;
 }
 
 .likes_user_name {
-  padding-top: 10px;
-  padding-left: 10px;
-  text-decoration: none;
+  margin-top: 10px;
+  margin-left: 15px;
   color: black;
-}
-
-.likes-center {
-  padding: 0 10px;
-  margin-top: 15px;
+  text-decoration: none;
 }
 
 .likes-center img {
-  height: 250px;
-  width: 100%;
-}
-
-.likes-bottom {
-  margin: 20px 0 20px 10px;
+  height: 274px;
+  width: 200px;
+  border-radius: 20px;
 }
 
 .likes-bottom a {
-  text-decoration: none;
+  display: inline-block;
   color: black;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: normal;
+  margin: 13px 0 13px 0;
 }

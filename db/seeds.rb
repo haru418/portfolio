@@ -28,22 +28,22 @@
   Recipe.create!(cooking_name: "手巻き寿司", comment: "巻くのも楽しい", user_id: 6, cooking_image: "cooking_6.png")
   
   # 作り方
-  Step.create!(recipe_id: 1, step_1: "具材を切る1", step_2: "煮込む1", step_3: "完成1")
-  Step.create!(recipe_id: 2, step_1: "具材を切る2", step_2: "煮込む2", step_3: "完成2")
-  Step.create!(recipe_id: 3, step_1: "具材を切る3", step_2: "煮込む3", step_3: "完成3")
-  Step.create!(recipe_id: 4, step_1: "具材を切る4", step_2: "煮込む4", step_3: "完成4")
-  Step.create!(recipe_id: 5, step_1: "具材を切る5", step_2: "煮込む5", step_3: "完成5")
-  Step.create!(recipe_id: 6, step_1: "具材を切る6", step_2: "煮込む6", step_3: "完成6")
+  Step.create!(recipe_id: 1, step_1: "具材を切る1")
+  Step.create!(recipe_id: 2, step_1: "具材を切る2")
+  Step.create!(recipe_id: 3, step_1: "具材を切る3")
+  Step.create!(recipe_id: 4, step_1: "具材を切る4")
+  Step.create!(recipe_id: 5, step_1: "具材を切る5")
+  Step.create!(recipe_id: 6, step_1: "具材を切る6")
 
 # 材料
-  Ingredient.create!(recipe_id: 1, ingredient_1: "豚肉", ingredient_2: "キムチ")
-  Ingredient.create!(recipe_id: 2, ingredient_1: "納豆", ingredient_2: "白米", ingredient_3: "海苔")
-  Ingredient.create!(recipe_id: 3, ingredient_1: "鶏肉", ingredient_2: "トマト缶", ingredient_3: "玉ねぎ")
-  Ingredient.create!(recipe_id: 4, ingredient_1: "キャベツ", ingredient_2: "にんじん", ingredient_3: "玉ねぎ")
-  Ingredient.create!(recipe_id: 5, ingredient_1: "牛肉", ingredient_2: "豆腐", ingredient_3: "めんつゆ")
-  Ingredient.create!(recipe_id: 6, ingredient_1: "海苔", ingredient_2: "白米", ingredient_3: "刺身")
-
-# リレーションシップ
+  Ingredient.create!(recipe_id: 1, ingredient_1: "豚肉")
+  Ingredient.create!(recipe_id: 2, ingredient_1: "納豆")
+  Ingredient.create!(recipe_id: 3, ingredient_1: "鶏肉")
+  Ingredient.create!(recipe_id: 4, ingredient_1: "キャベツ")
+  Ingredient.create!(recipe_id: 5, ingredient_1: "牛肉")
+  Ingredient.create!(recipe_id: 6, ingredient_1: "海苔")
+  
+  # リレーションシップ
   users = User.all
   user  = users.first
   following = users[2..20]
