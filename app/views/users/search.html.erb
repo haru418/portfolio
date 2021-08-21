@@ -1,6 +1,9 @@
-<h1>検索結果</h1>
-<% @results.each do |user| %>
-  <div class="search-results">
-    <%= link_to user.user_name, user_path(user.id) %>
-  </div>
-<% end %>
+<div class="search-users">
+  <h1>検索結果</h1>
+  <% @results.each do |user| %>
+    <div class="search-results user-items">
+      <%= image_tag "/user_images/#{user.image}", class:"user_index_image" %>
+      <%= link_to user.user_name, user_path(user.id), class: "users_index_name" %>
+    </div>
+  <% end %>
+</div>

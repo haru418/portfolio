@@ -24,11 +24,11 @@
             <h2><%= @user.user_name %></h2>
             <%= render 'follow_form' if logged_in? %>
           </div>
+          <% if @user.id == @current_user.id %>
+            <%= link_to "ユーザー情報を編集", edit_user_path(@user.id), class:"user_edit_button" %>
+          <% end %>
         </div>
-        <p><%#= @user.email %></p>
-        <% if @user.id == @current_user.id %>
-          <%#= link_to "編集", edit_user_path(@user.id), class:"user_edit_button" %>
-        <% end %>
+        <!-- <p><%#= @user.email %></p> -->
         <div class="user-info">
           <%= render 'users/stats' %>
         </div>

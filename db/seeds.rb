@@ -7,18 +7,20 @@
   User.create!(user_name: "スタントン", email: "st@gmail.com", image: "user_4.png", password: "foobar")
   User.create!(user_name: "ロドリゲス", email: "r@gmail.com", image: "user_5.png", password: "foobar")
   User.create!(user_name: "ハル", email: "haru@gmail.com", image: "user_1.png", password: "foobar")
-
+  
   44.times do |n|
     user_name  = Faker::Name.name
     email = "example-#{n+1}@railstutorial.org"
     image = "default.png"
     password = "password"
     User.create!(user_name: user_name,
-                 email: email,
-                 image: image,
-                 password: password)
+    email: email,
+    image: image,
+    password: password)
   end
 
+  User.create!(user_name: "ゲスト", email: "guest@example.com", image: "default.png", password: "foobar")
+  
 # 投稿内容を一行ずつ記述して変数に代入します。
   Recipe.create!(cooking_name: "豚キムチ", comment: "美味しくできました", user_id: 1, cooking_image: "cooking_1.png")
   Recipe.create!(cooking_name: "納豆巻き", comment: "巻くのが大変でした", user_id: 2, cooking_image: "cooking_2.png")

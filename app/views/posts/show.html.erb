@@ -4,7 +4,7 @@
       <%= image_tag "/cooking_images/#{@recipe.cooking_image}" %>
       <% if @recipe.user_id == @current_user.id %>
         <div class="post-menu">
-          <%= link_to "編集", edit_post_path(@recipe.id, @step.id, @ingredient.id), class:"post_edit_button" %>
+          <%= link_to "編集", edit_post_path(@recipe.id), class:"post_edit_button" %>
           <%= link_to "削除", destroy_post_path(@recipe.id), method: :post, class:"post_destroy_button" %>
         </div>
       <% end %>
@@ -32,14 +32,6 @@
       <div class="show-process">
         <div class="step-number">ステップ１</div>
         <p><%= @step.step_1 %></p>
-        <% if @step.step_2.present? %>
-          <div class="step-number">ステップ２</div>
-          <p><%= @step.step_2 %></p>
-        <% end %>
-        <% if @step.step_3.present? %>
-          <div class="step-number">ステップ３</div>
-          <p><%= @step.step_3 %></p>
-        <% end %>
       </div>
     </div>
     <!-- </div> -->

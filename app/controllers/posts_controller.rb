@@ -17,26 +17,19 @@ class PostsController < ApplicationController
   end
   
   def create
-    @recipe = Recipe.new(
-      cooking_name: params[:cooking_name],
-      comment: params[:comment],
-      user_id: @current_user.id,
-      cooking_image: params[:cooking_image]
-      )
+    @recipe = Recipe.new(recipe_params)
+    @recipe.user_id = @current_user.id
     @ingredient = Ingredient.new(
       recipe_id: @recipe.id,
       ingredient_1: params[:ingredient_1],
-      )
+      amount: params[:amount]
+    )
     @step = Step.new(
       recipe_id: @recipe.id,
-      step_1: params[:step_1]
-      )
-    if params[:cooking_image]
-      @recipe.cooking_image = "cooking_#{@recipe.id}.png"
-      File.binwrite("public/cooking_images/#{@recipe.cooking_image}", params[:cooking_image].read)
-    else
-      @recipe.cooking_image = "cooking_default.png"
-    end
+      step_1: params[:step_1],
+      step_2: params[:step_2],
+      step_3: params[:step_3]
+    )
     if @recipe.save && @ingredient.save && @step.save
       redirect_to posts_index_url
       flash[:notice] = "投稿を作成しました"
@@ -44,13 +37,20 @@ class PostsController < ApplicationController
       @feed_items = []
       render :new
     end
+    if params[:cooking_image]
+      @recipe.cooking_image = "cooking_#{@recipe.id}.png"
+      File.binwrite("public/cooking_images/#{@recipe.cooking_image}", params[:cooking_image].read)
+      @recipe.save
+    else
+      @recipe.cooking_image = "cooking_default.png"
+    end
   end
 
   def show
     @recipe = Recipe.find(params[:id])
     @user = @recipe.user
-    @ingredient = Ingredient.find(params[:id])
-    @step = Step.find(params[:id])
+    @ingredient = Ingredient.find_by(recipe_id: @recipe.id)
+    @step = Step.find_by(recipe_id: @recipe.id)
     @likes_count = Like.where(recipe_id: @recipe.id).count
   end
   
@@ -74,13 +74,13 @@ class PostsController < ApplicationController
     end
     
     @step.step_1 = params[:step_1]
-    @step.step_2 = params[:step_2]
-    @step.step_3 = params[:step_3]
+    # @step.step_2 = params[:step_2]
+    # @step.step_3 = params[:step_3]
     @step.save
     
     @ingredient.ingredient_1 = params[:ingredient_1]
-    @ingredient.ingredient_2 = params[:ingredient_2]
-    @ingredient.ingredient_3 = params[:ingredient_3]
+    # @ingredient.ingredient_2 = params[:ingredient_2]
+    # @ingredient.ingredient_3 = params[:ingredient_3]
     @ingredient.save
   end
   
@@ -101,11 +101,15 @@ class PostsController < ApplicationController
   
     def limitation_correct_user
       @recipe = Recipe.find(params[:id])
-      @step = Step.find(params[:id])
-      @ingredient = Ingredient.find(params[:id])
+      @step = Step.find_by(recipe_id: @recipe.id)
+      @ingredient = Ingredient.find_by(recipe_id: @recipe.id)
       unless @recipe.user_id == @current_user.id
         flash[:notice] = "自分以外の投稿の編集はできません"
         redirect_to posts_index_url
       end
+    end
+
+    def recipe_params
+      params.permit(:user_id, :cooking_name, :cooking_image, :comment)
     end
 end

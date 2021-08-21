@@ -12,7 +12,7 @@
   margin-top: 50px;
 }
 
-.users-index-item {
+.user-items {
   height: 80px;
   width: 600px;
   margin: auto;
@@ -64,6 +64,8 @@
 .user_edit_button {
   color: blue;
   text-decoration: none;
+  margin: 0 0 0 auto;
+  padding-top: 147px;
 }
 
 .user-info {
@@ -181,22 +183,51 @@
 // edit====================================================================================
 .edit-user {
   height: auto;
-  width: 300px;
+  width: 655px;
   margin: auto;
   margin-top: 40px;
-  border: 1px solid #80808040;
-  box-shadow: 3px 3px 10px 0px #c1ced7;
-  text-align: center
 }
 
-.user-image input {
-  border: 1px solid rgb(118, 118, 118);
-  border-radius: 3px;
-  padding: 10px;
+.edit-title {
+  margin: 50px 0;
 }
 
-.send_edit_user {
-  margin: 30px 0;
+.edit-user p {
+  font-size: 17px;
+  margin-top: 28px;
+}
+
+.edit-info {
+  height: 45px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid;
+}
+
+.user-image-form {
+  text-align: center;
+}
+
+// .user-image-form span {
+//   margin-left: 110px;
+// }
+
+.user-image input[type="file"] {
+  display: none;
+}
+
+.send-edit-user {
+  text-align: center;
+}
+
+.send-edit-user input {
+  margin: 80px 0;
+  padding: 18px 25px;
+  font-size: 16px;
+  color: white;
+  background-color: #33319f;
+  border: 1px solid #33319f;
+  border-radius: 5px;
 }
 
 // new====================================================================================
@@ -400,4 +431,9 @@
   font-size: 18px;
   font-weight: normal;
   margin: 13px 0 13px 0;
+}
+
+// likes====================================================================================
+.search-users h1 {
+  margin: 30px 0 30px 419px;
 }

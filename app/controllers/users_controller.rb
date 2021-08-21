@@ -8,9 +8,6 @@ class UsersController < ApplicationController
     @users = User.paginate(page: params[:page])
   end
   
-  def show
-    @user = User.find(params[:id])
-  end
   
   def new
     @user = User.new
@@ -22,35 +19,40 @@ class UsersController < ApplicationController
       email: params[:email],
       image: "default.png",
       password: params[:password]
-    )
-    if @user.save
-      session[:user_id] = @user.id
-      flash[:notice] = "ユーザーを作成しました"
-      redirect_to user_url @user
-    else
-      render :new
+      )
+      if @user.save
+        session[:user_id] = @user.id
+        flash[:notice] = "ユーザーを作成しました"
+        redirect_to user_url @user
+      else
+        render :new
+      end
     end
-  end
-  
-  def edit
-    @user = User.find(params[:id])
-  end
-  
-  def update
-    @user = User.find(params[:id])
-    @user.user_name = params[:user_name]
-    @user.email = params[:email]
-    if params[:image]
-      @user.image = "user_#{@user.id}.png"
-      File.binwrite("public/user_images/#{@user.image}", params[:image].read)
+
+    def show
+      @user = User.find(params[:id])
     end
-    if @user.save
-      redirect_to user_url @user
-      flash[:notice] = "ユーザー情報を編集しました"
-    else
-      render :edit
+    
+    def edit
+      @user = User.find(params[:id])
     end
-  end
+    
+    def update
+      @user = User.find(params[:id])
+      @user.user_name = params[:user_name]
+      @user.email = params[:email]
+      @user.image = params[:image]
+      if params[:image]
+        @user.image = "edit_user_#{@user.id}.png"
+        File.binwrite("public/user_images/#{@user.image}", params[:image].read)
+      end
+      if @user.save
+        redirect_to user_url @user
+        flash[:notice] = "ユーザー情報を編集しました"
+      else
+        render :edit
+      end
+    end
   
   def lonin_page
   end
@@ -106,5 +108,9 @@ class UsersController < ApplicationController
         flash[:notice] = "他のユーザーの編集はできません"
         redirect_to posts_index_url
       end
+    end
+
+    def user_params
+      params.require(:user).permit(:user_name, :email, :image, :password)
     end
 end

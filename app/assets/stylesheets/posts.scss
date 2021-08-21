@@ -278,7 +278,7 @@
   padding-top: 40px;
 }
 
-.cooking-image-form {
+.image-form {
   height: 260px;
   width: 260px;
   padding-top: 70px;
@@ -289,17 +289,18 @@
   background-color: #8080802e;
 }
 
-.cooking-image-form span {
+.image-form span {
   font-size: 40px;
 }
 
-.cooking-image-form p {
+.image-form p {
+  font-size: 17px;
   text-align: center;
 }
 
-// .post-cooking-image input[type="file"] {
-//   display: none;
-// }
+.post-cooking-image input[type="file"] {
+  display: none;
+}
 
 .not-selected {
   margin-top: 20px;
@@ -441,26 +442,24 @@
   text-align: right;
 }
 
+.edit-recipe-title {
+  margin: 65px 0 20px 162px;
+  font-size: 27px;
+}
+
 .edit-post {
   height: auto;
-  width: 400px;
+  width: 810px;
   margin: auto;
-  margin-top: 40px;
-  border: 1px solid #80808040;
-  box-shadow: 3px 3px 10px 0px #c1ced7;
-  text-align: center
+  margin-bottom: 50px;
+  background-color: white;
+  border-radius: 15px;
+  text-align: center;
 }
 
-.posts-edit-content p {
-  width: 253px;
+.edit-form {
+  width: 82%;
   margin: auto;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  text-align: left;
-}
-
-.posts-edit-content textarea {
-  width: 253px;
 }
 
 .post_edit_button {
@@ -474,3 +473,16 @@
   color: blue;
   margin-right: 10px;
 }
+
+// search===================================================================
+.search-recipes {
+  height: 1000px;
+  width: 64%;
+  margin: auto;
+}
+
+.search-recipes h1 {
+  margin: 30px 0;
+  margin-left: 15px;
+}
+

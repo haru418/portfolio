@@ -1,7 +1,7 @@
 <div class="posts-new-main">
   <div class="container">
     <h2 class="start-message">レシピを投稿しよう！</h2>
-    <%= form_tag posts_create_path, multipart: true do %>
+    <%= form_with url: posts_create_path do |f| %>
       <div class="new-post">
         <% @recipe.errors.full_messages.each do |message| %>
           <div class="form-error">
@@ -20,30 +20,53 @@
         <% end %>
         <div class="new-post-form">
           <div class="post-cooking-name posts-new-content">
-            <%= render 'posts/cooking_name_fields' %>
+            <p>料理名</p>
+            <%= f.text_field :cooking_name, placeholder: "かぼちゃジュース" %>
           </div>
           <div class="post-cooking-image posts-new-content">
-            <%= render 'posts/post_cooking_image' %>
-            <input id="image-loading" name="cooking_image" type="file">
+            <p>写真を追加する</p>
+            <label class="image-form cooking-image-form">
+              <span class="material-icons camera-icon">add_a_photo</span>
+              <p>ファイルを選択</p>
+              <p class="not-selected">※選択されていません</p>
+              <%= f.file_field :cooking_image %>
+            </label>
           </div>
           <div class="post-new-ingredients posts-new-content">
-            <%= render 'posts/ingredient_fields' %>
+            <%= f.fields_for :ingredients do |i| %>
+              <div class="nested-fields">
+                <div class="new-ingredients">
+                  <div class="ingredient">
+                    <p class="ingredient">材料</p>
+                    <%= i.text_field :ingredient_1 %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
           </div>
           <div id="detail-association-insertion-point"></div>
           <div class="additional-links">
           </div>
           <div class="new-cooking-steps posts-new-content">
-            <p class="new-steps-letter">作り方</p>
-            <%= render 'posts/step_fields' %>
+            <%= f.fields_for :steps do |s| %>
+              <p class="new-steps-letter">作り方</p>
+              <div class="nested-fields step-field">
+                <div class="new-steps">
+                  <%= s.text_area :step_1 %>
+                  <%#= link_to_remove_association "削除", class: "delete-form delete-step" %>
+                </div>
+              </div>
+            <% end %>
           </div>
           <div id="button-to-add-step"></div>
           <div class="additional-links additional-steps">
           </div>
           <div class="post-comment posts-new-content">
-            <%= render 'posts/comment_fields' %>
+            <p class="comment-field">コメント</p>
+            <%= f.text_area :comment %>
           </div>
           <div class="send-post">
-            <input type="submit" value="投稿する">
+            <%= f.submit "投稿する" %>
           </div>
         </div>
       </div>
