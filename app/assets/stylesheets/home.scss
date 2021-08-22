@@ -74,6 +74,18 @@ header {
   font-size: 18px;
 }
 
+.search-for {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.search-for:hover {
+  color: #104574;
+  text-decoration: underline solid black;
+}
+
 .overlay.show li {
   opacity: 1;
   transform: none;
@@ -212,4 +224,27 @@ body {
 
 .login-btn {
   padding-right: 70px;
+}
+
+.flash {
+  width: 100%;
+  height: 53px;
+  text-align: center;
+  line-height: 53px;
+  color: black;
+  background-color: mediumaquamarine;
+  font-size: 15px;
+  position: absolute;
+  opacity: 0.8;
+}
+
+.search-for.sf {
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+  z-index: 10;
+}
+
+.menu-cover.sf_cover {
+  z-index: 9;
 }

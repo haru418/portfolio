@@ -1,12 +1,12 @@
 # coding:utf-8
 
  # ユーザーを一人ずつ作成します。
-  User.create!(user_name: "ジョン", email: "jn@gmail.com", image: "user_1.png", password: "foobar")
-  User.create!(user_name: "マイケル", email: "mk@gmail.com", image: "user_2.png", password: "foobar")
-  User.create!(user_name: "ジャクソン", email: "js@gmail.com", image: "user_3.png", password: "foobar")
-  User.create!(user_name: "スタントン", email: "st@gmail.com", image: "user_4.png", password: "foobar")
-  User.create!(user_name: "ロドリゲス", email: "r@gmail.com", image: "user_5.png", password: "foobar")
-  User.create!(user_name: "ハル", email: "haru@gmail.com", image: "user_1.png", password: "foobar")
+  User.create!(user_name: "ジョン", email: "jn@example.com", image: "user_1.png", password: "foobar")
+  User.create!(user_name: "マイケル", email: "mk@example.com", image: "user_2.png", password: "foobar")
+  User.create!(user_name: "ロジャー", email: "rg@example.com", image: "user_3.png", password: "foobar")
+  User.create!(user_name: "スタントン", email: "st@example.com", image: "user_4.png", password: "foobar")
+  User.create!(user_name: "ロドリゲス", email: "r@example.com", image: "user_5.png", password: "foobar")
+  User.create!(user_name: "ハル", email: "haru@example.com", image: "user_6.png", password: "foobar")
   
   44.times do |n|
     user_name  = Faker::Name.name

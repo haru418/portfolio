@@ -38,12 +38,16 @@
           <ul>
             <li><%= link_to "レシピ", posts_index_path %></li>
             <li><%= link_to "投稿する", posts_new_path %></li>
+            <% if logged_in? %>
+              <li id="search-for">検索する</li>
+            <% end %>
             <li><%= link_to "全てのユーザー", users_path %></li>
             <li><%= link_to "ログアウト", logout_path, method: :post %></li>
           </ul>
         </nav>
       </div>
       <div class="menu-cover"></div>
+      <div id="mask"></div>
     <% if flash[:notice] %>
       <div class="flash">
         <%= flash[:notice] %>

@@ -1,0 +1,16 @@
+<div id="search-form">
+  <span class="material-icons" id="search-close">close</span>
+  <h1>検索</h1>
+  <%= search_form_for @q, url: search_users_path do |f| %>
+    <%= f.label :user_name_cont, "ユーザー名" %>
+    <br>
+    <%= f.search_field :user_name_cont, required: true %>
+    <%= f.submit "検索" %>
+  <% end %>
+  <%= search_form_for @q_recipes, url: search_posts_path do |f| %>
+    <%= f.label :cooking_name_cont, "料理名" %>
+    <br>
+    <%= f.search_field :cooking_name_cont, required: true %>
+    <%= f.submit "検索" %>
+  <% end %>
+</div>

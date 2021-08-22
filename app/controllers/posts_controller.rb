@@ -55,16 +55,17 @@ class PostsController < ApplicationController
   end
   
   def edit
+    @recipe = Recipe.find(params[:id])
   end
   
   def update
+    @recipe = Recipe.find(params[:id])
     @recipe.cooking_name = params[:cooking_name]
     @recipe.comment = params[:comment]
+    @recipe.cooking_image = params[:cooking_image] if @recipe.cooking_image.blank?
     if params[:cooking_image]
       @recipe.cooking_image = "cooking_#{@recipe.id}.png"
       File.binwrite("public/cooking_images/#{@recipe.cooking_image}", params[:cooking_image].read)
-    else
-      @recipe.cooking_image = "cooking_default.png"
     end
     if @recipe.save
       redirect_to posts_index_url
