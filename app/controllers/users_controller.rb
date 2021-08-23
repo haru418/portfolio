@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user, only: [:index, :show, :edit, :update, :following, :followers]
   before_action :limitation_login_user, only: [:new, :create, :login_page, :login]
   before_action :limitation_correct_user, only: [:edit, :update]
+  before_action :set_search
   
   def index
     @users = User.paginate(page: params[:page])
@@ -25,6 +26,13 @@ class UsersController < ApplicationController
         redirect_to user_url @user
       else
         render :new
+      end
+      if params[:image]
+        @user.image = "user_#{@user.id}.png"
+        File.binwrite("public/user_images/#{@user.image}", params[:image].read)
+        @user.save
+      else
+        @user.image = "user_default.png"
       end
     end
 

@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user
   before_action :limitation_correct_user, only: [:edit, :update, :destroy]
-  before_action :set_search, only: [:index, :show]
+  before_action :set_search
   
   def index
     if logged_in?
@@ -19,18 +19,19 @@ class PostsController < ApplicationController
   def create
     @recipe = Recipe.new(recipe_params)
     @recipe.user_id = @current_user.id
+    @recipe.save
     @ingredient = Ingredient.new(
       recipe_id: @recipe.id,
-      ingredient_1: params[:ingredient_1],
+      ingredient_1: params[:ingredients][:ingredient_1],
       amount: params[:amount]
     )
     @step = Step.new(
       recipe_id: @recipe.id,
-      step_1: params[:step_1],
+      step_1: params[:steps][:step_1],
       step_2: params[:step_2],
       step_3: params[:step_3]
     )
-    if @recipe.save && @ingredient.save && @step.save
+    if @ingredient.save && @step.save
       redirect_to posts_index_url
       flash[:notice] = "投稿を作成しました"
     else
@@ -49,8 +50,8 @@ class PostsController < ApplicationController
   def show
     @recipe = Recipe.find(params[:id])
     @user = @recipe.user
-    @ingredient = Ingredient.find_by(recipe_id: @recipe.id)
-    @step = Step.find_by(recipe_id: @recipe.id)
+    @ingredient = Ingredient.find(params[:id])
+    @step = Step.find(params[:id])
     @likes_count = Like.where(recipe_id: @recipe.id).count
   end
   

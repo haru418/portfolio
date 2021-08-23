@@ -11,7 +11,7 @@
   44.times do |n|
     user_name  = Faker::Name.name
     email = "example-#{n+1}@railstutorial.org"
-    image = "default.png"
+    image = "user_default.png"
     password = "password"
     User.create!(user_name: user_name,
     email: email,
