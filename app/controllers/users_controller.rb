@@ -2,7 +2,6 @@ class UsersController < ApplicationController
   before_action :authenticate_user, only: [:index, :show, :edit, :update, :following, :followers]
   before_action :limitation_login_user, only: [:new, :create, :login_page, :login]
   before_action :limitation_correct_user, only: [:edit, :update]
-  before_action :set_search
   
   def index
     @users = User.paginate(page: params[:page])
@@ -106,8 +105,6 @@ class UsersController < ApplicationController
   def search
     @q = User.ransack(params[:q])
     @results = @q.result
-    @rq = Recipe.ransack(params[:rq], search_key: :rq)
-    @recipe_results = @rq.result
   end
 
   private
