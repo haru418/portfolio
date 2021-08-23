@@ -30,6 +30,7 @@ class PostsController < ApplicationController
       step_2: params[:step_2],
       step_3: params[:step_3]
     )
+    binding.pry
     if @recipe.save && @ingredient.save && @step.save
       redirect_to posts_index_url
       flash[:notice] = "投稿を作成しました"
