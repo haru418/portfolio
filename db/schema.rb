@@ -10,14 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210815073741) do
+ActiveRecord::Schema.define(version: 20210825012811) do
 
   create_table "ingredients", force: :cascade do |t|
     t.integer "recipe_id"
     t.string "ingredient_1"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "amount"
+    t.string "ingredient_2"
+    t.string "ingredient_3"
+    t.string "ingredient_4"
+    t.string "ingredient_5"
+    t.string "ingredient_6"
+    t.string "ingredient_7"
+    t.string "ingredient_8"
+    t.string "ingredient_9"
+    t.integer "amount_1"
+    t.integer "amount_2"
+    t.integer "amount_3"
+    t.integer "amount_4"
+    t.integer "amount_5"
+    t.integer "amount_6"
+    t.integer "amount_7"
+    t.integer "amount_8"
+    t.integer "amount_9"
+    t.string "unit_1"
+    t.string "unit_2"
+    t.string "unit_3"
+    t.string "unit_4"
+    t.string "unit_5"
+    t.string "unit_6"
+    t.string "unit_7"
+    t.string "unit_8"
+    t.string "unit_9"
   end
 
   create_table "likes", force: :cascade do |t|

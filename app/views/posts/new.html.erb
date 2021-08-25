@@ -34,32 +34,13 @@
           </div>
           <div class="post-new-ingredients posts-new-content">
             <%= f.fields_for :ingredients do |i| %>
-              <div class="nested-fields">
-                <div class="new-ingredients">
-                  <div class="ingredient">
-                    <p class="ingredient">材料</p>
-                    <%= i.text_field :ingredient_1 %>
-                  </div>
-                </div>
-              </div>
+              <%= render 'posts/ingredient_fields', f: i %>
             <% end %>
-          </div>
-          <div id="detail-association-insertion-point"></div>
-          <div class="additional-links">
           </div>
           <div class="new-cooking-steps posts-new-content">
             <%= f.fields_for :steps do |s| %>
-              <p class="new-steps-letter">作り方</p>
-              <div class="nested-fields step-field">
-                <div class="new-steps">
-                  <%= s.text_area :step_1 %>
-                  <%#= link_to_remove_association "削除", class: "delete-form delete-step" %>
-                </div>
-              </div>
+              <%= render 'posts/step_fields', f: s %>
             <% end %>
-          </div>
-          <div id="button-to-add-step"></div>
-          <div class="additional-links additional-steps">
           </div>
           <div class="post-comment posts-new-content">
             <p class="comment-field">コメント</p>

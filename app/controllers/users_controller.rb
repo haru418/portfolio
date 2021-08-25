@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     @user = User.new(
       user_name: params[:user_name],
       email: params[:email],
-      image: "default.png",
+      image: "user_default.png",
       password: params[:password]
       )
       if @user.save
@@ -29,7 +29,6 @@ class UsersController < ApplicationController
       if params[:image]
         @user.image = "user_#{@user.id}.png"
         File.binwrite("public/user_images/#{@user.image}", params[:image].read)
-        @user.save
       else
         @user.image = "user_default.png"
       end

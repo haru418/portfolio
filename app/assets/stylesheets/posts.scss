@@ -179,6 +179,7 @@
 .show-ingredients {
   border-bottom: 1px solid #e1ddd8;
   padding-bottom: 35px;
+  display: flex;
 }
 
 .ingredient-letter {
@@ -187,7 +188,20 @@
   margin-bottom: 10px;
 }
 
+.ingredients {
+  margin-right: 100px;
+}
+
 .ingredients p {
+  font-size: 18px;
+}
+
+.ingredient select {
+  width: 50%;
+  margin-right: 90px;
+}
+
+.amounts p {
   font-size: 18px;
 }
 
@@ -226,7 +240,7 @@
   height: auto;
   width: 810px;
   margin: auto;
-  margin-bottom: 50px;
+  margin-bottom: 85px;
   background-color: white;
   border-radius: 15px;
   text-align: center
@@ -396,11 +410,19 @@
 }
 
 .step-field {
-  height: 134px;
+  height: 86px;
 }
 
 .additional-steps {
   padding-top: 0;
+}
+
+.steps-number {
+  margin-top: 20px;
+}
+
+.number-font {
+  font-size: 20px;
 }
 
 .new-steps {
@@ -408,8 +430,8 @@
 }
 
 .new-steps textarea {
-  height: 100px;
-  width: 95%;
+  height: 60px;
+  width: 100%;
   margin-bottom: 50px;
 }
 
@@ -418,7 +440,7 @@
 }
 
 .post-comment {
-  padding-top: 5px;
+  padding-top: 40px;
 }
 
 .post-comment textarea {

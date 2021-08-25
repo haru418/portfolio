@@ -21,21 +21,28 @@
       <p class="comment-letter">コメント</p>
       <p><%= @recipe.comment %></p>
     </div>
-    <!-- <div class="flex"> -->
     <div class="show-ingredients">
       <div class="ingredients">
-        <div class="ingredient-letter">材料</div>
-        <p><%= @ingredient.ingredient_1 %></p>
+        <%= render 'posts/ingredients' %>
+      </div>
+      <div class="amounts">
+        <%= render 'posts/amounts' %>
       </div>
     </div>
     <div class="show-cooking-recipe">
       <div class="show-process">
         <div class="step-number">ステップ１</div>
         <p><%= @step.step_1 %></p>
+        <% if @step.step_2.present? %>
+          <div class="step-number">ステップ２</div>
+          <p><%= @step.step_2 %></p>
+        <% end %>
+        <% if @step.step_3.present? %>
+          <div class="step-number">ステップ３</div>
+          <p><%= @step.step_3 %></p>
+        <% end %>
       </div>
     </div>
-    <!-- </div> -->
-    
   </div>
   <!-- <div class="posts-show-search-form">
     <%#= render 'posts/search_form' %>
