@@ -19,15 +19,22 @@
     password: password)
   end
 
-  User.create!(user_name: "ゲスト", email: "guest@example.com", image: "default.png", password: "foobar")
+  User.create!(user_name: "ゲスト", email: "guest@example.com",
+            image: "default.png", password: "foobar")
   
 # 投稿内容を一行ずつ記述して変数に代入します。
-  Recipe.create!(cooking_name: "豚キムチ", comment: "美味しくできました", user_id: 1, cooking_image: "cooking_1.png")
-  Recipe.create!(cooking_name: "納豆巻き", comment: "巻くのが大変でした", user_id: 2, cooking_image: "cooking_2.png")
-  Recipe.create!(cooking_name: "チキンのトマト煮込み", comment: "ニンニクが効いてて美味しかったです", user_id: 3, cooking_image: "cooking_3.png")
-  Recipe.create!(cooking_name: "野菜炒め", comment: "肉も入れればよかった", user_id: 4, cooking_image: "cooking_4.png")
-  Recipe.create!(cooking_name: "肉豆腐", comment: "相性抜群", user_id: 5, cooking_image: "cooking_5.png")
-  Recipe.create!(cooking_name: "手巻き寿司", comment: "巻くのも楽しい", user_id: 6, cooking_image: "cooking_6.png")
+  Recipe.create!(cooking_name: "豚キムチ", comment: "美味しくできました", user_id: 1,
+              cooking_image: File.open("./public/cooking_images/cooking_1.png"))
+  Recipe.create!(cooking_name: "納豆巻き", comment: "巻くのが大変でした", user_id: 2,
+              cooking_image: File.open("./public/cooking_images/cooking_2.png"))
+  Recipe.create!(cooking_name: "チキンのトマト煮込み", comment: "ニンニクが効いてて美味しかったです",
+              user_id: 3, cooking_image: File.open("./public/cooking_images/cooking_3.png"))
+  Recipe.create!(cooking_name: "野菜炒め", comment: "肉も入れればよかった", user_id: 4,
+              cooking_image: File.open("./public/cooking_images/cooking_4.png"))
+  Recipe.create!(cooking_name: "肉豆腐", comment: "相性抜群", user_id: 5,
+              cooking_image: File.open("./public/cooking_images/cooking_5.png"))
+  Recipe.create!(cooking_name: "手巻き寿司", comment: "巻くのも楽しい", user_id: 6,
+              cooking_image: File.open("./public/cooking_images/cooking_6.png"))
   
   # 作り方
   Step.create!(recipe_id: 1, step_1: "具材を切る1")

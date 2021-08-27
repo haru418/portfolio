@@ -1,0 +1,7 @@
+<% if @recipe.errors.any? %>
+  <div class="recipe-error-message">
+    <% @recipe.errors.full_messages.each do |msg| %>
+      <div class="form-error"><%= msg %></div>
+    <% end %>
+  </div>
+<% end %>

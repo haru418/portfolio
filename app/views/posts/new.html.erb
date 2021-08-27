@@ -3,21 +3,22 @@
     <h2 class="start-message">レシピを投稿しよう！</h2>
     <%= form_with url: posts_create_path do |f| %>
       <div class="new-post">
-        <% @recipe.errors.full_messages.each do |message| %>
+        <%= render 'shared/error_messages' %>
+        <!-- <% @recipe.errors.full_messages.each do |message| %>
           <div class="form-error">
-            <%= message %>
+            <%#= message %>
           </div>
         <% end %>
         <% @ingredient.errors.full_messages.each do |message| %>
           <div class="form-error">
-            <%= message %>
+            <%#= message %>
           </div>
         <% end %>
         <% @step.errors.full_messages.each do |message| %>
           <div class="form-error">
-            <%= message %>
+            <%#= message %>
           </div>
-        <% end %>
+        <% end %> -->
         <div class="new-post-form">
           <div class="post-cooking-name posts-new-content">
             <p>料理名</p>
