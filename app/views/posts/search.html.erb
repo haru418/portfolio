@@ -3,7 +3,7 @@
   <% @results.each do |recipe| %>
     <div class="col-lg-3 col-md-6 mb-4">
       <div class="cooking-image">
-        <%= image_tag "/cooking_images/#{recipe.cooking_image}" %>
+        <%= image_tag recipe.cooking_image.url %>
       </div>
       <div class="posts-bottom">
         <p class="cooking-name">
