@@ -20,7 +20,7 @@
   end
 
   User.create!(user_name: "ゲスト", email: "guest@example.com",
-            image: "default.png", password: "foobar")
+            image: "user_default.png", password: "foobar")
   
 # 投稿内容を一行ずつ記述して変数に代入します。
   Recipe.create!(cooking_name: "豚キムチ", comment: "美味しくできました", user_id: 1,
@@ -45,12 +45,12 @@
   Step.create!(recipe_id: 6, step_1: "具材を切る6")
 
 # 材料
-  Ingredient.create!(recipe_id: 1, ingredient_1: "豚肉")
-  Ingredient.create!(recipe_id: 2, ingredient_1: "納豆")
-  Ingredient.create!(recipe_id: 3, ingredient_1: "鶏肉")
-  Ingredient.create!(recipe_id: 4, ingredient_1: "キャベツ")
-  Ingredient.create!(recipe_id: 5, ingredient_1: "牛肉")
-  Ingredient.create!(recipe_id: 6, ingredient_1: "海苔")
+  Ingredient.create!(recipe_id: 1, ingredient_1: "豚肉", amount_1: "100", unit_1: "グラム")
+  Ingredient.create!(recipe_id: 2, ingredient_1: "納豆", amount_1: "1", unit_1: "パック")
+  Ingredient.create!(recipe_id: 3, ingredient_1: "鶏肉", amount_1: "100", unit_1: "グラム")
+  Ingredient.create!(recipe_id: 4, ingredient_1: "キャベツ", amount_1: "1", unit_1: "個")
+  Ingredient.create!(recipe_id: 5, ingredient_1: "牛肉", amount_1: "150", unit_1: "グラム")
+  Ingredient.create!(recipe_id: 6, ingredient_1: "海苔", amount_1: "1", unit_1: "枚")
   
   # リレーションシップ
   users = User.all

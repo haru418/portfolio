@@ -60,10 +60,17 @@ class PostsController < ApplicationController
       step_2: params[:steps][:step_2],
       step_3: params[:steps][:step_3],
     )
-    if @recipe.errors.empty? && @ingredient.errors.empty? && @step.errors.empty?
-      @recipe.save
-      @ingredient.save
-      @step.save
+    # if @recipe.errors.empty? && @ingredient.errors.empty? && @step.errors.empty?
+    #   @recipe.save
+    #   @ingredient.save
+    #   @step.save
+    #   redirect_to posts_index_url
+    #   flash[:notice] = "投稿を作成しました"
+    # else
+    #   @feed_items = []
+    #   render :new
+    # end
+    if @ingredient.save && @step.save && @recipe.save
       redirect_to posts_index_url
       flash[:notice] = "投稿を作成しました"
     else

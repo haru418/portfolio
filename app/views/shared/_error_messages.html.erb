@@ -1,7 +1,21 @@
 <% if @recipe.errors.any? %>
   <div class="recipe-error-message">
     <% @recipe.errors.full_messages.each do |msg| %>
-      <div class="form-error"><%= msg %></div>
+      <div class="form-error">※<%= msg %></div>
+    <% end %>
+  </div>
+<% end %>
+<% if @ingredient.errors.any? %>
+  <div class="ingredient-error-message">
+    <% @ingredient.errors.full_messages.each do |msg| %>
+      <div class="form-error">※<%= msg %></div>
+    <% end %>
+  </div>
+<% end %>
+<% if @step.errors.any? %>
+  <div class="step-error-message">
+    <% @step.errors.full_messages.each do |msg| %>
+      <div class="form-error">※<%= msg %></div>
     <% end %>
   </div>
 <% end %>

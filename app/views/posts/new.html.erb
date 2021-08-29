@@ -1,31 +1,16 @@
 <div class="posts-new-main">
   <div class="container">
     <h2 class="start-message">レシピを投稿しよう！</h2>
-    <%= form_with url: posts_create_path do |f| %>
+    <%= form_with url: posts_create_path, local: true do |f| %>
       <div class="new-post">
         <%= render 'shared/error_messages' %>
-        <!-- <% @recipe.errors.full_messages.each do |message| %>
-          <div class="form-error">
-            <%#= message %>
-          </div>
-        <% end %>
-        <% @ingredient.errors.full_messages.each do |message| %>
-          <div class="form-error">
-            <%#= message %>
-          </div>
-        <% end %>
-        <% @step.errors.full_messages.each do |message| %>
-          <div class="form-error">
-            <%#= message %>
-          </div>
-        <% end %> -->
         <div class="new-post-form">
           <div class="post-cooking-name posts-new-content">
-            <p>料理名</p>
+            <p>料理名 <span class="required-item">※必須</span></p>
             <%= f.text_field :cooking_name, placeholder: "かぼちゃジュース" %>
           </div>
           <div class="post-cooking-image posts-new-content">
-            <p>写真を追加する</p>
+            <p>写真を追加する <span class="required-item">※必須</span></p>
             <label class="image-form cooking-image-form">
               <span class="material-icons camera-icon">add_a_photo</span>
               <p>ファイルを選択</p>

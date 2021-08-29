@@ -236,6 +236,11 @@
   font-size: 27px;
 }
 
+.required-item {
+  color: red;
+  font-size: 13px;
+}
+
 .new-post {
   height: auto;
   width: 810px;
@@ -461,6 +466,10 @@
 }
 
 // edit===================================================================
+.edit-form {
+  padding-top: 50px;
+}
+
 .post-menu {
   text-align: right;
 }
@@ -495,6 +504,11 @@
   text-decoration: none;
   color: blue;
   margin-right: 10px;
+}
+
+.edit-error-message {
+  color: red;
+  text-align: center;
 }
 
 // search===================================================================

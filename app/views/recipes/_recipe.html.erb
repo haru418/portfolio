@@ -2,12 +2,7 @@
   <div class="poster-contents">
     <div class="posts-top">
       <div class="cooking-image">
-        <% if recipe.cooking_image? %>
-          <%= image_tag recipe.cooking_image.url %>
-        <% else %>
-          <%= image_tag "/cooking_images/cooking_default.png" %>
-        <% end %>
-        <!-- <%#= image_tag "/cooking_images/#{recipe.cooking_image}" %> -->
+        <%= image_tag recipe.cooking_image.url %>
       </div>
     </div>
     <div class="cooking-name">

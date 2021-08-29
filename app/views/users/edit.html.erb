@@ -1,34 +1,36 @@
 <div class="users-edit-main">
   <div class="container">
-    <%= form_with url: user_path, method: :patch, multipart: true do |f| %>
-      <% @user.errors.full_messages.each do |message| %>
-        <div class="error-message">
-          <%= message %>
+    <div class="edit-form">
+      <%= form_with url: user_path, method: :patch, local: true do |f| %>
+        <% @user.errors.full_messages.each do |message| %>
+          <div class="edit-error-message">
+            ※<%= message %>
+          </div>
+        <% end %>
+        <div class="edit-user">
+          <h1 class="edit-title">プロフィール編集</h1>
+          <div class="user-image">
+            <p>プロフィール画像</p>
+            <label class="image-form user-image-form">
+              <span class="material-icons camera-icon">add_a_photo</span>
+              <p>ファイルを選択</p>
+              <p class="not-selected"><%= @user.image %></p>
+              <%= f.file_field :image, value: @user.image %>
+            </label>
+          </div>
+          <div class="user-name">
+            <p>ユーザー名</p>
+            <%= f.text_field :user_name, value: @user.user_name, class: "edit-info" %>
+          </div>
+          <div class="user-email">
+            <p>メールアドレス</p>
+            <%= f.text_field :email, value: @user.email, class: "edit-info" %>
+          </div>
+          <div class="send-edit-user">
+            <%= f.submit "変更内容を保存" %>
+          </div>
         </div>
       <% end %>
-      <div class="edit-user">
-        <h1 class="edit-title">プロフィール編集</h1>
-        <div class="user-image">
-          <p>プロフィール画像</p>
-          <label class="image-form user-image-form">
-            <span class="material-icons camera-icon">add_a_photo</span>
-            <p>ファイルを選択</p>
-            <p class="not-selected"><%= @user.image %></p>
-            <%= f.file_field :image, value: @user.image %>
-          </label>
-        </div>
-        <div class="user-name">
-          <p>ユーザー名</p>
-          <%= f.text_field :user_name, value: @user.user_name, class: "edit-info" %>
-        </div>
-        <div class="user-email">
-          <p>メールアドレス</p>
-          <%= f.text_field :email, value: @user.email, class: "edit-info" %>
-        </div>
-        <div class="send-edit-user">
-          <%= f.submit "変更内容を保存" %>
-        </div>
-      </div>
-    <% end %>
+    </div>
   </div>
 </div>

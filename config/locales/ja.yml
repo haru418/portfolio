@@ -1,6 +1,26 @@
 ---
 ja:
   activerecord:
+    models:
+      user: ユーザー
+      recipe: レシピ
+      ingredient: 材料
+      step: 作り方
+    attributes:
+      user:
+        user_name: ユーザー名
+        image: プロフィール画像
+        email: メールアドレス
+        password: パスワード
+      recipe:
+        cooking_name: 料理名
+        cooking_image: 写真
+      ingredient:
+        ingredient_1: 材料1
+        amount_1: 分量1
+        unit_1: 単位1
+      step:
+        step_1: 作り方1
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
