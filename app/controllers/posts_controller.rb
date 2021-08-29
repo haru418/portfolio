@@ -18,12 +18,6 @@ class PostsController < ApplicationController
   def create
     @recipe = Recipe.new(recipe_params)
     @recipe.user_id = @current_user.id
-    # if params[:cooking_image]
-    #   @recipe.cooking_image = "cooking_#{Recipe.last.id + 1}.png"
-    #   File.binwrite("public/cooking_images/#{@recipe.cooking_image}", params[:cooking_image].read)
-    # else
-    #   @recipe.cooking_image = "cooking_default.png"
-    # end
     @ingredient = Ingredient.new(
       recipe_id: Recipe.last.id + 1,
       ingredient_1: params[:ingredients][:ingredient_1],
@@ -60,16 +54,6 @@ class PostsController < ApplicationController
       step_2: params[:steps][:step_2],
       step_3: params[:steps][:step_3],
     )
-    # if @recipe.errors.empty? && @ingredient.errors.empty? && @step.errors.empty?
-    #   @recipe.save
-    #   @ingredient.save
-    #   @step.save
-    #   redirect_to posts_index_url
-    #   flash[:notice] = "投稿を作成しました"
-    # else
-    #   @feed_items = []
-    #   render :new
-    # end
     if @ingredient.save && @step.save && @recipe.save
       redirect_to posts_index_url
       flash[:notice] = "投稿を作成しました"
