@@ -1,3 +1,4 @@
+require 'faker'
 # coding:utf-8
 
  # ユーザーを一人ずつ作成します。
@@ -35,7 +36,29 @@
               cooking_image: File.open("./public/cooking_images/cooking_5.png"))
   Recipe.create!(cooking_name: "手巻き寿司", comment: "巻くのも楽しい", user_id: 6,
               cooking_image: File.open("./public/cooking_images/cooking_6.png"))
+
+  225.times do |n|
+    cooking_name = Faker::Food.sushi
+    Recipe.create!(
+      user_id: rand(7..51),
+      cooking_name: cooking_name,
+      comment: "思ってたより見栄えも良く作れたし何より美味しそう！早く食べたい。思ってたより
+      見栄えも良く作れたし何より美味しそう！早く食べたい。思ってたより見栄えも良く作れたし
+      何より美味しそう！早く食べたい。思ってたより見栄えも良く作れたし何より美味しそう！
+      早く食べたい。思ってたより見栄えも良く作れたし何より美味しそう！早く食べたい。思ってたより
+      見栄えも良く作れたし何より美味しそう！早く食べたい。",
+      cooking_image: File.open("./public/cooking_images/sushi.jpg")
+    )
+  end
   
+  # 材料
+  Ingredient.create!(recipe_id: 1, ingredient_1: "豚肉", amount_1: "100", unit_1: "グラム")
+  Ingredient.create!(recipe_id: 2, ingredient_1: "納豆", amount_1: "1", unit_1: "パック")
+  Ingredient.create!(recipe_id: 3, ingredient_1: "鶏肉", amount_1: "100", unit_1: "グラム")
+  Ingredient.create!(recipe_id: 4, ingredient_1: "キャベツ", amount_1: "1", unit_1: "個")
+  Ingredient.create!(recipe_id: 5, ingredient_1: "牛肉", amount_1: "150", unit_1: "グラム")
+  Ingredient.create!(recipe_id: 6, ingredient_1: "海苔", amount_1: "1", unit_1: "枚")
+
   # 作り方
   Step.create!(recipe_id: 1, step_1: "具材を切る1")
   Step.create!(recipe_id: 2, step_1: "具材を切る2")
@@ -43,14 +66,6 @@
   Step.create!(recipe_id: 4, step_1: "具材を切る4")
   Step.create!(recipe_id: 5, step_1: "具材を切る5")
   Step.create!(recipe_id: 6, step_1: "具材を切る6")
-
-# 材料
-  Ingredient.create!(recipe_id: 1, ingredient_1: "豚肉", amount_1: "100", unit_1: "グラム")
-  Ingredient.create!(recipe_id: 2, ingredient_1: "納豆", amount_1: "1", unit_1: "パック")
-  Ingredient.create!(recipe_id: 3, ingredient_1: "鶏肉", amount_1: "100", unit_1: "グラム")
-  Ingredient.create!(recipe_id: 4, ingredient_1: "キャベツ", amount_1: "1", unit_1: "個")
-  Ingredient.create!(recipe_id: 5, ingredient_1: "牛肉", amount_1: "150", unit_1: "グラム")
-  Ingredient.create!(recipe_id: 6, ingredient_1: "海苔", amount_1: "1", unit_1: "枚")
   
   # リレーションシップ
   users = User.all
