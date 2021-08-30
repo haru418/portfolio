@@ -37,17 +37,17 @@ require 'faker'
   Recipe.create!(cooking_name: "手巻き寿司", comment: "巻くのも楽しい", user_id: 6,
               cooking_image: File.open("./public/cooking_images/cooking_6.png"))
 
-  195.times do |n|
-    cooking_name = Faker::Food.dish
+  225.times do |n|
+    cooking_name = Faker::Food.sushi
     Recipe.create!(
-      user_id: rand(7..45),
+      user_id: rand(7..51),
       cooking_name: cooking_name,
       comment: "思ってたより見栄えも良く作れたし何より美味しそう！早く食べたい。思ってたより
       見栄えも良く作れたし何より美味しそう！早く食べたい。思ってたより見栄えも良く作れたし
       何より美味しそう！早く食べたい。思ってたより見栄えも良く作れたし何より美味しそう！
       早く食べたい。思ってたより見栄えも良く作れたし何より美味しそう！早く食べたい。思ってたより
       見栄えも良く作れたし何より美味しそう！早く食べたい。",
-      cooking_image: File.open("./public/cooking_images/cooking_sample.png")
+      cooking_image: File.open("./public/cooking_images/sushi.jpg")
     )
   end
   
@@ -66,7 +66,6 @@ require 'faker'
   Step.create!(recipe_id: 4, step_1: "具材を切る4")
   Step.create!(recipe_id: 5, step_1: "具材を切る5")
   Step.create!(recipe_id: 6, step_1: "具材を切る6")
-
   
   # リレーションシップ
   users = User.all
