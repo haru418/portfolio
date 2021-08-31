@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get "/" => "home#top"
   get "posts/index" => "posts#index"
   get "posts/new" => "posts#new"
-  post "posts/create" => "posts#create"
+  post "posts/create" => "posts#create"  #パスはposts_create_path
   get "posts/:id" => "posts#show", as: :post
   get "posts/:id/edit" => "posts#edit", as: :edit_post
   post "posts/:id/update" => "posts#update", as: :update_post

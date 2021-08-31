@@ -15,6 +15,7 @@ class PostsController < ApplicationController
     @step = Step.new
   end
   
+  # createアクション
   def create
     @recipe = Recipe.new(recipe_params)
     @recipe.user_id = @current_user.id
