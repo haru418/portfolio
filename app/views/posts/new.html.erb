@@ -23,6 +23,15 @@
               <%= render 'posts/ingredient_fields', f: i %>
             <% end %>
           </div>
+          <div id="detail-association-insertion-point"></div>
+          <div class="add-form">
+            <%= link_to_add_association "フォームを追加", f, :ingredients,
+            class: "add-form-btn",
+            data: {
+            association_insertion_node: '#detail-association-insertion-point',
+            association_insertion_method: 'after'
+            }%>
+          </div>
           <div class="new-cooking-steps posts-new-content">
             <%= f.fields_for :steps do |s| %>
               <%= render 'posts/step_fields', f: s %>

@@ -19,9 +19,9 @@ ja:
         cooking_name: 料理名
         cooking_image: 写真
       ingredient:
-        ingredient_1: 材料1
-        amount_1: 分量1
-        unit_1: 単位1
+        ingredient: 材料1
+        amount: 分量1
+        unit: 単位1
       step:
         step_1: 作り方1
     errors:

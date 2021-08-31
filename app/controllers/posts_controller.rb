@@ -20,33 +20,9 @@ class PostsController < ApplicationController
     @recipe.user_id = @current_user.id
     @ingredient = Ingredient.new(
       recipe_id: Recipe.last.id + 1,
-      ingredient_1: params[:ingredients][:ingredient_1],
-      ingredient_2: params[:ingredients][:ingredient_2],
-      ingredient_3: params[:ingredients][:ingredient_3],
-      ingredient_4: params[:ingredients][:ingredient_4],
-      ingredient_5: params[:ingredients][:ingredient_5],
-      ingredient_6: params[:ingredients][:ingredient_6],
-      ingredient_7: params[:ingredients][:ingredient_7],
-      ingredient_8: params[:ingredients][:ingredient_8],
-      ingredient_9: params[:ingredients][:ingredient_9],
-      amount_1: params[:ingredients][:amount_1],
-      amount_2: params[:ingredients][:amount_2],
-      amount_3: params[:ingredients][:amount_3],
-      amount_4: params[:ingredients][:amount_4],
-      amount_5: params[:ingredients][:amount_5],
-      amount_6: params[:ingredients][:amount_6],
-      amount_7: params[:ingredients][:amount_7],
-      amount_8: params[:ingredients][:amount_8],
-      amount_9: params[:ingredients][:amount_9],
-      unit_1: params[:ingredients][:unit_1],
-      unit_2: params[:ingredients][:unit_2],
-      unit_3: params[:ingredients][:unit_3],
-      unit_4: params[:ingredients][:unit_4],
-      unit_5: params[:ingredients][:unit_5],
-      unit_6: params[:ingredients][:unit_6],
-      unit_7: params[:ingredients][:unit_7],
-      unit_8: params[:ingredients][:unit_8],
-      unit_9: params[:ingredients][:unit_9],
+      ingredient: params[:ingredients][:ingredient],
+      amount: params[:ingredients][:amount],
+      unit: params[:ingredients][:unit],
     )
     @step = Step.new(
       recipe_id: Recipe.last.id + 1,
@@ -66,8 +42,8 @@ class PostsController < ApplicationController
   def show
     @recipe = Recipe.find(params[:id])
     @user = @recipe.user
-    @ingredient = Ingredient.find(params[:id])
-    @step = Step.find(params[:id])
+    @ingredient = Ingredient.find_by(recipe_id: @recipe.id)
+    @step = Step.find_by(recipe_id: @recipe.id)
     @likes_count = Like.where(recipe_id: @recipe.id).count
   end
   
@@ -92,13 +68,13 @@ class PostsController < ApplicationController
     end
     
     @step.step_1 = params[:step_1]
-    # @step.step_2 = params[:step_2]
-    # @step.step_3 = params[:step_3]
+    @step.step_2 = params[:step_2]
+    @step.step_3 = params[:step_3]
     @step.save
     
-    @ingredient.ingredient_1 = params[:ingredient_1]
-    # @ingredient.ingredient_2 = params[:ingredient_2]
-    # @ingredient.ingredient_3 = params[:ingredient_3]
+    @ingredient.ingredient = params[:ingredient]
+    @ingredient.amount = params[:amount]
+    @ingredient.unit = params[:unit]
     @ingredient.save
   end
   
@@ -127,6 +103,7 @@ class PostsController < ApplicationController
       end
     end
     def recipe_params
-      params.permit(:user_id, :cooking_name, :cooking_image, :comment)
+      params.permit(:user_id, :cooking_name, :cooking_image, :comment,
+                  ingredients_attributes:[:id, :recipe_id, :ingredient, :amount, :unit, :_destroy])
     end
 end

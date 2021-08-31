@@ -52,12 +52,12 @@ require 'faker'
   end
   
   # 材料
-  Ingredient.create!(recipe_id: 1, ingredient_1: "豚肉", amount_1: "100", unit_1: "グラム")
-  Ingredient.create!(recipe_id: 2, ingredient_1: "納豆", amount_1: "1", unit_1: "パック")
-  Ingredient.create!(recipe_id: 3, ingredient_1: "鶏肉", amount_1: "100", unit_1: "グラム")
-  Ingredient.create!(recipe_id: 4, ingredient_1: "キャベツ", amount_1: "1", unit_1: "個")
-  Ingredient.create!(recipe_id: 5, ingredient_1: "牛肉", amount_1: "150", unit_1: "グラム")
-  Ingredient.create!(recipe_id: 6, ingredient_1: "海苔", amount_1: "1", unit_1: "枚")
+  Ingredient.create!(recipe_id: 1, ingredient: "豚肉", amount: "100", unit: "グラム")
+  Ingredient.create!(recipe_id: 2, ingredient: "納豆", amount: "1", unit: "パック")
+  Ingredient.create!(recipe_id: 3, ingredient: "鶏肉", amount: "100", unit: "グラム")
+  Ingredient.create!(recipe_id: 4, ingredient: "キャベツ", amount: "1", unit: "個")
+  Ingredient.create!(recipe_id: 5, ingredient: "牛肉", amount: "150", unit: "グラム")
+  Ingredient.create!(recipe_id: 6, ingredient: "海苔", amount: "1", unit: "枚")
 
   # 作り方
   Step.create!(recipe_id: 1, step_1: "具材を切る1")
