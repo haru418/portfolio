@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user
   before_action :limitation_correct_user, only: [:edit, :update, :destroy]
-  # before_action :recipe_params, only: [:create]
   
   def index
     if logged_in?
@@ -34,7 +33,6 @@ class PostsController < ApplicationController
     @step.step_1 = params[:recipe][:steps_attributes][:step_1]
     @step.step_2 = params[:recipe][:steps_attributes][:step_2]
     @step.step_3 = params[:recipe][:steps_attributes][:step_3]
-    binding.pry
     if @ingredient.save && @step.save && @recipe.save
       redirect_to posts_index_url
       flash[:notice] = "投稿を作成しました"
