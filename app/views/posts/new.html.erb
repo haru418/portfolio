@@ -1,7 +1,7 @@
 <div class="posts-new-main">
   <div class="container">
     <h2 class="start-message">レシピを投稿しよう！</h2>
-    <%= form_with url: posts_create_path, local: true do |f| %>
+    <%= form_with model: @recipe, url: posts_create_path, local: true do |f| %>
       <div class="new-post">
         <%= render 'shared/error_messages' %>
         <div class="new-post-form">
@@ -19,11 +19,12 @@
             </label>
           </div>
           <div class="post-new-ingredients posts-new-content">
-            <%= f.fields_for :ingredients do |i| %>
+            <p>材料</p>
+            <p class="required-item">※必須</p>
+            <%= f.fields_for :ingredients_attributes do |i| %>
               <%= render 'posts/ingredient_fields', f: i %>
             <% end %>
           </div>
-          <!-- フォーム追加ボタンの作成 -->
           <div id="detail-association-insertion-point"></div>
           <div class="add-form">
             <%= link_to_add_association "フォームを追加", f, :ingredients,
@@ -34,7 +35,7 @@
             }%>
           </div>
           <div class="new-cooking-steps posts-new-content">
-            <%= f.fields_for :steps do |s| %>
+            <%= f.fields_for :steps_attributes do |s| %>
               <%= render 'posts/step_fields', f: s %>
             <% end %>
           </div>

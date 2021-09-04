@@ -1,12 +1,13 @@
 <div class="nested-fields">
-  <p>材料</p>
   <div class="new-ingredients">
-    <div class="ingredient">
-      <p>1 <span class="required-item">※必須</span></p>
-      <%= f.text_field :ingredient, placeholder: "材料" %>
-      <%= f.text_field :amount, placeholder: "分量" %>
+    <div class="posts-new-content ingredient">
+      <%= f.text_field :ingredient, placeholder: "材料", class: "ingredient-form" %>
+      <%= f.text_field :amount, placeholder: "分量", class: "amount-form" %>
       <%= f.select :unit, [["大さじ", "大さじ"], ["小さじ", "小さじ"],
               ["ml", "ml"], ["cc","cc"], ["グラム", "グラム"], ["個", "個"], ["パック", "パック"], ["枚", "枚"]], include_blank: "単位を選択" %>
+      <!-- <div class="remove-form">
+        <%#= link_to_remove_association "削除", f, class: "remove-form-btn" %>
+      </div> -->
     </div>
   </div>
 </div>

@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user
   before_action :limitation_correct_user, only: [:edit, :update, :destroy]
+  # before_action :recipe_params, only: [:create]
   
   def index
     if logged_in?
@@ -11,26 +12,29 @@ class PostsController < ApplicationController
   
   def new
     @recipe = Recipe.new
-    @ingredient = Ingredient.new
-    @step = Step.new
+    @ingredient = @recipe.ingredients.build
+    @step = @recipe.steps.build
   end
   
-  # createアクション
   def create
     @recipe = Recipe.new(recipe_params)
     @recipe.user_id = @current_user.id
-    @ingredient = Ingredient.new(
-      recipe_id: Recipe.last.id + 1,
-      ingredient: params[:ingredients][:ingredient],
-      amount: params[:ingredients][:amount],
-      unit: params[:ingredients][:unit],
-    )
-    @step = Step.new(
-      recipe_id: Recipe.last.id + 1,
-      step_1: params[:steps][:step_1],
-      step_2: params[:steps][:step_2],
-      step_3: params[:steps][:step_3],
-    )
+    @recipe.cooking_name = params[:recipe][:cooking_name]
+    @recipe.cooking_image = params[:recipe][:cooking_image]
+    @recipe.comment = params[:recipe][:comment]
+
+    @ingredient = Ingredient.new(recipe_params)
+    @ingredient.recipe_id = Recipe.last.id + 1
+    @ingredient.ingredient = params[:recipe][:ingredients_attributes][:ingredient]
+    @ingredient.amount = params[:recipe][:ingredients_attributes][:amount]
+    @ingredient.unit = params[:recipe][:ingredients_attributes][:unit]
+    
+    @step = Step.new(recipe_params)
+    @step.recipe_id = Recipe.last.id + 1
+    @step.step_1 = params[:recipe][:steps_attributes][:step_1]
+    @step.step_2 = params[:recipe][:steps_attributes][:step_2]
+    @step.step_3 = params[:recipe][:steps_attributes][:step_3]
+    binding.pry
     if @ingredient.save && @step.save && @recipe.save
       redirect_to posts_index_url
       flash[:notice] = "投稿を作成しました"
@@ -105,6 +109,7 @@ class PostsController < ApplicationController
     end
     def recipe_params
       params.permit(:user_id, :cooking_name, :cooking_image, :comment,
-                  ingredients_attributes:[:id, :recipe_id, :ingredient, :amount, :unit, :_destroy])
+                  ingredients_attributes:[:id, :recipe_id, :ingredient, :amount, :unit, :_destroy],
+                  steps_attributes:[:id, :recipe_id, :step_1, :step_2, :step_3, :_destroy])
     end
 end
