@@ -1,2 +1,4 @@
 <div class="ingredient-letter">分量</div>
-<p><%= @ingredient.amount %> <%= @ingredient.unit %></p>
+<% @ingredient.each do |ing| %>
+  <p><%= ing.amount %> <%= ing.unit %></p>
+<% end %>

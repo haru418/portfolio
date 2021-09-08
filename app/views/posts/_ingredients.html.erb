@@ -1,2 +1,4 @@
 <div class="ingredient-letter">材料</div>
-<p><%= @ingredient.ingredient %></p>
+<% @ingredient.each do |ing| %>
+  <p><%= ing.ingredient %></p>
+<% end %>

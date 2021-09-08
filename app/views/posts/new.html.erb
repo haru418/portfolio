@@ -21,21 +21,30 @@
           <div class="post-new-ingredients posts-new-content">
             <p>材料</p>
             <p class="required-item">※必須</p>
-            <%= f.fields_for :ingredients_attributes do |i| %>
-              <%= render 'posts/ingredient_fields', f: i %>
-            <% end %>
+            <div class="ingredient-area">
+              <%= f.fields_for :ingredients do |i| %>
+                <div class="js-file-group" data-index="${index}">
+                  <div class="new-ingredients">
+                    <div class="posts-new-content ingredient">
+                      <%= i.text_field :ingredient, placeholder: "材料", class: "ingredient-form" %>
+                      <%= i.text_field :amount, placeholder: "分量", class: "amount-form" %>
+                      <%= i.select :unit, [["大さじ", "大さじ"], ["小さじ", "小さじ"],
+                              ["ml", "ml"], ["cc","cc"], ["グラム", "グラム"], ["個", "個"], ["パック", "パック"], ["枚", "枚"]], include_blank: "単位を選択" %>
+                      <span class="delete-form-btn">
+                        削除する
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            </div>
           </div>
-          <div id="detail-association-insertion-point"></div>
-          <div class="add-form">
-            <%= link_to_add_association "フォームを追加", f, :ingredients,
-            class: "add-form-btn",
-            data: {
-            association_insertion_node: '#detail-association-insertion-point',
-            association_insertion_method: 'after'
-            }%>
+          <div class="add-form-btn">
+            追加する
           </div>
+
           <div class="new-cooking-steps posts-new-content">
-            <%= f.fields_for :steps_attributes do |s| %>
+            <%= f.fields_for :steps do |s| %>
               <%= render 'posts/step_fields', f: s %>
             <% end %>
           </div>

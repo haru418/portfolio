@@ -12,28 +12,37 @@ class PostsController < ApplicationController
   def new
     @recipe = Recipe.new
     @ingredient = @recipe.ingredients.build
-    @step = @recipe.steps.build
+    @step = Step.new
   end
   
   def create
-    @recipe = Recipe.new(recipe_params)
+    @recipe = Recipe.new
+    @recipe.id = Recipe.last.id + 1
     @recipe.user_id = @current_user.id
     @recipe.cooking_name = params[:recipe][:cooking_name]
     @recipe.cooking_image = params[:recipe][:cooking_image]
     @recipe.comment = params[:recipe][:comment]
 
-    @ingredient = Ingredient.new(recipe_params)
-    @ingredient.recipe_id = Recipe.last.id + 1
-    @ingredient.ingredient = params[:recipe][:ingredients_attributes][:ingredient]
-    @ingredient.amount = params[:recipe][:ingredients_attributes][:amount]
-    @ingredient.unit = params[:recipe][:ingredients_attributes][:unit]
-    
-    @step = Step.new(recipe_params)
-    @step.recipe_id = Recipe.last.id + 1
-    @step.step_1 = params[:recipe][:steps_attributes][:step_1]
-    @step.step_2 = params[:recipe][:steps_attributes][:step_2]
-    @step.step_3 = params[:recipe][:steps_attributes][:step_3]
-    if @ingredient.save && @step.save && @recipe.save
+    @step = Step.new(
+      recipe_id: @recipe.id,
+      step_1: params[:recipe][:steps][:step_1],
+      step_2: params[:recipe][:steps][:step_2],
+      step_3: params[:recipe][:steps][:step_3]
+    )
+    if params[:recipe][:cooking_name].present? && params[:recipe][:steps][:step_1].present?
+      params[:recipe][:ingredients_attributes].keys.each do |key|
+        @ingredient = Ingredient.new(
+          recipe_id: @recipe.id,
+          ingredient: params[:recipe][:ingredients_attributes][key][:ingredient],
+          amount: params[:recipe][:ingredients_attributes][key][:amount],
+          unit: params[:recipe][:ingredients_attributes][key][:unit]
+        )
+        @ingredient.save
+      end
+    end
+    if params[:recipe][:cooking_name].present? && params[:recipe][:steps][:step_1].present?
+      @recipe.save
+      @step.save
       redirect_to posts_index_url
       flash[:notice] = "投稿を作成しました"
     else
@@ -45,8 +54,8 @@ class PostsController < ApplicationController
   def show
     @recipe = Recipe.find(params[:id])
     @user = @recipe.user
-    @ingredient = Ingredient.find_by(recipe_id: @recipe.id)
-    @step = Step.find_by(recipe_id: @recipe.id)
+    @ingredient = Ingredient.where(recipe_id: params[:id])
+    @step = Step.find_by(recipe_id: params[:id])
     @likes_count = Like.where(recipe_id: @recipe.id).count
   end
   
@@ -59,10 +68,6 @@ class PostsController < ApplicationController
     @recipe.cooking_name = params[:cooking_name]
     @recipe.comment = params[:comment]
     @recipe.cooking_image = params[:cooking_image] if @recipe.cooking_image.blank?
-    if params[:cooking_image]
-      @recipe.cooking_image = "cooking_#{@recipe.id}.png"
-      File.binwrite("public/cooking_images/#{@recipe.cooking_image}", params[:cooking_image].read)
-    end
     if @recipe.save
       redirect_to posts_index_url
       flash[:notice] = "投稿を編集しました"
@@ -104,10 +109,5 @@ class PostsController < ApplicationController
         flash[:notice] = "自分以外の投稿の編集はできません"
         redirect_to posts_index_url
       end
-    end
-    def recipe_params
-      params.permit(:user_id, :cooking_name, :cooking_image, :comment,
-                  ingredients_attributes:[:id, :recipe_id, :ingredient, :amount, :unit, :_destroy],
-                  steps_attributes:[:id, :recipe_id, :step_1, :step_2, :step_3, :_destroy])
     end
 end
