@@ -1,8 +1,13 @@
-<div class="new-ingredients">
-  <div class="posts-new-content ingredient">
-    <%= f.text_field :ingredient, placeholder: "材料", class: "ingredient-form" %>
-    <%= f.text_field :amount, placeholder: "分量", class: "amount-form" %>
-    <%= f.select :unit, [["大さじ", "大さじ"], ["小さじ", "小さじ"],
-            ["ml", "ml"], ["cc","cc"], ["グラム", "グラム"], ["個", "個"], ["パック", "パック"], ["枚", "枚"]], include_blank: "単位を選択" %>
+<div class="js-file-group" data-index="${index}">
+  <div class="new-ingredients">
+    <div class="posts-new-content ingredient">
+      <%= f.text_field :ingredient, placeholder: "材料", class: "ingredient-form" %>
+      <%= f.text_field :amount, placeholder: "分量", class: "amount-form" %>
+      <%= f.select :unit, [["大さじ", "大さじ"], ["小さじ", "小さじ"],
+              ["ml", "ml"], ["cc","cc"], ["グラム", "グラム"], ["個", "個"], ["パック", "パック"], ["枚", "枚"]], include_blank: "単位を選択" %>
+      <span class="delete-form-btn">
+        削除する
+      </span>
+    </div>
   </div>
 </div>

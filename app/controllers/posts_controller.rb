@@ -61,13 +61,15 @@ class PostsController < ApplicationController
   
   def edit
     @recipe = Recipe.find(params[:id])
+    @ingredient = Ingredient.where(recipe_id: params[:id])
+    @step = Step.find_by(recipe_id: @recipe.id)
   end
   
   def update
     @recipe = Recipe.find(params[:id])
     @recipe.cooking_name = params[:cooking_name]
     @recipe.comment = params[:comment]
-    @recipe.cooking_image = params[:cooking_image] if @recipe.cooking_image.blank?
+    @recipe.cooking_image = params[:cooking_image]
     if @recipe.save
       redirect_to posts_index_url
       flash[:notice] = "投稿を編集しました"
@@ -80,10 +82,12 @@ class PostsController < ApplicationController
     @step.step_3 = params[:step_3]
     @step.save
     
-    @ingredient.ingredient = params[:ingredient]
-    @ingredient.amount = params[:amount]
-    @ingredient.unit = params[:unit]
-    @ingredient.save
+    params[:ingredients].keys.each do |key|
+      @ingredient.ingredient = params[:ingredients][key][:ingredient]
+      @ingredient.amount = params[:ingredients][key][:amount]
+      @ingredient.unit = params[:ingredients][key][:unit]
+      @ingredient.save
+    end
   end
   
   def destroy

@@ -6,7 +6,6 @@
     <% else %>
       <%= image_tag "/cooking_images/cooking_default.png" %>
     <% end %>
-      <%#= image_tag "/cooking_images/#{@recipe.cooking_image}" %>
       <% if @recipe.user_id == @current_user.id %>
         <div class="post-menu">
           <%= link_to "編集", edit_post_path(@recipe.id), class:"post_edit_button" %>

@@ -1,0 +1,22 @@
+<div class="js-file-group" data-index="${index}">
+  <div class="new-ingredients">
+    <div class="posts-new-content ingredient">
+      <%= f.text_field :ingredient, value: ing.ingredient, class: "ingredient-form" %>
+      <%= f.text_field :amount, value: ing.amount, class: "amount-form" %>
+      <select class="unit-form" name="[ingredients][unit]" id="_ingredients_unit">
+        <option value="<% ing.unit %>"><%= ing.unit %></option>
+        <option value="大さじ">大さじ</option>
+        <option value="小さじ">小さじ</option>
+        <option value="ml">ml</option>
+        <option value="cc">cc</option>
+        <option value="グラム">グラム</option>
+        <option value="個">個</option>
+        <option value="パック">パック</option>
+        <option value="枚">枚</option></select>
+      <span class="delete-form-btn">
+        削除する
+      </span>
+    </div>
+  </div>
+</div>
+
