@@ -35,7 +35,7 @@ cooking_image: File.open("./public/cooking_images/cooking_5.png"))
 Recipe.create!(cooking_name: "手巻き寿司", comment: "巻くのも楽しい", user_id: 6,
 cooking_image: File.open("./public/cooking_images/cooking_6.png"))
 
-225.times do |n|
+130.times do |n|
   cooking_name = Faker::Food.sushi
   Recipe.create!(
     user_id: rand(7..51),
@@ -58,12 +58,12 @@ cooking_image: File.open("./public/cooking_images/cooking_6.png"))
   Ingredient.create!(recipe_id: 4, ingredient: "キャベツ", amount: "1", unit: "個")
   Ingredient.create!(recipe_id: 5, ingredient: "牛肉", amount: "150", unit: "グラム")
   Ingredient.create!(recipe_id: 6, ingredient: "海苔", amount: "1", unit: "枚")
-  Ingredient.create!(recipe_id: 231, ingredient: "豚肉", amount: "100", unit: "グラム")
-  Ingredient.create!(recipe_id: 231, ingredient: "キムチ", amount: "50", unit: "グラム")
-  Ingredient.create!(recipe_id: 231, ingredient: "ごま油", amount: "1", unit: "大さじ")
+  Ingredient.create!(recipe_id: 136, ingredient: "豚肉", amount: "100", unit: "グラム")
+  Ingredient.create!(recipe_id: 136, ingredient: "キムチ", amount: "50", unit: "グラム")
+  Ingredient.create!(recipe_id: 136, ingredient: "ごま油", amount: "1", unit: "大さじ")
 
   # 作り方
-  Step.create!(recipe_id: 231, step_1: "具材を切る1")
+  Step.create!(recipe_id: 136, step_1: "具材を切る1", step_2: "具材を切る2", step_3: "具材を切る3")
   Step.create!(recipe_id: 2, step_1: "具材を切る2")
   Step.create!(recipe_id: 3, step_1: "具材を切る3")
   Step.create!(recipe_id: 4, step_1: "具材を切る4")
