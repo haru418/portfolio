@@ -6,11 +6,11 @@
       <div class="edit-post">
         <div class="edit-form">
           <div class="post-cooking_name posts-edit-content posts-new-content">
-            <p>料理名</p>
+            <p>料理名 <span class="required-item">※必須</span></p>
             <%= f.text_field :cooking_name, value: @recipe.cooking_name %>
           </div>
           <div class="post-cooking-image posts-edit-content posts-new-content">
-            <p>写真を変更する</p>
+            <p>写真を変更する <span class="required-item">※必須</span></p>
             <label class="image-form">
               <span class="material-icons camera-icon">add_a_photo</span>
               <p>ファイルを選択</p>
@@ -21,17 +21,17 @@
           <div class="post-edit-ingredients">
             <div class="edit-ingredients posts-new-content">
               <p class="ingredient">材料</p>
-              <p class="required-item">※必須</p>
+              <div class="required-item">※必須</div>
               <% @ingredient.each do |ing| %>
                 <div class="ingredient-area">
                   <%= f.fields_for :ingredients do |i| %>
                     <div class="js-file-group" data-index="${index}">
                       <div class="new-ingredients">
-                        <div class="posts-new-content ingredient">
+                        <div class="ingredient">
                           <%= i.text_field :ingredient, name: "[ingredients][#{ing.id}][ingredient]", value: ing.ingredient, class: "ingredient-form" %>
                           <%= i.text_field :amount, name: "[ingredients][#{ing.id}][amount]", value: ing.amount, class: "amount-form" %>
                           <select class="unit-form" name="[ingredients][<%= ing.id %>][unit]" id="_ingredients_unit">
-                            <option value="<% ing.unit %>"><%= ing.unit %></option>
+                            <option value="<%= ing.unit %>"><%= ing.unit %></option>
                             <option value="大さじ">大さじ</option>
                             <option value="小さじ">小さじ</option>
                             <option value="ml">ml</option>
@@ -49,16 +49,24 @@
                   <% end %>
                 </div>
               <% end %>
-              <!-- <%#= f.text_field :ingredient, value: @ingredient.ingredient %> -->
             </div>
           </div>
           <div class="add-form-btn">
-            追加する
+            ＋フォームを追加
           </div>
           <div class="edit-cooking-steps posts-new-content">
             <p class="edit-steps-letter">作り方</p>
             <div class="edit-steps">
+              <p>1 <span class="required-item">※必須</span></p>
               <%= f.text_area :step_1, value: @step.step_1 %>
+              <% if @step.step_2.present? %>
+                <p>2</p>
+                <%= f.text_area :step_2, value: @step.step_2 %>
+                <% end %>
+                <% if @step.step_3.present? %>
+                <p>3</p>
+                <%= f.text_area :step_3, value: @step.step_3 %>
+              <% end %>
             </div>
           </div>
           <div class="post-comment posts-new-content posts-edit-content">

@@ -198,8 +198,8 @@
 
 .ingredient select {
   height: 40px;
-  width: 50%;
-  margin-right: 90px;
+  width: 75px;
+  margin-right: 13px;
 }
 
 .amounts p {
@@ -240,6 +240,7 @@
 .required-item {
   color: red;
   font-size: 13px;
+  text-align: left;
 }
 
 .new-post {
@@ -493,6 +494,37 @@
 .edit-form {
   width: 82%;
   margin: auto;
+}
+
+.ingredient-area {
+  margin-top: 15px;
+}
+
+.ingredient input {
+  width: 200px;
+  height: 40px;
+  margin-right: 30px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.edit-steps textarea {
+  height: 60px;
+}
+
+.delete-form-btn {
+  height: 20px;
+  width: 56px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.add-form-btn {
+  text-align: left;
+  margin-top: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  color: #0f59dc;
 }
 
 .post_edit_button {

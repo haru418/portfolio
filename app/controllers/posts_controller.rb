@@ -66,27 +66,24 @@ class PostsController < ApplicationController
   end
   
   def update
-    @recipe = Recipe.find(params[:id])
     @recipe.cooking_name = params[:cooking_name]
     @recipe.comment = params[:comment]
     @recipe.cooking_image = params[:cooking_image]
-    if @recipe.save
-      redirect_to posts_index_url
-      flash[:notice] = "投稿を編集しました"
-    else
-      render :edit
-    end
-    
-    @step.step_1 = params[:step_1]
-    @step.step_2 = params[:step_2]
-    @step.step_3 = params[:step_3]
-    @step.save
-    
     params[:ingredients].keys.each do |key|
+      @ingredient = Ingredient.find_by(id: key)
       @ingredient.ingredient = params[:ingredients][key][:ingredient]
       @ingredient.amount = params[:ingredients][key][:amount]
       @ingredient.unit = params[:ingredients][key][:unit]
       @ingredient.save
+    end
+    @step.step_1 = params[:step_1]
+    @step.step_2 = params[:step_2]
+    @step.step_3 = params[:step_3]
+    if @recipe.save && @step.save
+      redirect_to posts_index_url
+      flash[:notice] = "投稿を編集しました"
+    else
+      render :edit
     end
   end
   
