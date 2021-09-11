@@ -24,6 +24,8 @@ require 'faker'
             image: "user_default.png", password: "foobar")
   
 # 投稿内容を一行ずつ記述して変数に代入します。
+Recipe.create!(cooking_name: "豚キムチ", comment: "美味しくできました", user_id: 1,
+cooking_image: File.open("./public/cooking_images/cooking_1.png"))
 Recipe.create!(cooking_name: "納豆巻き", comment: "巻くのが大変でした", user_id: 2,
 cooking_image: File.open("./public/cooking_images/cooking_2.png"))
 Recipe.create!(cooking_name: "チキンのトマト煮込み", comment: "ニンニクが効いてて美味しかったです",
@@ -48,27 +50,85 @@ cooking_image: File.open("./public/cooking_images/cooking_6.png"))
     cooking_image: File.open("./public/cooking_images/sushi.jpg")
     )
   end
-
-  Recipe.create!(cooking_name: "豚キムチ", comment: "美味しくできました", user_id: 1,
-              cooking_image: File.open("./public/cooking_images/cooking_1.png"))
   
   # 材料
+  Ingredient.create!(recipe_id: 1, ingredient: "豚肉", amount: "100", unit: "グラム")
+  Ingredient.create!(recipe_id: 1, ingredient: "キムチ", amount: "50", unit: "グラム")
+  Ingredient.create!(recipe_id: 1, ingredient: "ごま油", amount: "1", unit: "大さじ")
   Ingredient.create!(recipe_id: 2, ingredient: "納豆", amount: "1", unit: "パック")
   Ingredient.create!(recipe_id: 3, ingredient: "鶏肉", amount: "100", unit: "グラム")
   Ingredient.create!(recipe_id: 4, ingredient: "キャベツ", amount: "1", unit: "個")
   Ingredient.create!(recipe_id: 5, ingredient: "牛肉", amount: "150", unit: "グラム")
   Ingredient.create!(recipe_id: 6, ingredient: "海苔", amount: "1", unit: "枚")
-  Ingredient.create!(recipe_id: 136, ingredient: "豚肉", amount: "100", unit: "グラム")
-  Ingredient.create!(recipe_id: 136, ingredient: "キムチ", amount: "50", unit: "グラム")
-  Ingredient.create!(recipe_id: 136, ingredient: "ごま油", amount: "1", unit: "大さじ")
+
+  recipes = Recipe.where(id: 6..136)
+  recipes.each do |recipe|
+    Ingredient.create!(
+      recipe_id: recipe.id,
+      ingredient: "生魚",
+      amount: "150",
+      unit: "グラム"
+    )
+  end
+
+  recipes = Recipe.where(id: 6..136)
+  recipes.each do |recipe|
+    Ingredient.create!(
+      recipe_id: recipe.id,
+      ingredient: "白米",
+      amount: "1",
+      unit: "合"
+    )
+  end
+
+  recipes = Recipe.where(id: 6..136)
+  recipes.each do |recipe|
+    Ingredient.create!(
+      recipe_id: recipe.id,
+      ingredient: "お酢",
+      amount: "3",
+      unit: "大さじ"
+    )
+  end
+
+  recipes = Recipe.where(id: 6..136)
+  recipes.each do |recipe|
+    Ingredient.create!(
+      recipe_id: recipe.id,
+      ingredient: "醤油",
+      amount: "お好みで",
+      unit: ""
+    )
+  end
+
+  recipes = Recipe.where(id: 6..136)
+  recipes.each do |recipe|
+    Ingredient.create!(
+      recipe_id: recipe.id,
+      ingredient: "わさび",
+      amount: "お好みで",
+      unit: ""
+    )
+  end
 
   # 作り方
-  Step.create!(recipe_id: 136, step_1: "具材を切る1", step_2: "具材を切る2", step_3: "具材を切る3")
+  Step.create!(recipe_id: 1, step_1: "具材を切る1", step_2: "具材を切る2", step_3: "具材を切る3")
   Step.create!(recipe_id: 2, step_1: "具材を切る2")
   Step.create!(recipe_id: 3, step_1: "具材を切る3")
   Step.create!(recipe_id: 4, step_1: "具材を切る4")
   Step.create!(recipe_id: 5, step_1: "具材を切る5")
   Step.create!(recipe_id: 6, step_1: "具材を切る6")
+
+  recipes = Recipe.where(id: 7..136)
+  recipes.each do |recipe|
+    Step.create!(
+      recipe_id: recipe.id,
+      step_1: "まず炊いた白米に酢を入れまんべんなく混ざるまでしゃもじで着るように混ぜ合わせます。次に混ぜた白米を
+      ひと口分手に取りお寿司のシャリの形になるように握ります。",
+      step_2: "シャリができたら生魚を食べやすい大きさに薄く切っていきます。",
+      step_3: "最後にわさびをお好みでシャリに付けて食べやすい大きさに切ったネタをのせたら完成です！"
+    )
+  end
   
   # リレーションシップ
   users = User.all
