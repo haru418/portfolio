@@ -32,6 +32,7 @@
                           <%= i.text_field :amount, name: "[ingredients][#{ing.id}][amount]", value: ing.amount, class: "amount-form" %>
                           <select class="unit-form" name="[ingredients][<%= ing.id %>][unit]" id="_ingredients_unit">
                             <option value="<%= ing.unit %>"><%= ing.unit %></option>
+                            <option value="">未選択</option>
                             <option value="大さじ">大さじ</option>
                             <option value="小さじ">小さじ</option>
                             <option value="ml">ml</option>
@@ -39,7 +40,10 @@
                             <option value="グラム">グラム</option>
                             <option value="個">個</option>
                             <option value="パック">パック</option>
-                            <option value="枚">枚</option></select>
+                            <option value="合">合</option>
+                            <option value="枚">枚</option>
+                            <option value="少々">少々</option>
+                            <option value="ひと摘み">ひと摘み</option></select>
                             <span class="delete-form-btn">
                               削除する
                             </span>

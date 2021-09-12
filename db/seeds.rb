@@ -21,11 +21,9 @@ require 'faker'
   end
 
   User.create!(user_name: "ゲスト", email: "guest@example.com",
-            image: "user_default.png", password: "foobar")
+            image: "user_4.png", password: "foobar")
   
 # 投稿内容を一行ずつ記述して変数に代入します。
-Recipe.create!(cooking_name: "豚キムチ", comment: "美味しくできました", user_id: 1,
-cooking_image: File.open("./public/cooking_images/cooking_1.png"))
 Recipe.create!(cooking_name: "納豆巻き", comment: "巻くのが大変でした", user_id: 2,
 cooking_image: File.open("./public/cooking_images/cooking_2.png"))
 Recipe.create!(cooking_name: "チキンのトマト煮込み", comment: "ニンニクが効いてて美味しかったです",
@@ -37,10 +35,10 @@ cooking_image: File.open("./public/cooking_images/cooking_5.png"))
 Recipe.create!(cooking_name: "手巻き寿司", comment: "巻くのも楽しい", user_id: 6,
 cooking_image: File.open("./public/cooking_images/cooking_6.png"))
 
-130.times do |n|
+153.times do |n|
   cooking_name = Faker::Food.sushi
   Recipe.create!(
-    user_id: rand(7..51),
+    user_id: rand(1..51),
     cooking_name: cooking_name,
     comment: "思ってたより見栄えも良く作れたし何より美味しそう！早く食べたい。思ってたより
     見栄えも良く作れたし何より美味しそう！早く食べたい。思ってたより見栄えも良く作れたし
@@ -50,18 +48,19 @@ cooking_image: File.open("./public/cooking_images/cooking_6.png"))
     cooking_image: File.open("./public/cooking_images/sushi.jpg")
     )
   end
+
+  Recipe.create!(cooking_name: "豚キムチ", comment: "豚肉とキムチの比率が良かったので美味しくできた。
+  ただ、もう少し辛い方が自分好みなので次作るときは何か辛味が増すものを入れてみようと思う。", user_id: 51,
+  cooking_image: File.open("./public/cooking_images/cooking_1.png"))
   
   # 材料
-  Ingredient.create!(recipe_id: 1, ingredient: "豚肉", amount: "100", unit: "グラム")
-  Ingredient.create!(recipe_id: 1, ingredient: "キムチ", amount: "50", unit: "グラム")
-  Ingredient.create!(recipe_id: 1, ingredient: "ごま油", amount: "1", unit: "大さじ")
-  Ingredient.create!(recipe_id: 2, ingredient: "納豆", amount: "1", unit: "パック")
-  Ingredient.create!(recipe_id: 3, ingredient: "鶏肉", amount: "100", unit: "グラム")
-  Ingredient.create!(recipe_id: 4, ingredient: "キャベツ", amount: "1", unit: "個")
-  Ingredient.create!(recipe_id: 5, ingredient: "牛肉", amount: "150", unit: "グラム")
-  Ingredient.create!(recipe_id: 6, ingredient: "海苔", amount: "1", unit: "枚")
+  Ingredient.create!(recipe_id: 1, ingredient: "納豆", amount: "1", unit: "パック")
+  Ingredient.create!(recipe_id: 2, ingredient: "鶏肉", amount: "100", unit: "グラム")
+  Ingredient.create!(recipe_id: 3, ingredient: "キャベツ", amount: "1", unit: "個")
+  Ingredient.create!(recipe_id: 4, ingredient: "牛肉", amount: "150", unit: "グラム")
+  Ingredient.create!(recipe_id: 5, ingredient: "海苔", amount: "1", unit: "枚")
 
-  recipes = Recipe.where(id: 6..136)
+  recipes = Recipe.where(id: 6..158)
   recipes.each do |recipe|
     Ingredient.create!(
       recipe_id: recipe.id,
@@ -71,7 +70,7 @@ cooking_image: File.open("./public/cooking_images/cooking_6.png"))
     )
   end
 
-  recipes = Recipe.where(id: 6..136)
+  recipes = Recipe.where(id: 6..158)
   recipes.each do |recipe|
     Ingredient.create!(
       recipe_id: recipe.id,
@@ -81,7 +80,7 @@ cooking_image: File.open("./public/cooking_images/cooking_6.png"))
     )
   end
 
-  recipes = Recipe.where(id: 6..136)
+  recipes = Recipe.where(id: 6..158)
   recipes.each do |recipe|
     Ingredient.create!(
       recipe_id: recipe.id,
@@ -91,7 +90,7 @@ cooking_image: File.open("./public/cooking_images/cooking_6.png"))
     )
   end
 
-  recipes = Recipe.where(id: 6..136)
+  recipes = Recipe.where(id: 6..158)
   recipes.each do |recipe|
     Ingredient.create!(
       recipe_id: recipe.id,
@@ -101,7 +100,7 @@ cooking_image: File.open("./public/cooking_images/cooking_6.png"))
     )
   end
 
-  recipes = Recipe.where(id: 6..136)
+  recipes = Recipe.where(id: 6..158)
   recipes.each do |recipe|
     Ingredient.create!(
       recipe_id: recipe.id,
@@ -111,15 +110,21 @@ cooking_image: File.open("./public/cooking_images/cooking_6.png"))
     )
   end
 
+  Ingredient.create!(recipe_id: 159, ingredient: "豚肉", amount: "150", unit: "グラム")
+  Ingredient.create!(recipe_id: 159, ingredient: "キムチ", amount: "2", unit: "大さじ")
+  Ingredient.create!(recipe_id: 159, ingredient: "唐辛子", amount: "お好み", unit: "")
+  Ingredient.create!(recipe_id: 159, ingredient: "ごま油", amount: "1", unit: "大さじ")
+  Ingredient.create!(recipe_id: 159, ingredient: "塩", amount: "ひと摘み", unit: "")
+  Ingredient.create!(recipe_id: 159, ingredient: "胡椒", amount: "ひと摘み", unit: "")
+
   # 作り方
   Step.create!(recipe_id: 1, step_1: "具材を切る1", step_2: "具材を切る2", step_3: "具材を切る3")
-  Step.create!(recipe_id: 2, step_1: "具材を切る2")
-  Step.create!(recipe_id: 3, step_1: "具材を切る3")
-  Step.create!(recipe_id: 4, step_1: "具材を切る4")
-  Step.create!(recipe_id: 5, step_1: "具材を切る5")
-  Step.create!(recipe_id: 6, step_1: "具材を切る6")
+  Step.create!(recipe_id: 2, step_1: "具材を切る1", step_2: "具材を切る2", step_3: "具材を切る3")
+  Step.create!(recipe_id: 3, step_1: "具材を切る1", step_2: "具材を切る2", step_3: "具材を切る3")
+  Step.create!(recipe_id: 4, step_1: "具材を切る1", step_2: "具材を切る2", step_3: "具材を切る3")
+  Step.create!(recipe_id: 5, step_1: "具材を切る1", step_2: "具材を切る2", step_3: "具材を切る3")
 
-  recipes = Recipe.where(id: 7..136)
+  recipes = Recipe.where(id: 6..158)
   recipes.each do |recipe|
     Step.create!(
       recipe_id: recipe.id,
@@ -129,11 +134,25 @@ cooking_image: File.open("./public/cooking_images/cooking_6.png"))
       step_3: "最後にわさびをお好みでシャリに付けて食べやすい大きさに切ったネタをのせたら完成です！"
     )
   end
+
+  Step.create!(
+    recipe_id: 159,
+    step_1: "温めたフライパンにごま油を入れ熱し、豚肉を火が通るまで炒めます。",
+    step_2: "豚肉に火が通ったら塩、胡椒をひと摘み入れキムチを入れ混ぜ合わせます。",
+    step_3: "キムチが温まりムラなく混ざったら完成です！"
+  )
   
   # リレーションシップ
   users = User.all
   user  = users.first
   following = users[2..20]
   followers = users[3..30]
+  following.each { |followed| user.follow(followed) }
+  followers.each { |follower| follower.follow(user) }
+
+  users = User.all
+  user  = users.last
+  following = users[1..20]
+  followers = users[2..30]
   following.each { |followed| user.follow(followed) }
   followers.each { |follower| follower.follow(user) }

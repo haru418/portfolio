@@ -5,4 +5,7 @@
       <%= render 'recipes/feed' %>
     </div>
   </div>
+  <div class="paginate">
+    <%= will_paginate @feed_items %>
+  </div>
 </div>
