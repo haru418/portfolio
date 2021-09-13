@@ -25,15 +25,15 @@ require 'faker'
   
 # 投稿内容を一行ずつ記述して変数に代入します。
 Recipe.create!(cooking_name: "納豆巻き", comment: "巻くのが大変でした", user_id: 2,
-cooking_image: File.open("./app/assets/images/cooking_2.png"))
+cooking_image: File.open("./app/assets/images/cooking_2.jpg"))
 Recipe.create!(cooking_name: "チキンのトマト煮込み", comment: "ニンニクが効いてて美味しかったです",
-user_id: 3, cooking_image: File.open("./app/assets/images/cooking_3.png"))
+user_id: 3, cooking_image: File.open("./app/assets/images/cooking_3.jpg"))
 Recipe.create!(cooking_name: "野菜炒め", comment: "肉も入れればよかった", user_id: 4,
-cooking_image: File.open("./app/assets/images/cooking_4.png"))
+cooking_image: File.open("./app/assets/images/cooking_4.jpg"))
 Recipe.create!(cooking_name: "肉豆腐", comment: "相性抜群", user_id: 5,
-cooking_image: File.open("./app/assets/images/cooking_5.png"))
+cooking_image: File.open("./app/assets/images/cooking_5.jpg"))
 Recipe.create!(cooking_name: "手巻き寿司", comment: "巻くのも楽しい", user_id: 6,
-cooking_image: File.open("./app/assets/images/cooking_6.png"))
+cooking_image: File.open("./app/assets/images/cooking_6.jpg"))
 
 153.times do |n|
   cooking_name = Faker::Food.sushi
@@ -51,7 +51,7 @@ cooking_image: File.open("./app/assets/images/cooking_6.png"))
 
   Recipe.create!(cooking_name: "豚キムチ", comment: "豚肉とキムチの比率が良かったので美味しくできた。
   ただ、もう少し辛い方が自分好みなので次作るときは何か辛味が増すものを入れてみようと思う。", user_id: 51,
-  cooking_image: File.open("./app/assets/images/cooking_1.png"))
+  cooking_image: File.open("./app/assets/images/cooking_1.jpg"))
   
   # 材料
   Ingredient.create!(recipe_id: 1, ingredient: "納豆", amount: "1", unit: "パック")
