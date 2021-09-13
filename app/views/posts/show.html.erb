@@ -4,7 +4,7 @@
     <% if @recipe.cooking_image? %>
       <%= image_tag @recipe.cooking_image %>
     <% else %>
-      <%= image_tag "/cooking_images/cooking_default.png" %>
+      <%= image_tag "cooking_default.png" %>
     <% end %>
       <% if @recipe.user_id == @current_user.id %>
         <div class="post-menu">
@@ -18,7 +18,7 @@
     </p>
       <%= render 'likes/like' %>
     <div class="post-user-name">
-      <img src="<%= "/user_images/#{@user.image}" %>">
+      <img src="<%= "/assets/#{@user.image}" %>">
       <%= link_to @user.user_name, user_path(@user), class:"post_user_name" %>
     </div>
     <div class="comment">

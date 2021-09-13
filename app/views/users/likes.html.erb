@@ -4,7 +4,7 @@
       <div class="user">
         <div class="user-image-name">
           <div class="user-show-image">
-            <%= image_tag "/user_images/#{@user.image}", class:"user_show_image" %>
+            <%= image_tag "/assets/#{@user.image}", class:"user_show_image" %>
           </div>
           <div class="name-follow">
             <h2><%= @user.user_name %></h2>
@@ -29,7 +29,7 @@
               <%= link_to recipe.cooking_name, post_path(recipe.id) %>
             </div>
             <div class="likes-top">
-              <img src="<%= "/user_images/#{recipe.user.image}" %>">
+              <img src="<%= "/assets/#{recipe.user.image}" %>">
               <%= link_to recipe.user.user_name, user_path(recipe.user.id), class:"likes_user_name" %>
             </div>
           </div>

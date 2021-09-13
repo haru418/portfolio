@@ -5,7 +5,7 @@
         <% if recipe.cooking_image.present? %>
           <%= image_tag recipe.cooking_image.url %>
         <% else %>
-          <%= image_tag "/cooking_images/cooking_default.png" %>
+          <%= image_tag "cooking_default.png" %>
         <% end %>
       </div>
     </div>
@@ -14,7 +14,7 @@
     </div>
     <div class="posts-bottom">
       <div class="posts-user-image">
-        <%= image_tag "/user_images/#{recipe.user.image}" %>
+        <%= image_tag "/assets/#{recipe.user.image}" %>
       </div>
       <div class="posts-user-name">
         <%= link_to recipe.user.user_name, user_path(recipe.user.id) %>
