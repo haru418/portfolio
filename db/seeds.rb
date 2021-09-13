@@ -51,7 +51,7 @@ cooking_image: File.open("./app/assets/images/cooking_6.jpg"))
 
   Recipe.create!(cooking_name: "豚キムチ", comment: "豚肉とキムチの比率が良かったので美味しくできた。
   ただ、もう少し辛い方が自分好みなので次作るときは何か辛味が増すものを入れてみようと思う。", user_id: 51,
-  cooking_image: File.open("./public/uploads/recipe/cooking_image/159/cooking_1.jpg"))
+  cooking_image: File.open("./app/assets/images/cooking_1.jpg"))
   
   # 材料
   Ingredient.create!(recipe_id: 1, ingredient: "納豆", amount: "1", unit: "パック")
