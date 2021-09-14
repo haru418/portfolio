@@ -6,6 +6,7 @@
 
 https://immense-refuge-98296.herokuapp.com/
 
+
 実装されている機能と使用技術は以下のものです。
 
 * ユーザー登録機能
@@ -39,3 +40,5 @@ https://immense-refuge-98296.herokuapp.com/
 * Heroku
 
 * Puma
+
+https://media.giphy.com/media/z19vJ8FOcYVTJkrTUn/giphy.gif?cid=790b7611a35e937b368c2f8a30ca8a8b921cfdccabe56b4c&rid=giphy.gif&ct=g
