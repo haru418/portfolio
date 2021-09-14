@@ -2,9 +2,11 @@
 
 このアプリケーションは、作った料理の画像やレシピを投稿して簡単にシェアすることができます。
 
-# アプリケーションの機能一覧
+## アプリケーションURL
 
-Things you may want to cover:
+https://immense-refuge-98296.herokuapp.com/
+
+実装されている機能と使用技術は以下のものです。
 
 * ユーザー登録機能
 
@@ -28,17 +30,12 @@ Things you may want to cover:
 
 * Ruby on Rails 5.1.6
 
+* jQuery 1.12.4
+
 * SQLite 3.28.0
 
 * CarrierWave
 
 * Heroku
 
-* 
-
-*
-
-*
-
-*
-
+* Puma
