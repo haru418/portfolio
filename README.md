@@ -1,24 +1,44 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+このアプリケーションは、作った料理の画像やレシピを投稿して簡単にシェアすることができます。
+
+# アプリケーションの機能一覧
 
 Things you may want to cover:
 
-* Ruby version
+* ユーザー登録機能
 
-* System dependencies
+* ログイン・ログアウト機能
 
-* Configuration
+* ゲストログイン機能
 
-* Database creation
+* 新規投稿機能
 
-* Database initialization
+* 検索機能
 
-* How to run the test suite
+* 画像投稿機能
 
-* Services (job queues, cache servers, search engines, etc.)
+* いいね！機能
 
-* Deployment instructions
+* フォロー機能
 
-* ...
+* ページネーション機能
+
+* Ruby 2.6.7
+
+* Ruby on Rails 5.1.6
+
+* SQLite 3.28.0
+
+* CarrierWave
+
+* Heroku
+
+* 
+
+*
+
+*
+
+*
+
