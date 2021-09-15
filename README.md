@@ -41,4 +41,4 @@ https://immense-refuge-98296.herokuapp.com/
 
 * Puma
 
-https://media.giphy.com/media/z19vJ8FOcYVTJkrTUn/giphy.gif?cid=790b7611a35e937b368c2f8a30ca8a8b921cfdccabe56b4c&rid=giphy.gif&ct=g
+![sign_up](https://user-images.githubusercontent.com/80524490/133356356-2702d2e3-5cda-4e90-9214-f74e0031ee19.gif)
