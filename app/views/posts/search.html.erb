@@ -2,13 +2,21 @@
   <h1>検索結果</h1>
   <% @results.each do |recipe| %>
     <div class="col-lg-3 col-md-6 mb-4">
-      <div class="cooking-image">
-        <%= image_tag recipe.cooking_image.url %>
-      </div>
-      <div class="posts-bottom">
-        <p class="cooking-name">
+      <div class="poster-contents">
+        <div class="cooking-image">
+          <%= image_tag recipe.cooking_image.url %>
+        </div>
+        <div class="cooking-name">
           <%= link_to recipe.cooking_name, post_path(recipe.id), class:"cooking_name" %>
-        </p>
+        </div>
+        <div class="posts-bottom">
+          <div class="posts-user-image">
+            <%= image_tag "/assets/#{recipe.user.image}" %>
+          </div>
+          <div class="posts-user-name">
+            <%= link_to recipe.user.user_name, user_path(recipe.user.id) %>
+          </div>
+        </div>
       </div>
     </div>
   <% end %>
