@@ -238,8 +238,8 @@ body {
   margin: 0;
 }
 
-_::-webkit-full-page-media,_:future,:root .top-main {
-  height: 820px;
+_::-webkit-full-page-media,_:future,:root.top-main {
+  height: auto;
   background-color: #faf5f0;
 }
 
