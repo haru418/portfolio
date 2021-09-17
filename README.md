@@ -49,20 +49,20 @@ https://immense-refuge-98296.herokuapp.com/
 
 初めにユーザー登録をします。（ゲストログインも可能）
 
-![sign_up](https://user-images.githubusercontent.com/80524490/133356356-2702d2e3-5cda-4e90-9214-f74e0031ee19.gif)
+![sign_up](https://user-images.githubusercontent.com/80524490/133762769-2dbadf67-527f-4973-901c-a390c336dabc.gif)
 
 自分で作った料理をアップします。
 
-![new_recipe](https://user-images.githubusercontent.com/80524490/133361800-4a4f93dc-ee00-4477-aa70-c9f4b85dd0ae.gif)
+![new_recipe](https://user-images.githubusercontent.com/80524490/133764207-3d7340b1-3545-4279-8d15-f7140890aa0f.gif)
 
 気に入ったユーザーをフォローして投稿を見ることができます。
 
-![following](https://user-images.githubusercontent.com/80524490/133376267-d5da850b-5809-423a-9d0b-af23177d0945.gif)
+![following-min](https://user-images.githubusercontent.com/80524490/133764971-0264bb24-a207-4aaa-aa4d-2bf2ce9e7487.gif)
 
 気に入ったレシピをいいねできます。
 
-![like](https://user-images.githubusercontent.com/80524490/133376612-50e5a42c-8ed1-4204-a976-9c91b8081d2f.gif)
+![like-min](https://user-images.githubusercontent.com/80524490/133765575-7dfda16b-3b1e-4ca8-b9a7-450594df157c.gif)
 
 他の人が作った料理を検索してレシピを参考にすることができます。
 
-![search-min](https://user-images.githubusercontent.com/80524490/133380195-60352140-fa90-4fcf-9665-c8100b82f0ab.gif)
+![search-min](https://user-images.githubusercontent.com/80524490/133765997-c52eb220-ebdb-4a80-b83d-859ca1b6d664.gif)

@@ -186,12 +186,19 @@ header {
 .header-logo {
   float: left;
   line-height: 60px;
-  font-size: 30px;
+  font-size: 38px;
   margin-left: 9px;
 }
 
+.header-logo a {
+  padding-left: 20px;
+  color: black;
+  text-decoration: none;
+  font-family: serif;
+}
+
 .header-list a {
-  margin-left: 1130px;
+  margin-left: 1065px;
   color: black;
   text-decoration: none;
   font-size: 17px;
