@@ -45,6 +45,10 @@ https://immense-refuge-98296.herokuapp.com/
 
 * Puma
 
+## データベース設計
+
+![database_design](https://user-images.githubusercontent.com/80524490/133878065-4e875190-bd0d-4540-bdec-9bbf30696cd2.gif)
+
 ## 使用方法
 
 初めにユーザー登録をします。（ゲストログインも可能）
