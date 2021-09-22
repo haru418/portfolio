@@ -7,6 +7,6 @@ CarrierWave.configure do |config|
   }
 
   config.fog_directory = 'haru-pf-app' if Rails.env.production?
-  # config.fog_directory = 'your_backet_for_dev' if Rails.env.development?
+  config.fog_directory = 'haru-pf-app-dev' if Rails.env.development?
 
 end
