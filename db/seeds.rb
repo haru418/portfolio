@@ -8,51 +8,71 @@ require 'faker'
   User.create!(user_name: "スタントン", email: "st@example.com", image: "user_4.png", password: "foobar")
   User.create!(user_name: "ロドリゲス", email: "r@example.com", image: "user_5.png", password: "foobar")
   User.create!(user_name: "ハル", email: "haru@example.com", image: "user_6.png", password: "foobar")
-  User.create!(user_name: "ビビ", email: "bibi@example.com", image: "user_7.png", password: "foobar")
+  User.create!(user_name: "ビビ", email: "bibi@example.com", image: "user_7.jpg", password: "foobar")
   User.create!(user_name: "鈴木達也", email: "tatsu@example.com", image: "user_8.png", password: "foobar")
-  User.create!(user_name: "上村一真", email: "kazu@example.com", image: "user_9.png", password: "foobar")
-  User.create!(user_name: "ゲスト", email: "guest@example.com", image: "user_10.png", password: "foobar")
+  User.create!(user_name: "上村一真", email: "kazu@example.com", image: "user_9.jpg", password: "foobar")
+  User.create!(user_name: "ゲスト", email: "guest@example.com", image: "user_10.jpg", password: "foobar")
   
   # レシピ
-  Recipe.create!(user_id: 1, cooking_name: "大根の煮物", cooking_image: "",
+  Recipe.create!(user_id: 1, cooking_name: "大根の煮物",
+  cooking_image: File.open("./app/assets/images/boiled_food.jpg"),
   comment: "大根に煮汁が染み込んでて美味しかった！コツは長い時間煮込むことです。")
-  Recipe.create!(user_id: 1, cooking_name: "鶏肉のトマトソース煮込み", cooking_image: "",
+  Recipe.create!(user_id: 1, cooking_name: "鶏肉のトマトソース煮込み",
+  cooking_image: File.open("./app/assets/images/tomato.jpg"),
   comment: "ニンニクが効いて刺激のある味で美味しかった。これは僕のお箱になりそう。")
-  Recipe.create!(user_id: 2, cooking_name: "野菜炒め", cooking_image: "",
+  Recipe.create!(user_id: 2, cooking_name: "野菜炒め",
+  cooking_image: File.open("./app/assets/images/fried_vegetables.jpg"),
   comment: "定番だけどやっぱり美味しい！短い時間で簡単に作れるので嬉しい。")
-  Recipe.create!(user_id: 2, cooking_name: "肉豆腐", cooking_image: "",
+  Recipe.create!(user_id: 2, cooking_name: "肉豆腐",
+  cooking_image: File.open("./app/assets/images/beef_tofu.jpg"),
   comment: "肉と豆腐の相性が抜群！タンパク質がたくさん摂れます。")
-  Recipe.create!(user_id: 3, cooking_name: "牛ステーキ", cooking_image: "",
+  Recipe.create!(user_id: 3, cooking_name: "牛ステーキ",
+  cooking_image: File.open("./app/assets/images/beef.jpg"),
   comment: "やっぱりステーキはミディアム！ソースも美味しく作れたので良かった。")
-  Recipe.create!(user_id: 3, cooking_name: "青椒肉絲", cooking_image: "",
+  Recipe.create!(user_id: 3, cooking_name: "青椒肉絲",
+  cooking_image: File.open("./app/assets/images/pepper_steak.jpg"),
   comment: "中華の中でこれが一番好き！どうして中華はこんなに病みつきになるんだろう。")
-  Recipe.create!(user_id: 4, cooking_name: "シーザーサラダ", cooking_image: "",
+  Recipe.create!(user_id: 4, cooking_name: "シーザーサラダ",
+  cooking_image: File.open("./app/assets/images/salad.jpg"),
   comment: "サラダはやっぱりシーザーサラダ！野菜のシャキシャキ食感も好き。")
-  Recipe.create!(user_id: 4, cooking_name: "湯豆腐", cooking_image: "",
+  Recipe.create!(user_id: 4, cooking_name: "湯豆腐",
+  cooking_image: File.open("./app/assets/images/tofu.jpg"),
   comment: "出汁が効いてて最高に美味しかった！だし汁まで飲んでしまった。")
-  Recipe.create!(user_id: 5, cooking_name: "豚キムチ", cooking_image: "",
+  Recipe.create!(user_id: 5, cooking_name: "豚キムチ",
+  cooking_image: "",
   comment: "豚肉とキムチの相性抜群！キムチは無添加キムチです。")
-  Recipe.create!(user_id: 5, cooking_name: "もつ鍋", cooking_image: "",
-  comment: "ニンニクたっぷりスタミナ抜群！ニンニクは何にでも合うよね。")
-  Recipe.create!(user_id: 6, cooking_name: "大根の煮物", cooking_image: "",
+  Recipe.create!(user_id: 5, cooking_name: "肉野菜炒め",
+  cooking_image: File.open("./app/assets/images/meat_vegetables.jpg"),
+  comment: "肉と野菜の歯応えが良い感じ。野菜は多い方が好き！")
+  Recipe.create!(user_id: 6, cooking_name: "大根の煮物",
+  cooking_image: File.open("./app/assets/images/boiled_food.jpg"),
   comment: "大根に煮汁が染み込んでて美味しかった！コツは長い時間煮込むことです。")
-  Recipe.create!(user_id: 6, cooking_name: "鶏肉のトマトソース煮込み", cooking_image: "",
+  Recipe.create!(user_id: 6, cooking_name: "鶏肉のトマトソース煮込み",
+  cooking_image: File.open("./app/assets/images/tomato.jpg"),
   comment: "ニンニクが効いて刺激のある味で美味しかった。これは僕のお箱になりそう。")
-  Recipe.create!(user_id: 7, cooking_name: "野菜炒め", cooking_image: "",
+  Recipe.create!(user_id: 7, cooking_name: "野菜炒め",
+  cooking_image: File.open("./app/assets/images/fried_vegetables.jpg"),
   comment: "定番だけどやっぱり美味しい！短い時間で簡単に作れるので嬉しい。")
-  Recipe.create!(user_id: 7, cooking_name: "肉豆腐", cooking_image: "",
+  Recipe.create!(user_id: 7, cooking_name: "肉豆腐",
+  cooking_image: File.open("./app/assets/images/beef_tofu.jpg"),
   comment: "肉と豆腐の相性が抜群！タンパク質がたくさん摂れます。")
-  Recipe.create!(user_id: 8, cooking_name: "牛ステーキ", cooking_image: "",
+  Recipe.create!(user_id: 8, cooking_name: "牛ステーキ",
+  cooking_image: File.open("./app/assets/images/beef.jpg"),
   comment: "やっぱりステーキはミディアム！ソースも美味しく作れたので良かった。")
-  Recipe.create!(user_id: 8, cooking_name: "青椒肉絲", cooking_image: "",
+  Recipe.create!(user_id: 8, cooking_name: "青椒肉絲",
+  cooking_image: File.open("./app/assets/images/pepper_steak.jpg"),
   comment: "中華の中でこれが一番好き！どうして中華はこんなに病みつきになるんだろう。")
-  Recipe.create!(user_id: 9, cooking_name: "シーザーサラダ", cooking_image: "",
+  Recipe.create!(user_id: 9, cooking_name: "シーザーサラダ",
+  cooking_image: File.open("./app/assets/images/salad.jpg"),
   comment: "サラダはやっぱりシーザーサラダ！野菜のシャキシャキ食感も好き。")
-  Recipe.create!(user_id: 9, cooking_name: "湯豆腐", cooking_image: "",
+  Recipe.create!(user_id: 9, cooking_name: "湯豆腐",
+  cooking_image: File.open("./app/assets/images/tofu.jpg"),
   comment: "出汁が効いてて最高に美味しかった！だし汁まで飲んでしまった。")
-  Recipe.create!(user_id: 10, cooking_name: "豚キムチ", cooking_image: "",
+  Recipe.create!(user_id: 10, cooking_name: "豚キムチ",
+  cooking_image: "",
   comment: "豚肉とキムチの相性抜群！キムチは無添加キムチです。")
-  Recipe.create!(user_id: 10, cooking_name: "肉野菜炒め", cooking_image: "",
+  Recipe.create!(user_id: 10, cooking_name: "肉野菜炒め",
+  cooking_image: File.open("./app/assets/images/meat_vegetables.jpg"),
   comment: "肉と野菜の歯応えが良い感じ。野菜は多い方が好き！")
 
   # 材料
@@ -219,7 +239,7 @@ require 'faker'
     step_3: "肉に色がついたら豆腐と調味料を入れ煮立たせたら完成です！"
   )
   Step.create!(
-    recipe_id: 115,
+    recipe_id: 15,
     step_1: "牛脂をフライパンの上で熱します。",
     step_2: "焼き加減を見ながらひっくり返しながら焼きます。",
     step_3: "自分の好みの焼き加減まで焼いて塩胡椒を振ったら完成です！"
@@ -258,14 +278,14 @@ require 'faker'
   # リレーションシップ
   users = User.all
   user  = users.first
-  following = users[1..9]
-  followers = users[1..9]
+  following = users[2..9]
+  followers = users[3..8]
   following.each { |followed| user.follow(followed) }
   followers.each { |follower| follower.follow(user) }
 
   users = User.all
   user  = users.last
-  following = users[0..8]
-  followers = users[0..8]
+  following = users[1..8]
+  followers = users[2..7]
   following.each { |followed| user.follow(followed) }
   followers.each { |follower| follower.follow(user) }
