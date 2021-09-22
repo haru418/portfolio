@@ -442,6 +442,7 @@ DEPENDENCIES
   coffee-rails (= 4.2.2)
   faker!
   fog (= 1.42)
+  fog-aws
   gimei
   guard (= 2.14.1)
   guard-minitest (= 2.4.6)

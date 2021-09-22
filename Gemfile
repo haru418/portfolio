@@ -21,6 +21,7 @@ gem 'pry-rails'
 gem 'faker', git: 'https://github.com/stympy/faker'
 gem 'gimei'
 gem 'newrelic_rpm'
+gem 'fog-aws'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
