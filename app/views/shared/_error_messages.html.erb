@@ -1,6 +1,13 @@
 <% if @recipe.errors.any? %>
-  <div class="recipe-error-message">
+  <div class="rerror-message">
     <% @recipe.errors.full_messages.each do |msg| %>
+      <div class="form-error">※<%= msg %></div>
+    <% end %>
+  </div>
+<% end %>
+<% if @step.errors.any? %>
+  <div class="rerror-message">
+    <% @step.errors.full_messages.each do |msg| %>
       <div class="form-error">※<%= msg %></div>
     <% end %>
   </div>

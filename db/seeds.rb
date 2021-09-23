@@ -39,7 +39,7 @@ require 'faker'
   cooking_image: File.open("./app/assets/images/tofu.jpg"),
   comment: "出汁が効いてて最高に美味しかった！だし汁まで飲んでしまった。")
   Recipe.create!(user_id: 5, cooking_name: "豚キムチ",
-  cooking_image: "",
+  cooking_image: File.open("./app/assets/images/prok_kimchi.jpg"),
   comment: "豚肉とキムチの相性抜群！キムチは無添加キムチです。")
   Recipe.create!(user_id: 5, cooking_name: "肉野菜炒め",
   cooking_image: File.open("./app/assets/images/meat_vegetables.jpg"),
@@ -69,7 +69,7 @@ require 'faker'
   cooking_image: File.open("./app/assets/images/tofu.jpg"),
   comment: "出汁が効いてて最高に美味しかった！だし汁まで飲んでしまった。")
   Recipe.create!(user_id: 10, cooking_name: "豚キムチ",
-  cooking_image: "",
+  cooking_image: File.open("./app/assets/images/prok_kimchi.jpg"),
   comment: "豚肉とキムチの相性抜群！キムチは無添加キムチです。")
   Recipe.create!(user_id: 10, cooking_name: "肉野菜炒め",
   cooking_image: File.open("./app/assets/images/meat_vegetables.jpg"),

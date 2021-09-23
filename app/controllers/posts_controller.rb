@@ -39,9 +39,7 @@ class PostsController < ApplicationController
         @ingredient.save
       end
     end
-    if params[:recipe][:cooking_name].present? && params[:recipe][:steps][:step_1].present?
-      @recipe.save
-      @step.save
+    if @recipe.save && @step.save
       redirect_to posts_index_url
       flash[:notice] = "投稿を作成しました"
     else
@@ -73,6 +71,7 @@ class PostsController < ApplicationController
       @ingredient.ingredient = params[:ingredients][key][:ingredient]
       @ingredient.amount = params[:ingredients][key][:amount]
       @ingredient.unit = params[:ingredients][key][:unit]
+      @ingredient.save
     end
     @step.step_1 = params[:step_1]
     @step.step_2 = params[:step_2]
