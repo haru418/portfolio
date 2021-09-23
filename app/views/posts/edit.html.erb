@@ -22,12 +22,12 @@
             <div class="edit-ingredients posts-new-content">
               <p class="ingredient">材料</p>
               <div class="required-item">※必須</div>
-              <% @ingredient.each do |ing| %>
-                <div class="ingredient-area">
-                  <%= f.fields_for :ingredients do |i| %>
-                    <div class="js-file-group" data-index="${index}">
+              <div class="ingredient-area">
+                <%= f.fields_for :ingredients do |i| %>
+                  <div class="js-file-group" data-index="${index}">
+                    <% @ingredient.each do |ing| %>
                       <div class="new-ingredients">
-                        <div class="ingredient">
+                        <div class="ingredient edit-ingredient">
                           <%= i.text_field :ingredient, name: "[ingredients][#{ing.id}][ingredient]", value: ing.ingredient, class: "ingredient-form" %>
                           <%= i.text_field :amount, name: "[ingredients][#{ing.id}][amount]", value: ing.amount, class: "amount-form" %>
                           <select class="unit-form" name="[ingredients][<%= ing.id %>][unit]" id="_ingredients_unit">
@@ -49,10 +49,10 @@
                             </span>
                         </div>
                       </div>
-                    </div>
-                  <% end %>
-                </div>
-              <% end %>
+                    <% end %>
+                  </div>
+                <% end %>
+              </div>
             </div>
           </div>
           <div class="add-form-btn">

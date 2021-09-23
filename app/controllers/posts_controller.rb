@@ -22,7 +22,6 @@ class PostsController < ApplicationController
     @recipe.cooking_name = params[:recipe][:cooking_name]
     @recipe.cooking_image = params[:recipe][:cooking_image]
     @recipe.comment = params[:recipe][:comment]
-
     @step = Step.new(
       recipe_id: @recipe.id,
       step_1: params[:recipe][:steps][:step_1],
@@ -74,7 +73,6 @@ class PostsController < ApplicationController
       @ingredient.ingredient = params[:ingredients][key][:ingredient]
       @ingredient.amount = params[:ingredients][key][:amount]
       @ingredient.unit = params[:ingredients][key][:unit]
-      @ingredient.save
     end
     @step.step_1 = params[:step_1]
     @step.step_2 = params[:step_2]
