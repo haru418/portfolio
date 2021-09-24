@@ -231,6 +231,75 @@
 }
 
 // new====================================================================================
+/* small screen */
+@media (max-width: 799px) {
+  .new-form {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: auto;
+    width: 335px;
+    margin-top: 75px;
+    margin-left: 19px;
+    border: 1px solid #80808040;
+    border-radius: 12px;
+    text-align: center;
+    background-color: white;
+  }
+
+  .redistration-info {
+    width: 153px;
+    margin: 0 0 10px 24px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .redistration-form {
+    height: 36px;
+    width: 286px;
+  }
+
+  #new-close {
+    margin-top: 10px;
+    margin-left: 288px;
+  }
+}
+
+@media (min-width: 800px) {
+  .new-form {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: auto;
+    width: 500px;
+    margin-top: 75px;
+    margin-left: 467px;
+    border: 1px solid #80808040;
+    border-radius: 12px;
+    text-align: center;
+    background-color: white;
+  }
+
+  .redistration-info {
+    width: 153px;
+    margin: 0 0 10px 50px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .redistration-form {
+    height: 36px;
+    width: 400px;
+  }
+
+  #new-close {
+    margin-top: 10px;
+    margin-left: 450px;
+  }
+}
+
 .users-new-main {
   position: fixed;
   height: 100%;
@@ -286,19 +355,6 @@
   margin-bottom: 40px;
 }
 
-.redistration-info {
-  width: 153px;
-  margin: 0 0 10px 50px;
-  text-align: left;
-  font-size: 16px;
-  font-weight: 700;
-}
-
-.redistration-form {
-  height: 36px;
-  width: 400px;
-}
-
 .send-user {
   margin-top: 60px;
   margin-bottom: 70px;
@@ -323,28 +379,9 @@
   background: rgba(0,0,0,.7);
 }
 
-.new-form {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: auto;
-  width: 500px;
-  margin-top: 75px;
-  margin-left: 467px;
-  border: 1px solid #80808040;
-  border-radius: 12px;
-  text-align: center;
-  background-color: white;
-}
-
 .new-form h1 {
   font-size: 27px;
   font-family: TT Commons,Arial,Helvetica Neue,sans-serif;
-}
-
-#new-close {
-  margin-top: 10px;
-  margin-left: 450px;
 }
 
 .new-close-btn {
