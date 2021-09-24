@@ -155,14 +155,61 @@
 }
 
 // show===================================================================
+/* small screen */
+@media (max-width: 799px) {
+  .posts-show-item {
+    width: 90%;
+    margin: auto;
+  }
+
+  .posts-show-cooking-image img {
+    height: 240px;
+    width: 100%;
+    border-radius: 15px;
+  }
+
+  .post-user-name img {
+    height: 65px;
+    width: 65px;
+    border-radius: 5px;
+  }
+
+  .post_user_name {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    margin-left: 12px;
+  }
+}
+
+/* large screen */
+@media (min-width: 800px) {
+  .posts-show-item {
+    width: 62%;
+    margin: auto;
+  }
+
+  .posts-show-cooking-image img {
+    height: 505px;
+    width: 100%;
+    border-radius: 15px;
+  }
+
+  .post-user-name img {
+    height: 43px;
+    width: 43px;
+    border-radius: 5px;
+  }
+
+  .post_user_name {
+    color: black;
+    text-decoration: none;
+  }
+}
+
 .posts-show-main {
   height: auto;
   padding-bottom: 50px;
-}
-
-.posts-show-item {
-  width: 62%;
-  margin: auto;
 }
 
 // .show-flex {
@@ -179,12 +226,6 @@
   margin-top: 50px;
 }
 
-.posts-show-cooking-image img {
-  height: 505px;
-  width: 100%;
-  border-radius: 15px;
-}
-
 .show-cooking-name {
   font-size: 37px;
   margin-top: 30px;
@@ -195,17 +236,6 @@
 .post-user-name {
   margin-top: 30px;
   // padding-bottom: 40px;
-}
-
-.post_user_name {
-  color: black;
-  text-decoration: none;
-}
-
-.post-user-name img {
-  height: 43px;
-  width: 43px;
-  border-radius: 5px;
 }
 
 .comment {
