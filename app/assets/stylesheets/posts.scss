@@ -1,24 +1,106 @@
 // index===================================================================
-.posts-index-main {
-  height: auto;
-  width: 70%;
-  margin: auto;
+/* small screen */
+@media (max-width: 799px) {
+  .main-headline {
+    padding-left: 54px;
+    margin: 15px 0 20px -43px;
+    font-size: 40px;
+  }
+
+  .recipes {
+    padding-left: 0;
+  }
+
+  .post-page {
+    display: flex;
+    margin: auto;
+  }
+
+  .posts-index-main {
+    height: auto;
+    width: 80%;
+    margin: auto;
+  }
+
+  .poster-contents {
+    height: 422px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .cooking-image img {
+    height: 274px;
+    width: 100%;
+    border-radius: 20px;
+  }
+
+  .cooking-image {
+    margin-top: 0;
+  }
+
+  .posts-user-name {
+    margin-top: 7px;
+    margin-left: 20px;
+  }
+  
+  .posts-user-name a {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+  }
+}
+
+/* large screen */
+@media (min-width: 800px) {
+  .main-headline {
+    padding-left: 54px;
+    margin: 50px 0 20px 0;
+    font-size: 40px;
+  }
+
+  .post-page {
+    display: flex;
+    margin: auto;
+  }
+
+  .posts-index-main {
+    height: auto;
+    width: 70%;
+    margin: auto;
+  }
+
+  .poster-contents {
+    height: 430px;
+    width: 200px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .cooking-image img {
+    height: 274px;
+    width: 200px;
+    border-radius: 20px;
+  }
+
+  .cooking-image {
+    margin-top: 20px;
+  }
+
+  .posts-user-name {
+    margin-top: 10px;
+    margin-left: 20px;
+  }
+  
+  .posts-user-name a {
+    color: black;
+    text-decoration: none;
+  }
 }
 
 .container {
   // width: 70%;
   margin: 0;
-}
-
-.main-headline {
-  padding-left: 54px;
-  margin: 50px 0 20px 0;
-  font-size: 40px;
-}
-
-.post-page {
-  display: flex;
-  margin: auto;
 }
 
 .posts-items {
@@ -35,25 +117,8 @@
   box-shadow: 3px 3px 10px 0px #c1ced7;
 }
 
-.poster-contents {
-  height: 430px;
-  width: 200px;
-  margin: 0;
-  padding: 0;
-}
-
 .posts-top {
   margin: 0;
-}
-
-.cooking-image {
-  margin-top: 20px;
-}
-
-.cooking-image img {
-  height: 274px;
-  width: 200px;
-  border-radius: 20px;
 }
 
 .cooking_name {
@@ -79,16 +144,6 @@
   height: 37px;
   width: 37px;
   border-radius: 5px;
-}
-
-.posts-user-name {
-  margin-top: 10px;
-  margin-left: 20px;
-}
-
-.posts-user-name a {
-  color: black;
-  text-decoration: none;
 }
 
 .index-search-form {
