@@ -318,6 +318,7 @@
   .posts-new-main {
     width: 100%;
     background-color: #faf5f0;
+    overflow: hidden;
   }
 
   .new-post {
@@ -364,6 +365,10 @@
   .new-post-form {
     width: 94%;
     margin: auto;
+  }
+
+  nav {
+    width: 100%;
   }
 }
 
@@ -508,10 +513,6 @@
 
 .post-new-ingredients {
   padding-top: 40px;
-}
-
-.js-file-group {
-  height: 80px;
 }
 
 .ingredient p {

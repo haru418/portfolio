@@ -23,7 +23,9 @@
         </div>
         <div class="header-list">
           <% if session[:user_id] %>
-            <%= link_to @current_user.user_name, user_path(@current_user.id), class:"header-menu" %>
+            <%= link_to user_path(@current_user.id), class:"header-menu" do %>
+              <%= image_tag @current_user.image, class: "header-user-image" %>
+            <% end %>
           <% else %>
             <div id="signup">
               <%= link_to "新規登録", new_user_path %>

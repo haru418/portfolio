@@ -210,8 +210,17 @@ header {
     font-family: serif;
   }
 
-  .header-list a {
-    display: none;
+  .header-list {
+    width: 100%;
+    text-align: right;
+  }
+
+  .header-user-image {
+    height: 50px;
+    width: 50px;
+    margin-top: 5px;
+    margin-right: 14px;
+    border-radius: 6px;
   }
 
   .menu-cover {
@@ -305,6 +314,14 @@ header {
     opacity: 0;
     pointer-events: none;
   }
+
+  .header-user-image {
+    height: 50px;
+    width: 50px;
+    margin-top: 5px;
+    margin-left: 1052px;
+    border-radius: 6px;
+  }
 }
 
 .header-logo {
@@ -317,14 +334,6 @@ header {
 .header-title:hover {
   text-decoration: none;
   color: black;
-}
-
-.header-list a {
-  margin-left: 1065px;
-  color: black;
-  text-decoration: none;
-  font-size: 17px;
-  line-height: 60px;
 }
 
 .header-menu {
