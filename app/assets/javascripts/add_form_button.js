@@ -3,9 +3,9 @@ $(function(){
     const html = `<div class="js-file-group" data-index="${index}">
                     <div class="new-ingredients">
                       <div class="posts-new-content ingredient">
-                        <input placeholder="材料" class="amount-form" type="text" name="recipe[ingredients_attributes][${index}][ingredient]" id="recipe_ingredients_attributes_0_ingredient">
+                        <input placeholder="材料" class="ingredient-form" type="text" name="recipe[ingredients_attributes][${index}][ingredient]" id="recipe_ingredients_attributes_0_ingredient">
                         <input placeholder="分量" class="amount-form" type="text" name="recipe[ingredients_attributes][${index}][amount]" id="recipe_ingredients_attributes_0_amount">
-                        <select class="unit-form" name="recipe[ingredients_attributes][${index}][unit]" id="recipe_ingredients_attributes_0_unit"><option value="">単位を選択</option>
+                        <select name="recipe[ingredients_attributes][${index}][unit]" id="recipe_ingredients_attributes_0_unit"><option value="">未選択</option>
                         <option value="大さじ">大さじ</option>
                         <option value="小さじ">小さじ</option>
                         <option value="ml">ml</option>
@@ -13,7 +13,11 @@ $(function(){
                         <option value="グラム">グラム</option>
                         <option value="個">個</option>
                         <option value="パック">パック</option>
-                        <option value="枚">枚</option></select>
+                        <option value="枚">枚</option>
+                        <option value="少々">少々</option>
+                        <option value="ひと摘み">ひと摘み</option></select>
+                      </div>
+                      <div class="delete-form-button">
                         <span class="delete-form-btn">
                           削除する
                         </span>
