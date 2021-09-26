@@ -7,16 +7,6 @@
   margin-top: 50px;
 }
 
-.user-items {
-  height: 80px;
-  width: 600px;
-  margin: auto;
-  border: 1px solid #80808040;
-  color: black;
-  box-shadow: 3px 3px 10px 0px #c1ced7;
-  display: flex;
-}
-
 .users-index-item p {
   margin: 0 0 20px 50px;
 }
@@ -35,32 +25,247 @@
 }
 
 // show====================================================================================
-.users {
-  width: 78%;
-  margin: auto;
+/* small screen */
+@media (max-width: 799px) {
+  .users {
+    width: 100%;
+    margin: auto;
+  }
+
+  .user-image-name {
+    display: block;
+  }
+
+  .user-show-image {
+    text-align: center;
+  }
+
+  .user_show_image {
+    height: 90px;
+    width: 90px;
+    margin-top: 40px;
+    border-radius: 7px;
+  }
+
+  .user-image-name h2 {
+    width: 90px;
+    margin: 28px auto;
+  }
+
+  .user-edit-btn {
+    text-align: center;
+  }
+
+  .user_edit_button {
+    height: 20px;
+    color: blue;
+    text-decoration: none;
+  }
+
+  .user-recipe {
+    display: inline-block;
+    height: 45px;
+    width: 47px;
+    margin-right: 18px;
+    font-size: 15px;
+    line-height: 45px;
+    text-decoration: none;
+    color: black;
+    border-bottom: 3px solid #232fc3;
+  }
+
+  .user-stat {
+    display: inline-block;
+    height: 45px;
+    width: 88px;
+    margin-right: 18px;
+    font-size: 15px;
+    line-height: 45px;
+    text-decoration: none;
+    color: black;
+  }
+
+  .like-user-stat {
+    display: inline-block;
+    height: 45px;
+    width: 60px;
+    font-size: 15px;
+    line-height: 45px;
+    text-decoration: none;
+    color: black;
+  }
+
+  .user-other-page {
+    display: inline-block;
+    height: 45px;
+    width: 47px;
+    margin-right: 18px;
+    font-size: 15px;
+    line-height: 45px;
+    text-decoration: none;
+    color: black;
+  }
+
+  .user-following {
+    display: inline-block;
+    height: 45px;
+    width: 88px;
+    margin-right: 18px;
+    font-size: 15px;
+    line-height: 45px;
+    text-decoration: none;
+    color: black;
+    border-bottom: 3px solid #232fc3;
+  }
+
+  .user-followers {
+    display: inline-block;
+    height: 45px;
+    width: 88px;
+    margin-right: 18px;
+    font-size: 15px;
+    line-height: 45px;
+    text-decoration: none;
+    color: black;
+    border-bottom: 3px solid #232fc3;
+  }
+
+  .user-likes {
+    display: inline-block;
+    height: 45px;
+    width: 60px;
+    font-size: 15px;
+    line-height: 45px;
+    text-decoration: none;
+    color: black;
+    border-bottom: 3px solid #232fc3;
+  }
+
+  .likes-center img {
+    height: 274px;
+    width: 100%;
+    border-radius: 20px;
+  }
 }
 
-.user-image-name {
-  display: flex;
-}
+/* large screen */
+@media (min-width: 800px) {
+  .users {
+    width: 78%;
+    margin: auto;
+  }
 
-.user-image-name h2 {
-  margin-top: 69px;
-  margin-left: 30px;
-}
+  .user-image-name {
+    display: flex;
+  }
 
-.user_show_image {
-  height: 117px;
-  width: 117px;
-  margin-top: 50px;
-  border-radius: 7px;
-}
+  .user_show_image {
+    height: 117px;
+    width: 117px;
+    margin-top: 50px;
+    border-radius: 7px;
+  }
 
-.user_edit_button {
-  height: 20px;
-  color: blue;
-  text-decoration: none;
-  margin: 147px 0 0 auto;
+  .user-image-name h2 {
+    margin-top: 69px;
+    margin-left: 30px;
+  }
+
+  .user-edit-btn {
+    margin-left: auto;
+    padding-top: 147px;
+  }
+
+  .user_edit_button {
+    height: 20px;
+    color: blue;
+    text-decoration: none;
+  }
+
+  .user-recipe {
+    display: inline-block;
+    height: 45px;
+    width: 58px;
+    margin-right: 32px;
+    font-size: 18px;
+    line-height: 45px;
+    text-decoration: none;
+    color: black;
+    border-bottom: 3px solid #232fc3;
+  }
+
+  .user-stat {
+    display: inline-block;
+    height: 45px;
+    width: 150px;
+    font-size: 18px;
+    line-height: 45px;
+    text-decoration: none;
+    color: black;
+  }
+
+  .like-user-stat {
+    display: inline-block;
+    height: 45px;
+    width: 150px;
+    font-size: 18px;
+    line-height: 45px;
+    text-decoration: none;
+    color: black;
+  }
+
+  .user-other-page {
+    display: inline-block;
+    height: 45px;
+    width: 58px;
+    margin-right: 32px;
+    font-size: 18px;
+    line-height: 45px;
+    text-decoration: none;
+    color: black;
+  }
+
+  .user-following {
+    display: inline-block;
+    height: 45px;
+    width: 118px;
+    margin-right: 32px;
+    font-size: 18px;
+    line-height: 45px;
+    text-decoration: none;
+    color: black;
+    border-bottom: 3px solid #232fc3;
+  }
+
+  .user-followers {
+    display: inline-block;
+    height: 45px;
+    width: 118px;
+    margin-right: 32px;
+    font-size: 18px;
+    line-height: 45px;
+    text-decoration: none;
+    color: black;
+    border-bottom: 3px solid #232fc3;
+  }
+
+  .user-likes {
+    display: inline-block;
+    height: 45px;
+    width: 72px;
+    margin-right: 32px;
+    font-size: 18px;
+    line-height: 45px;
+    text-decoration: none;
+    color: black;
+    border-bottom: 3px solid #232fc3;
+  }
+
+  .likes-center img {
+    height: 274px;
+    width: 200px;
+    border-radius: 20px;
+  }
 }
 
 .user-info {
@@ -69,75 +274,6 @@
 
 .stats {
   border-bottom: 1px solid #e1ddd8;
-}
-
-.user-stat {
-  display: inline-block;
-  height: 45px;
-  width: 150px;
-  font-size: 18px;
-  line-height: 45px;
-  text-decoration: none;
-  color: black;
-}
-
-.user-recipe {
-  display: inline-block;
-  height: 45px;
-  width: 58px;
-  margin-right: 32px;
-  font-size: 18px;
-  line-height: 45px;
-  text-decoration: none;
-  color: black;
-  border-bottom: 3px solid #232fc3;
-}
-
-.user-other-page {
-  display: inline-block;
-  height: 45px;
-  width: 58px;
-  margin-right: 32px;
-  font-size: 18px;
-  line-height: 45px;
-  text-decoration: none;
-  color: black;
-}
-
-.user-following {
-  display: inline-block;
-  height: 45px;
-  width: 118px;
-  margin-right: 32px;
-  font-size: 18px;
-  line-height: 45px;
-  text-decoration: none;
-  color: black;
-  border-bottom: 3px solid #232fc3;
-}
-
-.user-followers {
-  display: inline-block;
-  height: 45px;
-  width: 118px;
-  margin-right: 32px;
-  font-size: 18px;
-  line-height: 45px;
-  text-decoration: none;
-  color: black;
-  border-bottom: 3px solid #232fc3;
-}
-
-.user-likes {
-  display: inline-block;
-  height: 45px;
-  width: 72px;
-  margin-right: 32px;
-  font-size: 18px;
-  line-height: 45px;
-  text-decoration: none;
-  color: black;
-  border-bottom: 3px solid #232fc3;
 }
 
 .users-follow {
@@ -259,6 +395,16 @@
     margin-top: 10px;
     margin-left: 288px;
   }
+
+  .user-items {
+    height: 80px;
+    width: 100%;
+    margin: auto;
+    border: 1px solid #80808040;
+    color: black;
+    box-shadow: 3px 3px 10px 0px #c1ced7;
+    display: flex;
+  }
 }
 
 @media (min-width: 800px) {
@@ -292,6 +438,16 @@
   #new-close {
     margin-top: 10px;
     margin-left: 450px;
+  }
+
+  .user-items {
+    height: 80px;
+    width: 600px;
+    margin: auto;
+    border: 1px solid #80808040;
+    color: black;
+    box-shadow: 3px 3px 10px 0px #c1ced7;
+    display: flex;
   }
 }
 
@@ -448,12 +604,6 @@
   margin-left: 15px;
   color: black;
   text-decoration: none;
-}
-
-.likes-center img {
-  height: 274px;
-  width: 200px;
-  border-radius: 20px;
 }
 
 .likes-bottom a {
