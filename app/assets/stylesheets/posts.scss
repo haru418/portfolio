@@ -332,7 +332,7 @@
   }
 
   .start-message {
-    margin: 65px 0 20px 0;
+    margin: 20px 0 20px 0;
     font-size: 27px;
   }
 
@@ -642,32 +642,53 @@
 }
 
 // edit===================================================================
-.edit-form {
-  padding-top: 50px;
+@media (max-width: 799px) {
+  .edit-recipe-title {
+    margin-bottom: 20px;
+    font-size: 27px;
+  }
+
+  .edit-post {
+    height: auto;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 50px;
+    background-color: white;
+    border-radius: 15px;
+    text-align: center;
+  }
+
+  .edit-form {
+    width: 95%;
+    margin: auto;
+  }
+}
+
+@media (min-width: 800px) {
+  .edit-recipe-title {
+    margin: 65px 0 20px 162px;
+    font-size: 27px;
+  }
+
+  .edit-post {
+    height: auto;
+    width: 810px;
+    margin: auto;
+    margin-bottom: 50px;
+    background-color: white;
+    border-radius: 15px;
+    text-align: center;
+  }
+
+  .edit-form {
+    width: 82%;
+    margin: auto;
+    padding-top: 50px;
+  }
 }
 
 .post-menu {
   text-align: right;
-}
-
-.edit-recipe-title {
-  margin: 65px 0 20px 162px;
-  font-size: 27px;
-}
-
-.edit-post {
-  height: auto;
-  width: 810px;
-  margin: auto;
-  margin-bottom: 50px;
-  background-color: white;
-  border-radius: 15px;
-  text-align: center;
-}
-
-.edit-form {
-  width: 82%;
-  margin: auto;
 }
 
 .edit-ingredient {

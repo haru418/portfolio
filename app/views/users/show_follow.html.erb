@@ -1,17 +1,3 @@
-<!-- <div class="users-index-main">
-  <div class="container">
-    <h3><%= @title %></h3>
-    <div class="users-index-items">
-      <% if @users.any? %>
-        <ul class="users-follow">
-          <%= render @users %>
-        </ul>
-        <%= will_paginate %>
-      <% end %>
-    </div>
-  </div>
-</div> -->
-
 <div class="users-show-main">
   <div class="container">
     <div class="users">
@@ -24,11 +10,12 @@
             <h2><%= @user.user_name %></h2>
             <%= render 'follow_form' if logged_in? %>
           </div>
-          <% if @user.id == @current_user.id %>
-            <%= link_to "ユーザー情報を編集", edit_user_path(@user.id), class:"user_edit_button" %>
-          <% end %>
+          <div class="user-edit-btn">
+            <% if @user.id == @current_user.id %>
+              <%= link_to "ユーザー情報を編集", edit_user_path(@user.id), class:"user_edit_button" %>
+            <% end %>
+          </div>
         </div>
-        <!-- <p><%#= @user.email %></p> -->
         <div class="user-info">
           <%= render 'users/stats' %>
         </div>

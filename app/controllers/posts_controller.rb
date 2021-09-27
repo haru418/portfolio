@@ -39,7 +39,7 @@ class PostsController < ApplicationController
         @ingredient.save
       end
     end
-    if @recipe.save && @step.save
+    if @step.save && @recipe.save
       redirect_to posts_index_url
       flash[:notice] = "投稿を作成しました"
     else
@@ -76,7 +76,7 @@ class PostsController < ApplicationController
     @step.step_1 = params[:step_1]
     @step.step_2 = params[:step_2]
     @step.step_3 = params[:step_3]
-    if @recipe.save && @step.save
+    if @step.save && @recipe.save
       redirect_to posts_index_url
       flash[:notice] = "投稿を編集しました"
     else

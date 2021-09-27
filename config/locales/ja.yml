@@ -16,14 +16,14 @@ ja:
         email: メールアドレス
         password: パスワード
       recipe:
-        cooking_name: 料理名
+        cooking_name: 必須項目
         cooking_image: 写真
       ingredient:
         ingredient: 材料1
         amount: 分量1
         unit: 単位1
       step:
-        step_1: 作り方1
+        step_1: 必須項目
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'

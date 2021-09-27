@@ -10,9 +10,11 @@
             <h2><%= @user.user_name %></h2>
             <%= render 'follow_form' if logged_in? %>
           </div>
-          <% if @user.id == @current_user.id %>
-            <%= link_to "ユーザー情報を編集", edit_user_path(@user.id), class:"user_edit_button" %>
-          <% end %>
+          <div class="user-edit-btn">
+            <% if @user.id == @current_user.id %>
+              <%= link_to "ユーザー情報を編集", edit_user_path(@user.id), class:"user_edit_button" %>
+            <% end %>
+          </div>
         </div>
         <div class="user-info">
           <%= render 'users/stats' %>

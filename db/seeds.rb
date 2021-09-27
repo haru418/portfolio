@@ -2,15 +2,15 @@ require 'faker'
 # coding:utf-8
 
  # ユーザーを一人ずつ作成します。
-  User.create!(user_name: "ジョン", email: "jn@example.com", image: "user_1.png", password: "foobar")
-  User.create!(user_name: "マイケル", email: "mk@example.com", image: "user_2.png", password: "foobar")
-  User.create!(user_name: "ロジャー", email: "rg@example.com", image: "user_3.png", password: "foobar")
-  User.create!(user_name: "スタントン", email: "st@example.com", image: "user_4.png", password: "foobar")
-  User.create!(user_name: "ロドリゲス", email: "r@example.com", image: "user_5.png", password: "foobar")
-  User.create!(user_name: "ハル", email: "haru@example.com", image: "user_6.png", password: "foobar")
-  User.create!(user_name: "ビビ", email: "bibi@example.com", image: "user_7.jpg", password: "foobar")
-  User.create!(user_name: "鈴木達也", email: "tatsu@example.com", image: "user_8.png", password: "foobar")
-  User.create!(user_name: "上村一真", email: "kazu@example.com", image: "user_9.jpg", password: "foobar")
+  User.create!(user_name: "後藤歩", email: "ayumu@example.com", image: "user_1.png", password: "foobar")
+  User.create!(user_name: "佐々木享", email: "toru@example.com", image: "user_2.png", password: "foobar")
+  User.create!(user_name: "川上憲伸", email: "kenshin@example.com", image: "user_3.png", password: "foobar")
+  User.create!(user_name: "野口太郎", email: "taro@example.com", image: "user_4.png", password: "foobar")
+  User.create!(user_name: "板垣健太", email: "kenta@example.com", image: "user_5.png", password: "foobar")
+  User.create!(user_name: "大河正樹", email: "masaki@example.com", image: "user_6.png", password: "foobar")
+  User.create!(user_name: "東野春樹", email: "haruki@example.com", image: "user_7.jpg", password: "foobar")
+  User.create!(user_name: "鈴木達也", email: "tatsuya@example.com", image: "user_8.png", password: "foobar")
+  User.create!(user_name: "上村一真", email: "kazuma@example.com", image: "user_9.jpg", password: "foobar")
   User.create!(user_name: "ゲスト", email: "guest@example.com", image: "user_10.jpg", password: "foobar")
   
   # レシピ

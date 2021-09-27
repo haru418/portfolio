@@ -10,7 +10,7 @@
             <%= f.text_field :cooking_name, placeholder: "かぼちゃジュース" %>
           </div>
           <div class="post-cooking-image posts-new-content">
-            <p>写真を追加する <span class="required-item">※必須</span></p>
+            <p>写真を追加する</p>
             <label class="image-form cooking-image-form">
               <span class="material-icons camera-icon">add_a_photo</span>
               <p>ファイルを選択</p>
@@ -20,7 +20,6 @@
           </div>
           <div class="post-new-ingredients posts-new-content">
             <p>材料</p>
-            <p class="required-item">※必須</p>
             <div class="ingredient-area">
               <%= f.fields_for :ingredients do |i| %>
                 <%= render 'posts/ingredient_fields', f: i %>
