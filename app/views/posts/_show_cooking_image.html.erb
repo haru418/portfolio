@@ -1,0 +1,11 @@
+<% if @recipe.cooking_image? %>
+  <%= image_tag @recipe.cooking_image %>
+<% else %>
+  <%= image_tag "cooking_default.png" %>
+<% end %>
+<% if @recipe.user_id == @current_user.id %>
+  <div class="post-menu">
+    <%= link_to "編集", edit_post_path(@recipe.id), class:"post_edit_button" %>
+    <%= link_to "削除", destroy_post_path(@recipe.id), method: :post, class:"post_destroy_button" %>
+  </div>
+<% end %>

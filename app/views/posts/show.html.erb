@@ -1,22 +1,12 @@
 <div class="posts-show-main">
   <div class="posts-show-item">
     <div class="posts-show-cooking-image">
-    <% if @recipe.cooking_image? %>
-      <%= image_tag @recipe.cooking_image %>
-    <% else %>
-      <%= image_tag "cooking_default.png" %>
-    <% end %>
-      <% if @recipe.user_id == @current_user.id %>
-        <div class="post-menu">
-          <%= link_to "編集", edit_post_path(@recipe.id), class:"post_edit_button" %>
-          <%= link_to "削除", destroy_post_path(@recipe.id), method: :post, class:"post_destroy_button" %>
-        </div>
-      <% end %>
+      <%= render 'posts/show_cooking_image' %>
     </div>
     <p class="show-cooking-name">
       <%= @recipe.cooking_name %>
     </p>
-      <%= render 'likes/like' %>
+    <%= render 'likes/like' %>
     <div class="post-user-name">
       <img src="<%= "/assets/#{@user.image}" %>">
       <%= link_to @user.user_name, user_path(@user), class:"post_user_name" %>
@@ -48,7 +38,4 @@
       </div>
     </div>
   </div>
-  <!-- <div class="posts-show-search-form">
-    <%#= render 'posts/search_form' %>
-  </div> -->
 </div>
