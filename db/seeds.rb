@@ -17,52 +17,52 @@ require 'faker'
   Recipe.create!(user_id: 1, cooking_name: "大根の煮物",
   cooking_image: File.open("./app/assets/images/boiled_food.jpg"),
   comment: "大根に煮汁が染み込んでて美味しかった！コツは長い時間煮込むことです。")
-  Recipe.create!(user_id: 1, cooking_name: "鶏肉のトマトソース煮込み",
+  Recipe.create!(user_id: 2, cooking_name: "鶏肉のトマトソース煮込み",
   cooking_image: File.open("./app/assets/images/tomato.jpg"),
   comment: "ニンニクが効いて刺激のある味で美味しかった。これは僕のお箱になりそう。")
-  Recipe.create!(user_id: 2, cooking_name: "野菜炒め",
+  Recipe.create!(user_id: 3, cooking_name: "野菜炒め",
   cooking_image: File.open("./app/assets/images/fried_vegetables.jpg"),
   comment: "定番だけどやっぱり美味しい！短い時間で簡単に作れるので嬉しい。")
-  Recipe.create!(user_id: 2, cooking_name: "肉豆腐",
+  Recipe.create!(user_id: 4, cooking_name: "肉豆腐",
   cooking_image: File.open("./app/assets/images/beef_tofu.jpg"),
   comment: "肉と豆腐の相性が抜群！タンパク質がたくさん摂れます。")
-  Recipe.create!(user_id: 3, cooking_name: "牛ステーキ",
+  Recipe.create!(user_id: 5, cooking_name: "牛ステーキ",
   cooking_image: File.open("./app/assets/images/beef.jpg"),
   comment: "やっぱりステーキはミディアム！ソースも美味しく作れたので良かった。")
-  Recipe.create!(user_id: 3, cooking_name: "青椒肉絲",
+  Recipe.create!(user_id: 6, cooking_name: "青椒肉絲",
   cooking_image: File.open("./app/assets/images/pepper_steak.jpg"),
   comment: "中華の中でこれが一番好き！どうして中華はこんなに病みつきになるんだろう。")
-  Recipe.create!(user_id: 4, cooking_name: "シーザーサラダ",
+  Recipe.create!(user_id: 7, cooking_name: "シーザーサラダ",
   cooking_image: File.open("./app/assets/images/salad.jpg"),
   comment: "サラダはやっぱりシーザーサラダ！野菜のシャキシャキ食感も好き。")
-  Recipe.create!(user_id: 4, cooking_name: "湯豆腐",
+  Recipe.create!(user_id: 8, cooking_name: "湯豆腐",
   cooking_image: File.open("./app/assets/images/tofu.jpg"),
   comment: "出汁が効いてて最高に美味しかった！だし汁まで飲んでしまった。")
-  Recipe.create!(user_id: 5, cooking_name: "豚キムチ",
+  Recipe.create!(user_id: 9, cooking_name: "豚キムチ",
   cooking_image: File.open("./app/assets/images/prok_kimchi.jpg"),
   comment: "豚肉とキムチの相性抜群！キムチは無添加キムチです。")
-  Recipe.create!(user_id: 5, cooking_name: "肉野菜炒め",
+  Recipe.create!(user_id: 10, cooking_name: "肉野菜炒め",
   cooking_image: File.open("./app/assets/images/meat_vegetables.jpg"),
   comment: "肉と野菜の歯応えが良い感じ。野菜は多い方が好き！")
-  Recipe.create!(user_id: 6, cooking_name: "大根の煮物",
+  Recipe.create!(user_id: 2, cooking_name: "大根の煮物",
   cooking_image: File.open("./app/assets/images/boiled_food.jpg"),
   comment: "大根に煮汁が染み込んでて美味しかった！コツは長い時間煮込むことです。")
-  Recipe.create!(user_id: 6, cooking_name: "鶏肉のトマトソース煮込み",
+  Recipe.create!(user_id: 3, cooking_name: "鶏肉のトマトソース煮込み",
   cooking_image: File.open("./app/assets/images/tomato.jpg"),
   comment: "ニンニクが効いて刺激のある味で美味しかった。これは僕のお箱になりそう。")
-  Recipe.create!(user_id: 7, cooking_name: "野菜炒め",
+  Recipe.create!(user_id: 4, cooking_name: "野菜炒め",
   cooking_image: File.open("./app/assets/images/fried_vegetables.jpg"),
   comment: "定番だけどやっぱり美味しい！短い時間で簡単に作れるので嬉しい。")
-  Recipe.create!(user_id: 7, cooking_name: "肉豆腐",
+  Recipe.create!(user_id: 5, cooking_name: "肉豆腐",
   cooking_image: File.open("./app/assets/images/beef_tofu.jpg"),
   comment: "肉と豆腐の相性が抜群！タンパク質がたくさん摂れます。")
-  Recipe.create!(user_id: 8, cooking_name: "牛ステーキ",
+  Recipe.create!(user_id: 6, cooking_name: "牛ステーキ",
   cooking_image: File.open("./app/assets/images/beef.jpg"),
   comment: "やっぱりステーキはミディアム！ソースも美味しく作れたので良かった。")
-  Recipe.create!(user_id: 8, cooking_name: "青椒肉絲",
+  Recipe.create!(user_id: 7, cooking_name: "青椒肉絲",
   cooking_image: File.open("./app/assets/images/pepper_steak.jpg"),
   comment: "中華の中でこれが一番好き！どうして中華はこんなに病みつきになるんだろう。")
-  Recipe.create!(user_id: 9, cooking_name: "シーザーサラダ",
+  Recipe.create!(user_id: 8, cooking_name: "シーザーサラダ",
   cooking_image: File.open("./app/assets/images/salad.jpg"),
   comment: "サラダはやっぱりシーザーサラダ！野菜のシャキシャキ食感も好き。")
   Recipe.create!(user_id: 9, cooking_name: "湯豆腐",
@@ -71,7 +71,7 @@ require 'faker'
   Recipe.create!(user_id: 10, cooking_name: "豚キムチ",
   cooking_image: File.open("./app/assets/images/prok_kimchi.jpg"),
   comment: "豚肉とキムチの相性抜群！キムチは無添加キムチです。")
-  Recipe.create!(user_id: 10, cooking_name: "肉野菜炒め",
+  Recipe.create!(user_id: 1, cooking_name: "肉野菜炒め",
   cooking_image: File.open("./app/assets/images/meat_vegetables.jpg"),
   comment: "肉と野菜の歯応えが良い感じ。野菜は多い方が好き！")
 
