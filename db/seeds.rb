@@ -74,6 +74,36 @@ require 'faker'
   Recipe.create!(user_id: 1, cooking_name: "肉野菜炒め",
   cooking_image: File.open("./app/assets/images/meat_vegetables.jpg"),
   comment: "肉と野菜の歯応えが良い感じ。野菜は多い方が好き！")
+  Recipe.create!(user_id: 3, cooking_name: "大根の煮物",
+  cooking_image: File.open("./app/assets/images/boiled_food.jpg"),
+  comment: "大根に煮汁が染み込んでて美味しかった！コツは長い時間煮込むことです。")
+  Recipe.create!(user_id: 4, cooking_name: "鶏肉のトマトソース煮込み",
+  cooking_image: File.open("./app/assets/images/tomato.jpg"),
+  comment: "ニンニクが効いて刺激のある味で美味しかった。これは僕のお箱になりそう。")
+  Recipe.create!(user_id: 5, cooking_name: "野菜炒め",
+  cooking_image: File.open("./app/assets/images/fried_vegetables.jpg"),
+  comment: "定番だけどやっぱり美味しい！短い時間で簡単に作れるので嬉しい。")
+  Recipe.create!(user_id: 6, cooking_name: "肉豆腐",
+  cooking_image: File.open("./app/assets/images/beef_tofu.jpg"),
+  comment: "肉と豆腐の相性が抜群！タンパク質がたくさん摂れます。")
+  Recipe.create!(user_id: 7, cooking_name: "牛ステーキ",
+  cooking_image: File.open("./app/assets/images/beef.jpg"),
+  comment: "やっぱりステーキはミディアム！ソースも美味しく作れたので良かった。")
+  Recipe.create!(user_id: 8, cooking_name: "青椒肉絲",
+  cooking_image: File.open("./app/assets/images/pepper_steak.jpg"),
+  comment: "中華の中でこれが一番好き！どうして中華はこんなに病みつきになるんだろう。")
+  Recipe.create!(user_id: 9, cooking_name: "シーザーサラダ",
+  cooking_image: File.open("./app/assets/images/salad.jpg"),
+  comment: "サラダはやっぱりシーザーサラダ！野菜のシャキシャキ食感も好き。")
+  Recipe.create!(user_id: 10, cooking_name: "湯豆腐",
+  cooking_image: File.open("./app/assets/images/tofu.jpg"),
+  comment: "出汁が効いてて最高に美味しかった！だし汁まで飲んでしまった。")
+  Recipe.create!(user_id: 1, cooking_name: "豚キムチ",
+  cooking_image: File.open("./app/assets/images/prok_kimchi.jpg"),
+  comment: "豚肉とキムチの相性抜群！キムチは無添加キムチです。")
+  Recipe.create!(user_id: 2, cooking_name: "肉野菜炒め",
+  cooking_image: File.open("./app/assets/images/meat_vegetables.jpg"),
+  comment: "肉と野菜の歯応えが良い感じ。野菜は多い方が好き！")
 
   # 材料
   Ingredient.create!(recipe_id: 1, ingredient: "大根", amount: "1/2", unit: "個")
@@ -154,6 +184,45 @@ require 'faker'
   Ingredient.create!(recipe_id: 20, ingredient: "キャベツ", amount: "1/4", unit: "個")
   Ingredient.create!(recipe_id: 20, ingredient: "玉ねぎ", amount: "1/2", unit: "個")
   Ingredient.create!(recipe_id: 20, ingredient: "にんじん", amount: "1/2", unit: "本")
+  Ingredient.create!(recipe_id: 21, ingredient: "大根", amount: "1/2", unit: "個")
+  Ingredient.create!(recipe_id: 21, ingredient: "鶏肉", amount: "200", unit: "グラム")
+  Ingredient.create!(recipe_id: 21, ingredient: "にんじん", amount: "1", unit: "本")
+  Ingredient.create!(recipe_id: 21, ingredient: "めんつゆ", amount: "2", unit: "大さじ")
+  Ingredient.create!(recipe_id: 22, ingredient: "鶏肉", amount: "200", unit: "グラム")
+  Ingredient.create!(recipe_id: 22, ingredient: "トマト缶", amount: "1", unit: "個")
+  Ingredient.create!(recipe_id: 22, ingredient: "玉ねぎ", amount: "1", unit: "個")
+  Ingredient.create!(recipe_id: 22, ingredient: "にんじん", amount: "1", unit: "本")
+  Ingredient.create!(recipe_id: 23, ingredient: "キャベツ", amount: "1/4", unit: "個")
+  Ingredient.create!(recipe_id: 23, ingredient: "玉ねぎ", amount: "1/2", unit: "個")
+  Ingredient.create!(recipe_id: 23, ingredient: "にんじん", amount: "1/2", unit: "本")
+  Ingredient.create!(recipe_id: 23, ingredient: "だしの素", amount: "1", unit: "小さじ")
+  Ingredient.create!(recipe_id: 24, ingredient: "牛肉", amount: "200", unit: "グラム")
+  Ingredient.create!(recipe_id: 24, ingredient: "豆腐", amount: "300", unit: "グラム")
+  Ingredient.create!(recipe_id: 24, ingredient: "めんつゆ", amount: "2", unit: "大さじ")
+  Ingredient.create!(recipe_id: 24, ingredient: "砂糖", amount: "2", unit: "小さじ")
+  Ingredient.create!(recipe_id: 25, ingredient: "牛ステーキ肉", amount: "200", unit: "")
+  Ingredient.create!(recipe_id: 25, ingredient: "牛脂", amount: "1", unit: "個")
+  Ingredient.create!(recipe_id: 25, ingredient: "塩", amount: "少々", unit: "")
+  Ingredient.create!(recipe_id: 25, ingredient: "胡椒", amount: "少々", unit: "")
+  Ingredient.create!(recipe_id: 26, ingredient: "牛肉", amount: "150", unit: "グラム")
+  Ingredient.create!(recipe_id: 26, ingredient: "ピーマン", amount: "2", unit: "個")
+  Ingredient.create!(recipe_id: 26, ingredient: "細切り竹の子", amount: "150", unit: "グラム")
+  Ingredient.create!(recipe_id: 26, ingredient: "パプリカ", amount: "2", unit: "個")
+  Ingredient.create!(recipe_id: 27, ingredient: "レタス", amount: "1/2", unit: "個")
+  Ingredient.create!(recipe_id: 27, ingredient: "玉ねぎ", amount: "1/4", unit: "個")
+  Ingredient.create!(recipe_id: 27, ingredient: "クルトン", amount: "お好みで", unit: "")
+  Ingredient.create!(recipe_id: 27, ingredient: "シーザードレッシング", amount: "お好みで", unit: "")
+  Ingredient.create!(recipe_id: 28, ingredient: "豆腐", amount: "300", unit: "グラム")
+  Ingredient.create!(recipe_id: 28, ingredient: "だしの素", amount: "1", unit: "大さじ")
+  Ingredient.create!(recipe_id: 28, ingredient: "小ネギ", amount: "お好みで", unit: "")
+  Ingredient.create!(recipe_id: 29, ingredient: "豚肉", amount: "150", unit: "グラム")
+  Ingredient.create!(recipe_id: 29, ingredient: "キムチ", amount: "70", unit: "グラム")
+  Ingredient.create!(recipe_id: 29, ingredient: "ごま油", amount: "1", unit: "大さじ")
+  Ingredient.create!(recipe_id: 29, ingredient: "塩", amount: "少々", unit: "")
+  Ingredient.create!(recipe_id: 30, ingredient: "豚肉細切れ", amount: "150", unit: "グラム")
+  Ingredient.create!(recipe_id: 30, ingredient: "キャベツ", amount: "1/4", unit: "個")
+  Ingredient.create!(recipe_id: 30, ingredient: "玉ねぎ", amount: "1/2", unit: "個")
+  Ingredient.create!(recipe_id: 30, ingredient: "にんじん", amount: "1/2", unit: "本")
 
   # 作り方
   Step.create!(
@@ -270,6 +339,65 @@ require 'faker'
   )
   Step.create!(
     recipe_id: 20,
+    step_1: "肉と野菜を食べやすい大きさに切ります。",
+    step_2: "フライパンに肉を入れ中火で炒めます。肉に火が通ったら野菜を入れ玉ねぎがしんなりするまで炒めます。",
+    step_3: "玉ねぎがしんなりしたら味付けをして完成です！"
+  )
+  Step.create!(
+    recipe_id: 21, step_1: "具材を食べやすい大きさに切ります。",
+    step_2: "具材全てを鍋に入れて火にかける。煮立ったら弱火で具材が柔らかくなるまで火にかける。",
+    step_3: "爪楊枝がスッと刺さるくらい柔らかくなったら完成！"
+  )
+  Step.create!(
+    recipe_id: 22,
+    step_1: "具材を食べやすい大きさに切ります。",
+    step_2: "具材全てを鍋に入れて火にかける。煮立ったら弱火で具材が柔らかくなるまで火にかける。",
+    step_3: "鶏肉に火が通り、野菜が食べやすい柔らかさになったら完成！"
+  )
+  Step.create!(
+    recipe_id: 23,
+    step_1: "具材を食べやすい大きさに切ります。",
+    step_2: "具材をフライパンに入れ、玉ねぎがしんなりするまで炒めます。",
+    step_3: "お好みで味付けしたら完成です！"
+  )
+  Step.create!(
+    recipe_id: 24,
+    step_1: "豚肉、豆腐は1口大に切ります。玉ねぎは5mm〜1cm位に切ります。",
+    step_2: "フライパンに牛肉を入れて炒めます。",
+    step_3: "肉に色がついたら豆腐と調味料を入れ煮立たせたら完成です！"
+  )
+  Step.create!(
+    recipe_id: 25,
+    step_1: "牛脂をフライパンの上で熱します。",
+    step_2: "焼き加減を見ながらひっくり返しながら焼きます。",
+    step_3: "自分の好みの焼き加減まで焼いて塩胡椒を振ったら完成です！"
+  )
+  Step.create!(
+    recipe_id: 26,
+    step_1: "牛肉、ピーマン、パプリカを細切りにします。",
+    step_2: "具材をフライパンに入れ中火で炒めます。",
+    step_3: "調味料で味付けをし、満遍なく火が通ったら完成です！"
+  )
+  Step.create!(
+    recipe_id: 27,
+    step_1: "レタスを食べやすい多きさにちぎり、玉ねぎは細切りにします。",
+    step_2: "レタスを皿にのせ玉ねぎとクルトンをのせます。",
+    step_3: "シーザードレッシングをかけたら完成です！"
+  )
+  Step.create!(
+    recipe_id: 28,
+    step_1: "水にだしの素を入れ煮立たせます。",
+    step_2: "煮立ったら豆腐を入れ弱火で５分に混みます。",
+    step_3: "豆腐に火が通ったら完成です！"
+  )
+  Step.create!(
+    recipe_id: 29,
+    step_1: "豚肉を食べやすい大きさに切ります。",
+    step_2: "プライパンに豚肉を入れ中火で炒めます。",
+    step_3: "豚肉に火が通ったらキムチを入れ混ぜ合わせたら完成です！"
+  )
+  Step.create!(
+    recipe_id: 30,
     step_1: "肉と野菜を食べやすい大きさに切ります。",
     step_2: "フライパンに肉を入れ中火で炒めます。肉に火が通ったら野菜を入れ玉ねぎがしんなりするまで炒めます。",
     step_3: "玉ねぎがしんなりしたら味付けをして完成です！"
