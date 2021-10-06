@@ -26,6 +26,7 @@ Rails.application.routes.draw do
     end
   end
   
+  resources :ingredients, only: [:new, :create]
   resources :relationships, only: [:create, :destroy]
   resources :guest_sessions, only: [:create]
 end

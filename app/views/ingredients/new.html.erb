@@ -1,0 +1,26 @@
+<div class="ingredients-new-main">
+  <div class="container">
+    <h2 class="start-message">材料を追加しよう！</h2>
+    <%= form_with model: @recipe, url: posts_create_path, local: true do |f| %>
+      <div class="new-post">
+        <%#= render 'shared/error_messages' %>
+        <div class="new-post-form">
+          <div class="post-new-ingredients posts-new-content">
+            <p>材料</p>
+            <div class="ingredient-area">
+              <%= f.fields_for :ingredients do |i| %>
+                <%= render 'posts/ingredient_fields', f: i %>
+              <% end %>
+            </div>
+          </div>
+          <div class="add-form-btn">
+            ＋フォームを追加
+          </div>
+          <div class="send-post">
+            <%= f.submit "追加する" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
