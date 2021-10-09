@@ -264,13 +264,25 @@
 
 .show-ingredients {
   border-bottom: 1px solid #e1ddd8;
-  padding-bottom: 35px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   display: flex;
+}
+
+.edit-ingredients-btn {
+  padding-top: 10px;
+  padding-right: 10px;
+  text-align: right;
+  color: blue;
+}
+
+.edit-ingredients-btn a {
+  color: blue;
 }
 
 .ingredient-letter {
   font-size: 23px;
-  margin-top: 40px;
+  margin-top: 9px;
   margin-bottom: 10px;
 }
 

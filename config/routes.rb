@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get "posts/:id/edit" => "posts#edit", as: :edit_post
   post "posts/:id/update" => "posts#update", as: :update_post
   post "posts/:id/destroy" => "posts#destroy", as: :destroy_post
+  get "ingredients/:id/new" => "ingredients#new", as: :ingredients_new
+  post "ingredients/:id/create" => "ingredients#create", as: :ingredients_create
   get "search" => "posts#search"
   post "search" => "posts#search", as: :search_posts
   get "login" => "users#login_page"
@@ -26,7 +28,12 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :ingredients, only: [:new, :create]
+  # resources :ingredients, only: [:new, :create] do
+  #   member do
+  #     get :new
+  #   end
+  # end
+
   resources :relationships, only: [:create, :destroy]
   resources :guest_sessions, only: [:create]
 end

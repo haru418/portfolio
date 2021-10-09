@@ -1,7 +1,7 @@
 <div class="ingredients-new-main">
   <div class="container">
     <h2 class="start-message">材料を追加しよう！</h2>
-    <%= form_with model: @recipe, url: posts_create_path, local: true do |f| %>
+    <%= form_with url: ingredients_create_path, local: true do |f| %>
       <div class="ingredients-new-post">
         <%#= render 'shared/error_messages' %>
         <div class="new-post-form">

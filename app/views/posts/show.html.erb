@@ -15,6 +15,11 @@
       <div class="comment-letter">コメント</div>
       <p><%= @recipe.comment %></p>
     </div>
+    <% if @recipe.user_id == @current_user.id %>
+      <div class="edit-ingredients-btn">
+        <%= link_to "材料を追加", ingredients_new_path(@recipe) %>
+      </div>
+    <% end %>
     <div class="show-ingredients">
       <div class="ingredients">
         <%= render 'posts/ingredients' %>
@@ -23,6 +28,7 @@
         <%= render 'posts/amounts' %>
       </div>
     </div>
+    
     <div class="show-cooking-recipe">
       <div class="show-process">
         <div class="step-number">ステップ１</div>
