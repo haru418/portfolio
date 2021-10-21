@@ -22,10 +22,10 @@ gem 'pry-rails'
 gem 'faker', git: 'https://github.com/stympy/faker'
 gem 'gimei'
 gem 'newrelic_rpm'
+gem 'mysql2'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.6.0'
-  gem 'mysql2'
   gem 'byebug',  '9.0.6', platform: :mri
 end
 
