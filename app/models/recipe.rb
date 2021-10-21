@@ -4,7 +4,7 @@ class Recipe < ApplicationRecord
   has_many :steps, dependent: :destroy
   accepts_nested_attributes_for :ingredients, allow_destroy: true
   mount_uploader :cooking_image, CookingImageUploader
-  validates :cooking_name, presence: true, length: {maximum: 200}
+  validates :cooking_name, presence: true, length: {maximum: 50}
   validates :user_id, presence: true
   # validates :cooking_image, presence: true
   
