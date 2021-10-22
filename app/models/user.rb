@@ -11,7 +11,7 @@ class User < ApplicationRecord
   has_many :followers, through: :passive_relationships, source: :follower
   validates :user_name, :email, presence: true
   validates :email, uniqueness: true
-  validates :password, presence: true
+  validates :password, presence: true, length: {minimum: 8, maximum: 20}
   
   def recipes
     Recipe.where(user_id: self.id)

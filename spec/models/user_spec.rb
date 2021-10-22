@@ -31,6 +31,7 @@ RSpec.describe User, type: :model do
     user.valid?
     expect(user.errors[:password]).to include("を入力してください")
   end
+
   #重複したメールアドレスなら無効な状態であること
   it "is invalid with a duplicate email" do
     user = User.create(
@@ -45,5 +46,56 @@ RSpec.describe User, type: :model do
     )
     user.valid?
     expect(user.errors[:email]).to include("はすでに存在します")
+  end
+
+  #パスワードの文字数を指定する
+  describe "specify the number of characters in the password" do
+    before do
+      password_1 = "a" * 8
+      @user_1 = User.new(
+        user_name: "ben",
+        email: "ben@example.com",
+        password: password_1
+      )
+      password_2 = "a" * 7
+      @user_2 = User.new(
+        user_name: "ben",
+        email: "ben@example.com",
+        password: password_2
+      )
+      password_3 = "a" * 21
+      @user_3 = User.new(
+        user_name: "ben",
+        email: "ben@example.com",
+        password: password_3
+      )
+    end
+
+    #パスワードが8文字以上20文字以内のとき
+    context "when the password is 8 to 20 characters" do
+      #有効であること
+      it "password is valid" do
+        @user_1.valid?
+        expect(@user_1).to be_valid
+      end
+    end
+
+    #パスワードが7文字以下のとき
+    context "when the password is 7 characters or less" do
+      #無効であること
+      it "password is invalid" do
+        @user_2.valid?
+        expect(@user_2.errors[:password]).to include("は8文字以上で入力してください")
+      end
+    end
+    
+    #パスワードが21文字以上のとき
+    context "when the password is 21 characters or more" do
+      #無効であること
+      it "password is invalid" do
+        @user_3.valid?
+        expect(@user_3.errors[:password]).to include("は20文字以内で入力してください")
+      end
+    end
   end
 end
