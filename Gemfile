@@ -26,6 +26,7 @@ gem 'mysql2'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.6.0'
+  gem 'factory_bot_rails'
   gem 'byebug',  '9.0.6', platform: :mri
   gem 'guard'
   gem 'guard-rspec', require: false

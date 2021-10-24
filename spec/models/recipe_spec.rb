@@ -11,10 +11,7 @@ RSpec.describe Recipe, type: :model do
 
   #料理名、ユーザーIDがあれば有効な状態であること
    it "is valid with a cooking_name, and user_id" do
-    recipe = @user.recipes.build(
-      cooking_name: "野菜炒め",
-      user_id: @user.id
-    )
+    recipe = @user.recipes.build(:recipe)
     recipe.valid?
     expect(recipe).to be_valid
    end

@@ -83,6 +83,11 @@ GEM
     erubi (1.10.0)
     excon (0.87.0)
     execjs (2.8.1)
+    factory_bot (6.2.0)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.2.0)
+      factory_bot (~> 6.2.0)
+      railties (>= 5.0.0)
     ffi (1.15.4)
     fission (0.5.0)
       CFPropertyList (~> 2.2)
@@ -465,6 +470,7 @@ DEPENDENCIES
   byebug (= 9.0.6)
   carrierwave (= 1.1.0)
   coffee-rails (= 4.2.2)
+  factory_bot_rails
   faker!
   fog (= 1.42)
   gimei
