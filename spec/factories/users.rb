@@ -1,7 +1,7 @@
 FactoryBot.define do
-  factory :user do
+  factory :user, aliases: [:owner] do
     user_name { "ben" }
-    email { "tester@example.com" }
+    sequence(:email) { |n| "tester#{n}@example.com" }
     password { "00000000" }
   end
 end
